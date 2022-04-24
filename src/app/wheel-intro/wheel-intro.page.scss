@@ -1,0 +1,1063 @@
+.slidein {
+    animation: slideMe 0.2s ease-in;
+}
+@keyframes slideMe {
+    0% {
+        transform: skewX(0deg) translateX(100%);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+ion-content {
+    --background: transparent;
+}
+ion-footer ion-toolbar {
+    padding: 2% 2%;
+    box-shadow: 0px -1px 0px #666666;
+    .fot-icons {
+        font-size: 24px;
+        padding: 5px 8px;
+        margin: 0px 0px 0px 0px;
+        color: #666666;
+    }
+    .active {
+        color: #008ec3;
+    }
+    .but {
+        margin: 0px;
+        background: #008ec3;
+    }
+}
+.foure {
+    color: #0046b5;
+    font-size: 24px;
+    padding: 5px 8px;
+    float: right;
+    margin: 0px 8px 0px 8px;
+}
+/* Transparent standard */
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+/* Show background if class is active */
+.show-background {
+    border-style: none;
+    background: var(--ion-color-primary);
+}
+
+/* Remove bottom border on md */
+.header-md::after {
+    background-image: none;
+}
+
+/* Remove bottom border on ios */
+.header-ios ion-toolbar:last-child {
+    --border-width: 0;
+}
+.menucs {
+    color: #0046b5;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* End Menu */
+.introduction {
+    img {
+        max-height: 60%;
+        max-width: 52%;
+        margin: 20px 0 10px;
+        pointer-events: none;
+    }
+}
+.flex-tool {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 20px;
+    h2 {
+        color: #333333;
+        font-size: 16px;
+        align-self: start;
+        margin: 0px 0px 10px;
+    }
+    h3 {
+        color: #0046b5;
+        font-size: 20px;
+        align-self: start;
+        margin: 0px;
+    }
+}
+.prototype {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px 10px;
+    .items {
+        color: #333333;
+        font-size: 13px;
+        align-self: start;
+    }
+    .items2 {
+        color: #333333;
+        font-size: 13px;
+        align-self: flex-end;
+    }
+    .grey {
+        color: #999999;
+    }
+}
+
+/* DOES NOT WORK - not specific enough */
+.modal-wrapper {
+    background: #222;
+}
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+.my-custom-class .modal-wrapper {
+    background: #222;
+}
+.my-custom-class {
+    --background: #222;
+}
+ion-modal.stack-modal {
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+}
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 20px;
+    .items {
+        width: 50%;
+        align-self: start;
+        margin-bottom: 15px;
+        h3 {
+            padding: 0px;
+            margin: 0px;
+            font-size: 22px;
+        }
+        p {
+            padding: 0px;
+            margin: 0px;
+            font-size: 15px;
+            color: #333333;
+        }
+    }
+    .items:nth-child(odd) {
+        h3,
+        p {
+            text-align: left;
+        }
+    }
+    .items:nth-child(even) {
+        h3,
+        p {
+            text-align: right;
+        }
+    }
+}
+
+// #Layer_1{
+//     animation: whee 3s infinite linear;
+//     transform-origin: center;
+//     transform-box: fill-box;
+// }
+
+// @keyframes whee {
+//     from{
+// transform: rotateZ(0deg);
+//     }
+//     to{
+//     transform:rotateZ(360deg) ;
+//     }
+// }
+
+
+
+
+
+#y1{
+    color:green;
+
+}
+
+
+.but {
+    width: 90%;
+    padding: 5%;
+    font-size: 18px;
+}
+
+
+
+
+@media only screen and(min-width: 360px) {
+    ion-content {
+        --background: transparent;
+    }
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 50px;
+            padding: 4px 12px;
+            margin: 0px 0px 0px 0px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 24px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+    /* Transparent standard */
+    ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+    }
+
+    /* Show background if class is active */
+    .show-background {
+        border-style: none;
+        background: var(--ion-color-primary);
+    }
+
+    /* Remove bottom border on md */
+    .header-md::after {
+        background-image: none;
+    }
+
+    /* Remove bottom border on ios */
+    .header-ios ion-toolbar:last-child {
+        --border-width: 0;
+    }
+    .menucs {
+        color: #0046b5;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* End Menu */
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 58%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+    }
+    .flex-tool {
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 20px;
+        h2 {
+            color: #333333;
+            font-size: 20px;
+            align-self: start;
+            margin: 0px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 24px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 13px;
+            align-self: start;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 13px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    /* DOES NOT WORK - not specific enough */
+    .modal-wrapper {
+        background: #222;
+    }
+
+    /* Works - pass "my-custom-class" in cssClass to increase specificity */
+    .my-custom-class .modal-wrapper {
+        background: #222;
+    }
+    .my-custom-class {
+        --background: #222;
+    }
+    ion-modal.stack-modal {
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+        --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 20px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 22px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 15px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    ion-content {
+        --background: transparent;
+    }
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 24px !important;
+            padding: 0px 3px;
+            margin: 0px 8px 0px 8px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 24px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+    /* Transparent standard */
+    ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+    }
+
+    /* Show background if class is active */
+    .show-background {
+        border-style: none;
+        background: var(--ion-color-primary);
+    }
+
+    /* Remove bottom border on md */
+    .header-md::after {
+        background-image: none;
+    }
+
+    /* Remove bottom border on ios */
+    .header-ios ion-toolbar:last-child {
+        --border-width: 0;
+    }
+    .menucs {
+        color: #0046b5;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* End Menu */
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 60%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+    }
+    .flex-tool {
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 20px;
+        h2 {
+            color: #333333;
+            font-size: 16px;
+            align-self: start;
+            margin: 0px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 20px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 13px;
+            align-self: start;
+            padding: 2px;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 13px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    /* DOES NOT WORK - not specific enough */
+    .modal-wrapper {
+        background: #222;
+    }
+
+    /* Works - pass "my-custom-class" in cssClass to increase specificity */
+    .my-custom-class .modal-wrapper {
+        background: #222;
+    }
+    .my-custom-class {
+        --background: #222;
+    }
+    ion-modal.stack-modal {
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+        --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 6px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 22px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 15px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    ion-content {
+        --background: transparent;
+    }
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 24px !important;
+            padding: 0px 3px;
+            margin: 0px 8px 0px 8px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 24px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+    /* Transparent standard */
+    ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+    }
+
+    /* Show background if class is active */
+    .show-background {
+        border-style: none;
+        background: var(--ion-color-primary);
+    }
+
+    /* Remove bottom border on md */
+    .header-md::after {
+        background-image: none;
+    }
+
+    /* Remove bottom border on ios */
+    .header-ios ion-toolbar:last-child {
+        --border-width: 0;
+    }
+    .menucs {
+        color: #0046b5;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* End Menu */
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 70%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+    }
+    .flex-tool {
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 20px;
+        h2 {
+            color: #333333;
+            font-size: 22px;
+            align-self: start;
+            margin: 20px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 24px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 17px;
+            align-self: start;
+            padding: 2px;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 17px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    /* DOES NOT WORK - not specific enough */
+    .modal-wrapper {
+        background: #222;
+    }
+
+    /* Works - pass "my-custom-class" in cssClass to increase specificity */
+    .my-custom-class .modal-wrapper {
+        background: #222;
+    }
+    .my-custom-class {
+        --background: #222;
+    }
+    ion-modal.stack-modal {
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+        --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 6px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 22px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 18px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 45%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 58%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+        h2 {
+            color: #333333;
+            font-size: 32px;
+            align-self: start;
+            margin: 20px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 32px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 6px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 32px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 26px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 24px;
+            align-self: start;
+            padding: 2px;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 24px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 40px !important;
+            padding: 0px 3px;
+            margin: 0px 8px 0px 8px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 30px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 70%;
+            margin: 20px 0 10px;
+            pointer-events: none;
+        }
+        h2 {
+            color: #333333;
+            font-size: 40px;
+            align-self: start;
+            margin: 20px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 36px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 6px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 36px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 35px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 30px;
+            align-self: start;
+            padding: 2px;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 30px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 40px !important;
+            padding: 0px 3px;
+            margin: 0px 8px 0px 8px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+            font-size: 35px;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 38px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+
+    .menucs {
+        color: #0046b5;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+@media only screen and (min-width: 720px) and (min-height: 1600px) {
+    .introduction {
+        img {
+            max-height: 60%;
+            max-width: 80%;
+            margin: 80px 0 10px;
+            pointer-events: none;
+        }
+        h2 {
+            color: #333333;
+            font-size: 52px;
+            align-self: start;
+            margin: 20px 0px 10px;
+        }
+        h3 {
+            color: #0046b5;
+            font-size: 58px;
+            align-self: start;
+            margin: 0px;
+        }
+    }
+    .result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 6px;
+        .items {
+            width: 50%;
+            align-self: start;
+            margin-bottom: 15px;
+            h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 36px;
+            }
+            p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 35px;
+                color: #333333;
+            }
+        }
+        .items:nth-child(odd) {
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+        .items:nth-child(even) {
+            h3,
+            p {
+                text-align: right;
+            }
+        }
+    }
+
+    .prototype {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px 10px;
+        .items {
+            color: #333333;
+            font-size: 30px;
+            align-self: start;
+            padding: 2px;
+        }
+        .items2 {
+            color: #333333;
+            font-size: 30px;
+            align-self: flex-end;
+        }
+        .grey {
+            color: #999999;
+        }
+    }
+
+    ion-footer ion-toolbar {
+        padding: 2% 2%;
+        box-shadow: 0px -1px 0px #666666;
+        .fot-icons {
+            font-size: 44px !important;
+            padding: 0px 3px;
+            margin: 0px 8px 0px 8px;
+            color: #666666;
+        }
+        .active {
+            color: #008ec3;
+        }
+        .but {
+            margin: 0px;
+            background: #008ec3;
+            font-size: 35px;
+        }
+    }
+    .foure {
+        color: #0046b5;
+        font-size: 40px;
+        padding: 5px 8px;
+        float: right;
+        margin: 0px 8px 0px 8px;
+    }
+
+    .menucs {
+        color: #0046b5;
+        font-size: 60px !important;
+        padding: 0px;
+        margin: 0px;
+        width: 80px;
+        height: 85px;
+    }
+}

@@ -1,0 +1,111 @@
+<ion-header class="ion-no-border slidein" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon (click)="User()"class="foure" src="../../assets/img/7.svg"></ion-icon>
+    <ion-icon (click)="Edit()" class="edit" src="../../assets/img/11.svg"></ion-icon>
+    <ion-icon (click)="Reset()" alt="reset" class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="form-prof slidein ">
+  <h2>Create New Webinar</h2>
+  <p>Now you can create your new Webinar and
+    explore to Macro Wheel.</p>
+</div>
+<ion-content class="slidein">
+  <div class="myprofile">
+    <div class="form-prof p-t-2">
+      <form [formGroup]="webinarForm" (submit)="doSignup()">
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="webinartitle" type="text" class="form-control" formControlName="webinartitle"
+              placeholder="Enter Webinar Title"></ion-input>
+            <ion-icon src="../../assets/img/12.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.webinartitle.errors?.required">
+            webinar title is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-datetime  style="width: 230px;" name="Choosedate" type='date' class="form-control" min="2018" max="2099-10-31" formControlName="Choosedate" displayFormat="DD-MM-YYYY"
+              placeholder="Choose Date"></ion-datetime>
+            <ion-icon src="../../assets/img/13.svg" style="margin-left: 41px;"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.Choosedate.errors?.required">
+            date is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="EnterName" type="text" class="form-control" formControlName="Name"
+              placeholder="Enter Name"></ion-input>
+            <ion-icon src="../../assets/img/1.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.Name.errors?.required">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="emailid" type="text" class="form-control" formControlName="Email"
+              placeholder="email@gmail.com"></ion-input>
+            <ion-icon src="../../assets/img/2.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.Email.errors?.required">
+            Email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="designer" type="text" class="form-control" formControlName="Designation"
+              placeholder="Profession"></ion-input>
+            <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.Designation.errors?.required">
+            Profession is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="igpsc" type="text" class="form-control" formControlName="IGPSC" placeholder="Institution / Company">
+            </ion-input>
+            <ion-icon src="../../assets/img/7.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.IGPSC.errors?.required">
+            Institution is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="it" type="text" class="form-control" formControlName="IT" placeholder="Department"></ion-input>
+            <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.IT.errors?.required">
+           Department is required.
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<div class="webinar-bg"></div>
+<ion-footer class="ion-no-border slidein">
+  <ion-toolbar>
+    <div>
+          
+      <button ion-button *ngIf="confirm"  (click)="Onsubmit()"  class="but"> Create and Proceed</button>
+      <div class="meter" *ngIf="success"> Create and Proceed
+        <span class="prog" [style.width]="width+'%'"></span>
+      </div>
+      <div class="meter" *ngIf="UpdateSussess"> Create and Proceed
+        <span class="prog" [style.width]="width+'%'"><ion-icon style="margin-top: 1px; margin-left: -1px;" name="checkmark-circle-outline"></ion-icon>Created Successfully</span>
+      </div>
+      <!-- <button ion-button  class="but" style="background-color: green;"> <ion-icon src="../../assets/img/24.svg"></ion-icon> Updated Successfully
+      </button> -->
+    </div>
+  </ion-toolbar>
+</ion-footer>

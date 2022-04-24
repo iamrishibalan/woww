@@ -1,0 +1,705 @@
+<ion-header class="ion-no-border slidein" translucent>
+    <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+        <ion-buttons slot="start">
+            <ion-menu-button class="menucs"></ion-menu-button>
+        </ion-buttons>
+        <ion-icon *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" class="foure"
+            src="../../assets/img/35.svg"></ion-icon>
+        <ion-icon *ngIf="userDetail.reg_UserType=='User'" (click)='User()' class="foure" src="../../assets/img/7.svg">
+        </ion-icon>
+        <!-- <ion-icon class="edit" src="../../assets/img/11.svg"></ion-icon> -->
+    </ion-toolbar>
+</ion-header>
+<div class="form-prof slidein">
+    <h2>My Webinar</h2>
+    <p>Hello User! you have Successfully Created
+        Now Totaly {{details.length}} Webinar List Displayed.</p>
+</div>
+<ion-content class="slidein">
+    <div class="card-prof">
+        <ion-card class="card" *ngFor="let list of details.reverse()">
+            <ion-card-header (click)="ChooseWebinar(list.webinar_Id,list.webinar_Type)">
+                <ion-card-title>{{list.webinar_Title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <div class="flex-box">
+                    <div class="item-box">
+                        <h4>Presenter</h4>
+                        <h3>{{list.webinar_Name}}</h3>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon (click)="Delete(list.webinar_Id,list.webinar_Type)" src="../../assets/img/18.svg">
+                        </ion-icon>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon src="../../assets/img/19.svg" (click)="shared(list.webinar_Id,webinarUserDetail.reg_Id)"></ion-icon>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon (click)="download(list.webinar_Id,webinarUserDetail.reg_Id,list.webinar_Type,list.webinar_Email)" src="../../assets/img/20.svg"></ion-icon>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
+<div class="webinar-bg"></div>
+<ion-footer class="ion-no-border slidein">
+    <ion-toolbar>
+        <button ion-button class="but butcont" *ngIf="userDetail.reg_UserType=='Admin'" (click)="adminwebinar()">
+            <ion-icon src="../../assets/img/21.svg"></ion-icon> Create New Webinar
+        </button>
+        <button ion-button class="but butcont" *ngIf="userDetail.reg_UserType=='User'" (click)="userwebinar()">
+            <ion-icon src="../../assets/img/21.svg"></ion-icon> Create New Webinar
+        </button>
+    </ion-toolbar>
+</ion-footer>
+<div class="loaders" *ngIf="load" >  
+    <div class="imgstyle">
+    <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+  </div>
+  </div>
+
+
+
+<!-- Pdf Download option -->
+<div id="demo" style="display: none;" *ngFor="let list of details">
+    <br>
+    <div>
+        <img src="{{apiUrl}}getImages/img1.jpg" style="width: 100%; height: 170%;" />
+    </div>
+    <br>
+    <br>
+    <div>
+        <h1 style="color: #003089;">{{list.webinar_Title}}</h1>
+    </div>
+    <br>
+    <div>
+        <div style="display: grid;grid-template-columns: auto auto;">
+            <table style="width:100%;text-align: left;">
+                <tr>
+                    <td style=" font-size: 30px;">
+                        Presenter : <b>{{webinarUserDetail.reg_Name}}</b>
+                    </td>
+                </tr>
+            </table>
+            <table style="width:100%;text-align: left;">
+                <tr>
+                    <td style=" font-size: 30px;">
+                        Created On : <b>{{webinarUserDetail.reg_CreateDate | date: 'dd/MM/yyyy'}}</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="display: grid;grid-template-columns: auto auto;">
+            <table style="width:100%;text-align: left;">
+                <tr>
+                    <td><img src="{{apiUrl}}getImages/svg7.jpg" style="width: 15px;"> {{webinarUserDetail.reg_Profession}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{{apiUrl}}getImages/svg14.jpg" style="width: 15px;"> {{webinarUserDetail.reg_Institution}}
+                    </td> 
+                </tr>
+                <tr>
+                    <td><img src="{{apiUrl}}getImages/svg15.jpg" style="width: 15px;"> {{webinarUserDetail.reg_Department}}
+                    </td>
+                </tr>
+            </table>
+            <table style="width:100%;text-align: left;">
+                <tr>
+                    <td><img src="{{apiUrl}}getImages/svg17.jpg" style="width: 15px;"> {{webinarUserDetail.reg_Purpose}}</td>
+                </tr>
+                <tr>
+                    <td><img src="{{apiUrl}}getImages/svg16.jpg" style="width: 15px;"> {{webinarUserDetail.reg_Place}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="display: grid;grid-template-columns: auto auto auto;">
+            <table style="width:100%;text-align: center;">
+                <tr>
+                    <td style="color: rgb(247, 108, 131); font-size: 50px;">
+                        69
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" font-size: 30px;">
+                        Total Action
+                    </td>
+                </tr>
+
+            </table>
+            <table style="width:100%;text-align: center;">
+                <tr>
+                    <td style="color: green; font-size: 50px;">
+                        {{rightCount}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" font-size: 30px;">
+                        Completed
+                    </td>
+                </tr>
+
+            </table>
+            <table style="width:100%;text-align: center;" >
+                <tr>
+                    <td style="color: red; font-size: 50px;">
+                        {{wrongCount}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" font-size: 30px;">
+                       Inprogress
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Over All Performance of Macro Wheel</h2>
+        <h5> </h5>
+    </div>
+    <div>
+        <br>
+        <img src="{{apiUrl}}getImages/img2.jpg" style="height: 100%;width: 100%;" />
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="display: grid;grid-template-columns: auto auto;">
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">01.DECIDE ON THE
+                    TOPIC-{{DataDetail.Planning[1].Decidingonthetopic | number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingonthetopic[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingonthetopic[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Set
+                    goals and Objectives</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingonthetopic[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingonthetopic[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Determine your Target Audience</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingonthetopic[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingonthetopic[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Make the list of topics</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingonthetopic[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingonthetopic[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    fix the topic</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">09.CHECK ON
+                    CONNECTION-{{DataDetail.Performing[1].Checkontheconnections | number: '1.0-0' }}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Checkontheconnections[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Checkontheconnections[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Check
+                    the internetspeed</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Checkontheconnections[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Checkontheconnections[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Check
+                    the equipment's</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Checkontheconnections[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Checkontheconnections[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>log
+                    into platform 15-30mins prior</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Checkontheconnections[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Checkontheconnections[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Perform
+                    Audio and video check</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">02.ASSIGNING ROLES-{{DataDetail.Planning[1].AssigningRoles |
+                    number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].AssigningRoles[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].AssigningRoles[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Organizer
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].AssigningRoles[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].AssigningRoles[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Presenter
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].AssigningRoles[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].AssigningRoles[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Assistant
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">10.RECORD THE
+                    WEBINAR-{{DataDetail.Performing[1].Recordthewebinar | number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Recordthewebinar[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Recordthewebinar[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Use
+                    a build in screen Recorder<br>
+                    Download</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Recordthewebinar[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Recordthewebinar[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Set
+                    up screen recording</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Recordthewebinar[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Recordthewebinar[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Record
+                    webinar</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Recordthewebinar[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Recordthewebinar[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Edit
+                    and save</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">03.RECRUIT THE
+                    SPEAKER-{{DataDetail.Planning[1].Recruitingthespeakers | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Recruitingthespeakers[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Recruitingthespeakers[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Experience
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Recruitingthespeakers[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Recruitingthespeakers[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Expertise
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Recruitingthespeakers[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Recruitingthespeakers[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Time
+                    Management</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Recruitingthespeakers[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Recruitingthespeakers[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Availability
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Recruitingthespeakers[4].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Recruitingthespeakers[4].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Expertise</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">11.PROMOTE ON SOCIAL
+                    MEDIA-{{DataDetail.Performing[1].Promoteonsocialmedia | number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Promoteonsocialmedia[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Promoteonsocialmedia[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Test
+                    Equipment's & Connectivity</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Promoteonsocialmedia[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Promoteonsocialmedia[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Live
+                    stream on Social media<br>
+                    (Youtube/Facebook/Linkedin)</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Promoteonsocialmedia[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Promoteonsocialmedia[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Gain
+                    reach and better targeting</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">04.DECIDE ON THE
+                    PLATFORM-{{DataDetail.Planning[1].Decidingontheplatform | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Ease
+                    of use</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Audience
+                    size</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Budget
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Recording
+                    option</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[4].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[4].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Engagement
+                    tools</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[5].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[5].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Mobile
+                    utilization</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[6].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[6].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Multi-stream
+                    capabilities</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Planning[0].Decidingontheplatform[7].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Planning[0].Decidingontheplatform[7].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Video
+                    & Audio quality</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">12.GATHER SPEAKERS & CALL IN
+                    GUESTS-{{DataDetail.Performing[1].Gatherspeakerandcallinguests | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Gatherspeakerandcallinguests[0].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Gatherspeakerandcallinguests[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Start
+                    the program at the right time</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Gatherspeakerandcallinguests[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Gatherspeakerandcallinguests[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Welcome
+                    the speakers</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Gatherspeakerandcallinguests[2].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Gatherspeakerandcallinguests[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Stick
+                    to time</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Performing[0].Gatherspeakerandcallinguests[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Performing[0].Gatherspeakerandcallinguests[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>End
+                    the programme with a <br>formal Voteof thanks</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">05.PREPARE THE
+                    EQUIPMENT'S-{{DataDetail.Preparing[1].Preparetheequipments | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Computer/Tablets
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Stable
+                    internet connection</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Microphone
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Webcam
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[4].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[4].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Lighting
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Preparetheequipments[5].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Preparetheequipments[5].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Earpiece
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">13.SEND THE
+                    FEEDBACK-{{DataDetail.Reviewing[1].Sendingfeedback | number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Sendingfeedback[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Sendingfeedback[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Keep
+                    scale question and <br>multiple
+                    choice questions</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Sendingfeedback[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Sendingfeedback[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Keep the language aimple and direct</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Sendingfeedback[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Sendingfeedback[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Link
+                    the cirtificate of partition
+                    with feedback</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Sendingfeedback[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Sendingfeedback[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Send
+                    the feedback link within 2 hours
+                    of Webinar ends</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">06.SET UP
+                    REGISTRATION-{{DataDetail.Preparing[1].SetupRegistration | number: '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].SetupRegistration[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].SetupRegistration[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Registration
+                    tool</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].SetupRegistration[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].SetupRegistration[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Registration
+                    fee</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].SetupRegistration[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].SetupRegistration[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Clear
+                    concise forms</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].SetupRegistration[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].SetupRegistration[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Contact
+                    details of host</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].SetupRegistration[4].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].SetupRegistration[4].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Follow-up
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">14.COLLECTING MATERIALS
+                    -{{DataDetail.Reviewing[1].Collectingthematerialsandsharing | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Collectingthematerialsandsharing[0].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Collectingthematerialsandsharing[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Request
+                    and collect Webinar materials
+                    from speakers</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Collectingthematerialsandsharing[1].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Collectingthematerialsandsharing[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Send the certificate of Appreciation
+                    to resource poerson</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Collectingthematerialsandsharing[2].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Collectingthematerialsandsharing[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Share
+                    the materials to participants
+                    through email</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Collectingthematerialsandsharing[3].Action==true) ? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Collectingthematerialsandsharing[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Share
+                    the materials within 3 days of
+                    completing Webinar</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">07.MARKETING-{{DataDetail.Preparing[1].Marketing | number:
+                    '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Marketing[0].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Marketing[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Promotional
+                    materials</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Marketing[1].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Marketing[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Promoting
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].Marketing[2].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].Marketing[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Follow-up
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">15.EVALUATE THE
+                    FEEDBACK-{{DataDetail.Reviewing[1].Evaluatethefeedback | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Evaluatethefeedback[0].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Evaluatethefeedback[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Review
+                    each of the feedback point</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Evaluatethefeedback[1].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Evaluatethefeedback[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>
+                    Discuss on the feedback with team</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Evaluatethefeedback[2].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Evaluatethefeedback[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Act
+                    on the feedback</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">08.DRY RUN-{{DataDetail.Preparing[1].DryRun | number:
+                    '1.0-0'}}%</th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[0].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Introduction
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[1].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Test
+                    the equipment's</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[2].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Agenda
+                    review</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[3].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[3].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Presentation
+                    check</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[4].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[4].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Timing
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Preparing[0].DryRun[5].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Preparing[0].DryRun[5].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Review
+                    the recording</td>
+            </tr>
+        </table>
+        <table style="width:100%;text-align: left;">
+            <tr>
+                <th style="font-size:14px;">16.PLAN FOR NEXT
+                    WEBINAR-{{DataDetail.Reviewing[1].Planfornextwebinar | number: '1.0-0'}}%
+                </th>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Planfornextwebinar[0].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Planfornextwebinar[0].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Review
+                    the strength and weakness</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Planfornextwebinar[1].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Planfornextwebinar[1].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Give
+                    adequate space</td>
+            </tr>
+            <tr>
+                <td style="font-size:14px;"><i
+                        [ngStyle]="{'color':(DataDetail.Reviewing[0].Planfornextwebinar[2].Action==true)? 'green' : 'red' }"
+                        [ngClass]="(DataDetail.Reviewing[0].Planfornextwebinar[2].Action==true)?'green fa fa-check-square-o':'red fa fa-times'"></i>Start
+                    discussing with team members</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- pdf end -->

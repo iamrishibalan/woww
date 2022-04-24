@@ -1,0 +1,100 @@
+modal-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+  }
+  
+
+//   .slid .swiper-wrapper {
+//     height: 25vh !important;
+//     width: 93% !important;
+// }
+  @media not all and (min-height: 600px) and (min-width: 768px) {
+    ion-modal ion-backdrop {
+      visibility: hidden;
+    }
+  }
+  
+  @media only screen and (min-height: 0px) and (min-width: 0px) {
+    .modal-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .main-view{
+      background: transparent;
+      width: 100%;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .modal_content {
+      display: block;
+      position: relative;
+      top: calc(20% - (30%/2));
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 80%;
+      padding: 0px;
+      z-index: 1;
+      margin: 0 auto;
+      padding: 10px;
+      color: #333;
+      background: #ffffff00;
+      border-radius: 15px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .fot-icons{
+        font-size: 36px;
+    padding: 5px 8px;
+    margin: 0px 8px 0px 8px;
+        color:#008ec3;
+      }
+      .fot-icons2{
+        font-size: 36px;
+      }
+.flex-card{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.flex-in{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+.flex-full{ width: 100%; display: flex;
+    justify-content:space-between;
+    align-items: center;}
+ion-slide{ border-radius: 6px; padding: 10px;
+h2{margin: 0; color: #333333; font-size: 14pt; font-weight: bold; }
+p{margin: 0; color: #666666; font-size: 10pt; padding: 8px 0px;}
+a {
+    font-size: 10pt;
+    line-height: 32px;
+    background-color: transparent;
+    color:  #999999;
+    text-decoration: none;
+    font-weight: 500;
+}
+.active{
+    color:  #003a89;
+}
+}

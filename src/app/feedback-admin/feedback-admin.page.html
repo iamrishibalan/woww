@@ -1,0 +1,648 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+      <ion-buttons slot="start">
+          <ion-menu-button class="menucs"></ion-menu-button>
+      </ion-buttons>
+      <ion-icon class="foure" src="../../assets/img/35.svg"></ion-icon>
+      <ion-icon class="foure acvct" style="color: #ff7716;" src="../../assets/img/36.svg"></ion-icon>
+      <ion-icon class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="myprofile">
+  <div class="item-prof" *ngIf="UserAc">
+    <img src="../../assets/img/user.png" />
+  </div>
+  <div class="item-prof" *ngIf="AdminAc">
+    <img src="../../assets/img/Admin-profil.png" />
+  </div>
+  <ion-icon class="close" (click)="dismiss()" src="../../assets/img/24.svg"></ion-icon>
+  <ion-content>
+    <div class="flex-box">
+      <h2>{{webinarUserDetail.reg_Name}}</h2>
+      <h3 *ngIf="(webinarUserDetail.reg_UserType=='Admin')?true:false">Admin</h3>
+      <h3 *ngIf="(webinarUserDetail.reg_UserType=='User')?true:false">User</h3>
+      <div class="item-box">
+        <div class="item">
+          <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Profession}}</h4>
+        </div>
+        <div class="item">
+          <ion-icon src="../../assets/img/42.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Institution}}</h4>
+        </div>
+        <div class="item">
+          <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Department}}</h4>
+        </div>
+        <div class="item">
+          <ion-icon src="../../assets/img/17.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Place}}</h4>
+        </div>
+      </div>
+
+      <h5><b>Primary ID -</b> Feedback</h5>
+      <div class="Feedback" *ngFor="let Feedback of RegisterUser">
+        <h3>{{Feedback.webinar_Title}}</h3>
+        <div class="flex-item border">
+          <ion-icon src="../../assets/img/1.svg"></ion-icon>
+          <ion-text class="texth1">
+            Feedback By Primary ID
+            <h4>{{webinarUserDetail.reg_Email}}</h4>
+          </ion-text>
+        </div>
+        <div class="flex-item bottm">
+          <ion-text>
+            Submitted By
+            <h4>{{webinarUserDetail.reg_Name}}</h4>
+          </ion-text>
+          <ion-text>
+            Submitted On
+            <h4>{{Feedback.Webinar_RateDate | date: 'dd/MM/y'}}</h4>
+          </ion-text>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Planning Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PlanRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Preparing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PreparRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Performing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_PerforRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Reviewing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_ReviewRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Overall Usefulness</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedback.Webinar_Totalusefull=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <!-- HalfImg -->
+          <!-- <div class="boxs-item1"
+            *ngIf="Feedback.Webinar_TotalRate==1.1||Feedback.Webinar_TotalRate==1.2||Feedback.Webinar_TotalRate==1.3||Feedback.Webinar_TotalRate==1.4||Feedback.Webinar_TotalRate==1.5||Feedback.Webinar_TotalRate==1.6||Feedback.Webinar_TotalRate==1.7||Feedback.Webinar_TotalRate==1.8||Feedback.Webinar_TotalRate==1.9||Feedback.Webinar_TotalRate==1.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedback.Webinar_TotalRate==2.1||Feedback.Webinar_TotalRate==2.2||Feedback.Webinar_TotalRate==2.3||Feedback.Webinar_TotalRate==2.4||Feedback.Webinar_TotalRate==2.5||Feedback.Webinar_TotalRate==2.6||Feedback.Webinar_TotalRate==2.7||Feedback.Webinar_TotalRate==2.8||Feedback.Webinar_TotalRate==2.9||Feedback.Webinar_TotalRate==2.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedback.Webinar_TotalRate==3.1||Feedback.Webinar_TotalRate==3.2||Feedback.Webinar_TotalRate==3.3||Feedback.Webinar_TotalRate==3.4||Feedback.Webinar_TotalRate==3.5||Feedback.Webinar_TotalRate==3.6||Feedback.Webinar_TotalRate==3.7||Feedback.Webinar_TotalRate==3.8||Feedback.Webinar_TotalRate==3.9||Feedback.Webinar_TotalRate==3.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedback.Webinar_TotalRate==4.1||Feedback.Webinar_TotalRate==4.2||Feedback.Webinar_TotalRate==4.3||Feedback.Webinar_TotalRate==4.4||Feedback.Webinar_TotalRate==4.5||Feedback.Webinar_TotalRate==4.6||Feedback.Webinar_TotalRate==4.7||Feedback.Webinar_TotalRate==4.8||Feedback.Webinar_TotalRate==4.9||Feedback.Webinar_TotalRate==4.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+          </div> -->
+          <!-- End -->
+        </div>
+        <div class="bfeed">
+          <h3>Comments</h3>
+          <p>{{Feedback.Webinar_RateCmd}}</p>
+        </div>
+      </div>
+      <h5><b>Guest ID -</b>Feedback</h5>
+      <div class="Feedback" *ngFor="let Feedbacks of GuestUser">
+        <h3>{{Feedbacks.webinar_Title}}</h3>
+        <div class="flex-item border">
+          <ion-icon src="../../assets/img/1.svg"></ion-icon>
+          <ion-text class="texth1">
+            Feedback By Primary ID
+            <h4>{{Feedbacks.webinar_Email}}</h4>
+          </ion-text>
+        </div>
+        <div class="flex-item bottm">
+          <ion-text>
+            Submitted By
+            <h4>{{webinarUserDetail.reg_Name}}</h4>
+          </ion-text>
+          <ion-text>
+            Submitted On
+            <h4>{{Feedbacks.Webinar_RateDate | date: 'dd/MM/y'}}</h4>
+          </ion-text>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Planning Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PlanRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Preparing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PreparRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Performing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_PerforRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Reviewing Phase</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_ReviewRate=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="boxs-feed">
+          <div class="boxs-item">
+            <p>Overall Usefulness</p>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='5'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='4'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='3'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='2'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='1'">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1" *ngIf="Feedbacks.Webinar_Totalusefull=='0'">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <!-- HalfImg -->
+          <!-- <div class="boxs-item1"
+            *ngIf="Feedbacks.Webinar_TotalRate==1.1||Feedbacks.Webinar_TotalRate==1.2||Feedbacks.Webinar_TotalRate==1.3||Feedbacks.Webinar_TotalRate==1.4||Feedbacks.Webinar_TotalRate==1.5||Feedbacks.Webinar_TotalRate==1.6||Feedbacks.Webinar_TotalRate==1.7||Feedbacks.Webinar_TotalRate==1.8||Feedbacks.Webinar_TotalRate==1.9||Feedbacks.Webinar_TotalRate==1.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedbacks.Webinar_TotalRate==2.1||Feedbacks.Webinar_TotalRate==2.2||Feedbacks.Webinar_TotalRate==2.3||Feedbacks.Webinar_TotalRate==2.4||Feedbacks.Webinar_TotalRate==2.5||Feedbacks.Webinar_TotalRate==2.6||Feedbacks.Webinar_TotalRate==2.7||Feedbacks.Webinar_TotalRate==2.8||Feedbacks.Webinar_TotalRate==2.9||Feedbacks.Webinar_TotalRate==2.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedbacks.Webinar_TotalRate==3.1||Feedbacks.Webinar_TotalRate==3.2||Feedbacks.Webinar_TotalRate==3.3||Feedbacks.Webinar_TotalRate==3.4||Feedbacks.Webinar_TotalRate==3.5||Feedbacks.Webinar_TotalRate==3.6||Feedbacks.Webinar_TotalRate==3.7||Feedbacks.Webinar_TotalRate==3.8||Feedbacks.Webinar_TotalRate==3.9||Feedbacks.Webinar_TotalRate==3.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="boxs-item1"
+            *ngIf="Feedbacks.Webinar_TotalRate==4.1||Feedbacks.Webinar_TotalRate==4.2||Feedbacks.Webinar_TotalRate==4.3||Feedbacks.Webinar_TotalRate==4.4||Feedbacks.Webinar_TotalRate==4.5||Feedbacks.Webinar_TotalRate==4.6||Feedbacks.Webinar_TotalRate==4.7||Feedbacks.Webinar_TotalRate==4.8||Feedbacks.Webinar_TotalRate==4.9||Feedbacks.Webinar_TotalRate==4.10">
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star checkedA"></span>
+            <span class="fa fa-star-half-full checkedA"></span>
+          </div> -->
+          <!-- End -->
+        </div>
+        <div class="bfeed">
+          <h3>Comments</h3>
+          <p>{{Feedbacks.Webinar_RateCmd}}</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <button ion-button class="but" [routerLink]="['/webinaruser']"> Webinar<span>{{TotalCountt}}</span></button>
+      <button ion-button class="but butc " [routerLink]="['/logs']"> Logs<span>{{GuestRecord.length}}</span></button>
+      <button ion-button class="but ablue"> Feedback <span>{{GuestUser.length + RegisterUser.length}}</span></button>
+    </ion-toolbar>
+  </ion-footer>
+</div>
+<div class="overlay" (click)="dismiss()"></div>
+
+
+<div class="loaders" *ngIf="load">
+  <div class="imgstyle">
+      <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+  </div>
+</div>

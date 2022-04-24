@@ -1,0 +1,19 @@
+<div class="overlay" (click)="dismiss()"></div>
+<div class="modal_content">
+  <div class="item-prof">
+    <img src="../../assets/img/Admin-profil.png"/>
+  </div>
+  <ion-icon class="close" (click)="dismiss()" src="../../assets/img/24.svg"></ion-icon>
+  <ion-content>
+  <div class="form-prof">
+    <h2>Registered Admin</h2>
+    <p>Since {{UserDetail.year}}</p>
+    <h3 style="font-size:22px">{{GoodMor}}</h3>
+    <h4>{{UserDetail.reg_Name}}</h4>
+    <h5>Admin</h5>
+    <p>Registered On   <span>{{UserDetail.reg_CreateDate | date: 'dd/MM/yyyy'}}</span></p>
+    <p>Last Login On   <span>{{UserDetail.reg_LastLoginDate | date: 'dd/MM/yyyy'}} </span></p>
+    <button ion-button class="but butw" (click)="dismiss()">Okey, Gotit</button> 
+  </div>
+</ion-content>
+  </div>

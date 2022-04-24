@@ -1,0 +1,19 @@
+.loaders{
+position: fixed;
+height: 100%;
+width: 100%;
+z-index: 99998 !important;
+transition: 5s ease-out;
+background-color: #6b2084;
+opacity: 0.9;
+}
+.imgstyle{
+    opacity: none;
+    height: 80%;
+    width: 80%;
+    margin: 70% 30% 0% 30%;
+}
+// .loadingrrr{
+//     position: fixed;
+//     margin: 0;
+// }

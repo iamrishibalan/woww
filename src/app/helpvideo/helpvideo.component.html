@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" class="foure"
+      src="../../assets/img/35.svg"></ion-icon>
+    <ion-icon *ngIf="userDetail.reg_UserType=='User'" (click)='User()' class="foure" src="../../assets/img/7.svg">
+    </ion-icon>
+    <ion-icon class="foure " *ngIf="userDetail.reg_UserType=='Admin'" [routerLink]="['/admin-records']"
+      src="../../assets/img/36.svg"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="slidein">
+  <div>
+    <!-- style="height: 400px; margin-top: 100px;" -->
+    <div style="position: fixed;" >
+      <video autoplay loop controls playsinline poster="../../assets/img/slider-bg2.png" style="width: 100%; height:100%;">
+        <source src="../../assets/VID-20211108-WA0041.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</ion-content>
+<div class="webinar-bg"></div>
+
+<ion-footer class="ion-no-border" style="background-color: white;">
+  <ion-toolbar>
+    <div class="flex-tool">
+      <ion-icon class="fot-icons" src="../../assets/img/45-home.svg" [routerLink]="['/mywebinar']"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/1.svg" [routerLink]="['/personal-detaills']"></ion-icon>
+      <button ion-button class="but m-b-2" [routerLink]="['/about']">About Us</button>
+      <ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='User'" src="../../assets/img/21.svg" [routerLink]="['/createwebinar']"></ion-icon>
+      <ion-icon class="fot-icons"  *ngIf="userDetail.reg_UserType=='Admin'" src="../../assets/img/21.svg" [routerLink]="['/admin-webinar']"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>

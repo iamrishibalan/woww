@@ -1,0 +1,85 @@
+<ion-content>
+  <div class="myprofile">
+    <div class="item-prof slideyou">
+      <img src="../../assets/img/user.png" />
+      <h2>My Profile</h2>
+    </div>
+    <div class="form-prof slideyou">
+      
+      
+      <form [formGroup]="profileForm" class="form" (submit)="doSignup()" style="height: 650px;">
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-input name="profession" type="text" placeholder="Profession" class="form-control"
+              formControlName="Profession"></ion-input>
+            <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess" *ngIf="isSubmitted && profileForm.controls.Profession.errors?.required">
+            Profession Field is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-item>
+            <ion-input name="company" type="text" placeholder="Institution / Company" class="form-control"
+              formControlName="Institution"></ion-input>
+            <ion-icon src="../../assets/img/7.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess" *ngIf="isSubmitted && profileForm.controls.Institution.errors?.required">
+            Institution/Company Field is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-item>
+            <ion-input name="department" type="text" placeholder="Department" class="form-control"
+              formControlName="Department"></ion-input>
+            <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess" *ngIf="isSubmitted && profileForm.controls.Department.errors?.required">
+            Department Field is required.
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-input name="purpose" type="text" placeholder="Purpose" class="form-control" formControlName="Purpose">
+            </ion-input>
+            <ion-icon src="../../assets/img/16.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess" *ngIf="isSubmitted && profileForm.controls.Purpose.errors?.required">
+            Purpose Field is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <ion-item>
+            <ion-input name="Place" type="text" placeholder="Place" class="form-control" formControlName="Place">
+            </ion-input>
+            <ion-icon src="../../assets/img/17.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess" *ngIf="isSubmitted && profileForm.controls.Place.errors?.required">
+            Place Field is required.
+          </div>
+        </div>
+
+
+        <div>
+          
+          <button ion-button *ngIf="confirm" class="but"> Confirm to Update</button>
+          <div class="meter" *ngIf="success">Confirm to Update
+            <span class="prog" [style.width]="width+'%'"></span>
+          </div>
+          <div class="meter" *ngIf="UpdateSussess">Confirm to Update
+            <span class="prog" [style.width]="width+'%'"><ion-icon style="margin-top: 1px; margin-left: -1px;" name="checkmark-circle-outline"></ion-icon>Update Successfully</span>
+          </div>
+          <!-- <button ion-button  class="but" style="background-color: green;"> <ion-icon src="../../assets/img/24.svg"></ion-icon> Updated Successfully
+          </button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

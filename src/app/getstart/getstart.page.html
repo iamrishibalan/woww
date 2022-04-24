@@ -1,0 +1,63 @@
+<!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> -->
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="sliderChanges($event)">
+
+
+    <ion-slide class="slide1">
+      <div class="slide">
+        <h2>Welcome To</h2>
+        <img src="../../assets/img/wow-logo1.gif" />
+        <p>A comprehensive<br>
+          tool For your webinar</p>
+      </div>
+    </ion-slide>
+
+
+    <ion-slide class="slide2 jing">
+      <video id="myVideo" width="100%" poster="../../assets/img/slider-bg2.png" [muted]="true" [autoplay]="true"
+        [loop]="true" style="margin-top: 35px;">
+        <source src="../../assets/img/vio.mp4" type="video/mp4">
+      </video>
+    </ion-slide>
+
+
+    <ion-slide class="slide3 jing">
+      <div class="slide3 black">
+        <div style="height: 15px;">
+        </div>
+        <p>Copy Rights & Powered by</p>
+        <img src="../../assets/img/sri-logo.png">
+        <p>In - collabration with</p>
+        <h2>Department of Community Medicine</h2>
+        <p class='top-2'>Designed & Developed by</p>
+        <img src="../../assets/img/cestro.png" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="bot-flex">
+    <div style="height: 30%;">
+      <div class="dot-box" *ngIf="d1">
+        <span style="background-color: white;"></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="dot-box"  *ngIf="d2">
+        <span></span>
+        <span style="background-color: white;"></span>
+        <span></span>
+      </div>
+      <div class="dot-box"  *ngIf="d3">
+        <span></span>
+        <span></span>
+        <span style="background-color: white;"></span>
+      </div>
+    </div>
+    <div style="height: 70%;text-align: -webkit-center;">
+      <a (click)="register()" class="but-ion outbg m-r">Register</a>
+      <a (click)="Signin()" class="but-ion outline">Sign In</a>
+    </div>
+  </div>
+</ion-content>

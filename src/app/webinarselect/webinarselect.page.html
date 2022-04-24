@@ -1,0 +1,3136 @@
+<ion-header class="ion-no-border slidein" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" class="foure"
+      src="../../assets/img/35.svg"></ion-icon>
+    <ion-icon *ngIf="userDetail.reg_UserType=='User'" (click)='User()' class="foure" src="../../assets/img/7.svg">
+    </ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="slidein" style="position: relative;">
+  <div class="introduction">
+    <div *ngIf="CollapseTrue">
+      <div class="Stepitem" style="padding: 0px 0px 0px; display: block;">
+        <div class="contentclass">
+          <div>
+            <div class="item" *ngIf="Decided">
+              <h2>STEP 1</h2>
+              <h3>Deciding the Topic</h3>
+              <p style="text-align : justify;" class="content">Deciding on the topic is fundamental to the
+                conceptualization and delivery of a successful
+                webinar. How to decide on a perfect topic for the
+                webinar</p>
+            </div>
+            <div class="item" *ngIf="Decided1">
+              <h2>STEP 1</h2>
+              <h3>Set Goals and Objectives</h3>
+              <p style="text-align : justify;" class="content">Without a specific goal and objective your
+                webinar can lose its significance and focus</p>
+            </div>
+            <div class="item" *ngIf="Decided2">
+              <h2>STEP 1</h2>
+              <h3>Determine your Target Audience</h3>
+              <p style="text-align : justify;" class="content">Select a winning topic that connects with
+                your target audience</p>
+            </div>
+            <div class="item" *ngIf="Decided3">
+              <h2>STEP 1</h2>
+              <h3>Make the list of topics</h3>
+              <p style="text-align : justify;" class="content">Creating a list helps you in organizing the
+                information and prioritize the topic.</p>
+            </div>
+            <div class="item" *ngIf="Decided4">
+              <h2>STEP 1</h2>
+              <h3>Fix the topic</h3>
+              <p style="text-align : justify;" class="content">Select the perfect topic from the list and fix it</p>
+            </div>
+
+            <div class="item" *ngIf="AssigningCont">
+              <h2>STEP 2</h2>
+              <h3>Assigning Roles</h3>
+              <p style="text-align : justify;" class="content">The next aspect of planning for a webinar begins with the
+                formation of a core committee to ensure the smooth
+                planning of the webinar</p>
+            </div>
+            <div class="item" *ngIf="AssigningCont1">
+              <h2>STEP 2</h2>
+              <h3>Organizer</h3>
+              <p style="text-align : justify;" class="content">The organizer oversees, developing the content, finding
+                the suitable speakers and the person in charge of
+                registration</p>
+            </div>
+            <div class="item" *ngIf="AssigningCont2">
+              <h2>STEP 2</h2>
+              <h3>Presenter/ Speaker</h3>
+              <p style="text-align : justify;" class="content">The presenter can be the subject matter expert who
+                delivers the webinar or the moderator who interviews
+                them.</p>
+            </div>
+            <div class="item" *ngIf="AssigningCont3">
+              <h2>STEP 2</h2>
+              <h3>Assistant</h3>
+              <p style="text-align : justify;" class="content">The assistant makes sure that the webinar is running
+                smoothly. They might greet the audience before the webinar
+                begins as well as ask ice-breaking questions. </p>
+            </div>
+
+
+            <div class="item" *ngIf="RecrtContent">
+              <h2>STEP 3</h2>
+              <h3>Recruiting the speakers</h3>
+              <p style="text-align : justify;" class="content">Recruiting a good speaker is a vital step in the webinar. The
+                speaker can either make or break your webinar. The steps to
+                keep in mind while recruiting the speakers are as follows</p>
+            </div>
+            <div class="item" *ngIf="RecrtContent1">
+              <h2>STEP 3</h2>
+              <h3>Experience</h3>
+              <p style="text-align : justify;" class="content">The speaker has any previous experience who could
+                entail speaking at a conference, podcast, a lecture or
+                even at a meeting.</p>
+            </div>
+            <div class="item" *ngIf="RecrtContent2">
+              <h2>STEP 3</h2>
+              <h3>Expertise</h3>
+              <p style="text-align : justify;" class="content">The speaker is an expert in a particular topic typically and
+                has a sense of passion for the topic as well. This will be
+                just as important to engage the audience during the
+                presentation</p>
+            </div>
+            <div class="item" *ngIf="RecrtContent3">
+              <h2>STEP 3</h2>
+              <h3>Time management</h3>
+              <p style="text-align : justify;" class="content">Since webinars are live events, and need to start and end
+                on time, it is imperative that your speaker has strong time
+                management skill</p>
+            </div>
+            <div class="item" *ngIf="RecrtContent4">
+              <h2>STEP 3</h2>
+              <h3>Availability</h3>
+              <p style="text-align : justify;" class="content">Webinar presenters need to be available for: pre-webinar
+                session(s), the live webinar and sometimes a postwebinar
+                session.</p>
+            </div>
+            <div class="item" *ngIf="RecrtContent5">
+              <h2>STEP 3</h2>
+              <h3>Adaptability</h3>
+              <p style="text-align : justify;" class="content">The speaker should be adaptable to the various questions
+                asked by the audience. so, it’s important that speaker can
+                answer or divert unexpected question.</p>
+            </div>
+
+            <div class="item" *ngIf="DplatContnt">
+              <h2>STEP 4</h2>
+              <h3>Deciding on the platform</h3>
+              <p style="text-align : justify;" class="content">With a wide variety of platform options available in the
+                market. Choosing the right one for your webinar is crucial.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt1">
+              <h2>STEP 4</h2>
+              <h3>Ease of use</h3>
+              <p style="text-align : justify;" class="content">The platform should be easy to use by the host, presenter and
+                audience</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt2">
+              <h2>STEP 4</h2>
+              <h3>Audience size</h3>
+              <p style="text-align : justify;" class="content">If the webinar is said to have a large attendance, choose a
+                platform that can accommodate enough people. Before you
+                invest in a platform, get a sense of the size of the audience.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt3">
+              <h2>STEP 4</h2>
+              <h3>Budget</h3>
+              <p style="text-align : justify;" class="content">There are free as well as paid platforms. Decide on the needs before
+                purchasing the platform.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt4">
+              <h2>STEP 4</h2>
+              <h3>Recording option</h3>
+              <p style="text-align : justify;" class="content">Many registrants fail to attend the webinar for a number of
+                reasons. In such cases, recording the webinar might be really
+                beneficial. As a result, selecting a webinar platform that
+                includes this feature is the best option.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt5">
+              <h2>STEP 4</h2>
+              <h3>Engagement tool</h3>
+              <p style="text-align : justify;" class="content">Engagement is a central part of a webinar. Most webinar
+                platforms provide chatbox features and a “raise your hand”
+                feature. Select the right platform with wide range of
+                engagement tools.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt6">
+              <h2>STEP 4</h2>
+              <h3>Mobile utilization</h3>
+              <p style="text-align : justify;" class="content">With many people using mobile as the device
+                to attend webinar, one should make sure the mobile compatibility
+                of the platform</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt7">
+              <h2>STEP 4</h2>
+              <h3>Multi-stream capabilities</h3>
+              <p style="text-align : justify;" class="content">With the popularity of social media
+                platforms on the rise, webinar hosts might benefit from social
+                media integration. Make sure the platform has multi-stream
+                capabilities across various social medi.</p>
+            </div>
+            <div class="item" *ngIf="DplatContnt8">
+              <h2>STEP 4</h2>
+              <h3>Video and Audio Quality</h3>
+              <p style="text-align : justify;" class="content">It is critical to select a webinar platform that offers
+                high-definition streaming with minimal latency.</p>
+            </div>
+
+
+            <div class="item" *ngIf="PreEquipCont">
+              <h2>STEP 5</h2>
+              <h3>Prepare the equipment’s</h3>
+              <p style="text-align : justify;" class="content">Webinar being conducted online needs minimum devices for the smooth
+                conduction of webinar. They are
+                us follows.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont1">
+              <h2>STEP 5</h2>
+              <h3>Computer/tablets</h3>
+              <p style="text-align : justify;" class="content">Any modern computer is basically good enough for holding webinars. One of
+                the following
+                browsers should be installed on the computer: Google Chrome, Mozilla Firefox, Safari, Opera.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont2">
+              <h2>STEP 5</h2>
+              <h3>Stable Internet Connection</h3>
+              <p style="text-align : justify;" class="content">The quality of sound and video during webinars is greatly dependent on
+                the
+                Internet connection speed. For a webinar with video broadcasting, this should be not less than 10 Mbps.
+                In
+                cases where no webcam is used, 4 Mbps should suffice.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont3">
+              <h2>STEP 5</h2>
+              <h3>Microphone</h3>
+              <p style="text-align : justify;" class="content">Most computers and laptops have built-in microphones and speakers, but
+                they offer low sound
+                quality accompanied by an echoing effect as a rule.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont4">
+              <h2>STEP 5</h2>
+              <h3>Webcam</h3>
+              <p style="text-align : justify;" class="content">Most of the computers and laptops have got built-in webcams that could be
+                used for holding
+                webinars. But video quality can often be improved considerably by using a standalone webcam.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont5">
+              <h2>STEP 5</h2>
+              <h3>Lighting</h3>
+              <p style="text-align : justify;" class="content">A well-lit room is required for the webinar to have a better video
+                quality. If not available add artificial
+                lights to the room where webinar is being conducted.</p>
+            </div>
+            <div class="item" *ngIf="PreEquipCont6">
+              <h2>STEP 5</h2>
+              <h3>Earpiece</h3>
+              <p style="text-align : justify;" class="content">To conduct a webinar, any usual 3.5 mm or USB headset can be used. Due to
+                the built-in soundprocessing
+                card, it provides a clearer sound and is effective in noise reduction.</p>
+            </div>
+
+
+            <div class="item" *ngIf="SetupCont">
+              <h2>STEP 6</h2>
+              <h3>Set-up Registration</h3>
+              <p style="text-align : justify;" class="content">The following steps must be followed for registration.</p>
+            </div>
+            <div class="item" *ngIf="SetupCont1">
+              <h2>STEP 6</h2>
+              <h3>Registration tool</h3>
+              <p style="text-align : justify;" class="content">While some platforms provide built-in registration form. If not prepare
+                your own registration forms using online tools like google forms.</p>
+            </div>
+            <div class="item" *ngIf="SetupCont2">
+              <h2>STEP 6</h2>
+              <h3>Registration fee</h3>
+              <p style="text-align : justify;" class="content">Decide on the registration fee for webinar or it is free webinar. If the
+                webinar is a paid webinar mention on the payment details or provide a payment link with
+                the registration tool.</p>
+            </div>
+            <div class="item" *ngIf="SetupCont3">
+              <h2>STEP 6</h2>
+              <h3>Clear Concise forms</h3>
+              <p style="text-align : justify;" class="content">Keep the language of the form simple and concise.</p>
+            </div>
+            <div class="item" *ngIf="SetupCont4">
+              <h2>STEP 6</h2>
+              <h3>Contact details of host</h3>
+              <p style="text-align : justify;" class="content">Provide the contact details of the host, for any queries.</p>
+            </div>
+            <div class="item" *ngIf="SetupCont5">
+              <h2>STEP 6</h2>
+              <h3>Follow-up</h3>
+              <p style="text-align : justify;" class="content">After a user registers for the webinars, ensure that the registered user
+                attends.
+                Direct successful registrations to a thank you page where it provides a link for attending the
+                webinar and boldly restate the date and time in which it is taking place.</p>
+            </div>
+
+            <div class="item" *ngIf="Marketingcont">
+              <h2>STEP 7</h2>
+              <h3>Marketing</h3>
+              <p style="text-align : justify;" class="content">Promoting the webinar and attracting the participants is the crucial step
+                for a successful webinar. For a better marketing the following steps to
+                be followed.</p>
+            </div>
+            <div class="item" *ngIf="Marketingcont1">
+              <h2>STEP 7</h2>
+              <h3>Promotional Material</h3>
+              <p style="text-align : justify;" class="content">Design an attractive invitation or an exclusive
+                website with all the details of the webinar, including the link for
+                registration.</p>
+            </div>
+            <div class="item" *ngIf="Marketingcont2">
+              <h2>STEP 7</h2>
+              <h3>Promoting</h3>
+              <p style="text-align : justify;" class="content">Promote the webinar across various social media such us
+                facebook/twitter/whatsapp from 1 week prior to the webinar.</p>
+            </div>
+            <div class="item" *ngIf="Marketingcont3">
+              <h2>STEP 7</h2>
+              <h3>Follow-up</h3>
+              <p style="text-align : justify;" class="content">Send remainder e-mails for the participants on regular
+                interval.</p>
+            </div>
+
+            <div class="item" *ngIf="DryCont">
+              <h2>STEP 8</h2>
+              <h3>Dry Run</h3>
+              <p style="text-align : justify;" class="content">Since webinar is entirely dependent on technology, everything should be
+                double-checked ahead of time.
+                For that reason alone, you should schedule a webinar run-through a few days before the event, to check
+                that everything is well prepared.</p>
+            </div>
+            <div class="item" *ngIf="DryCont1">
+              <h2>STEP 8</h2>
+              <h3>Introductions</h3>
+              <p style="text-align : justify;" class="content">Introduce the webinar team members and presenters to each other if they
+                haven’t already
+                met. If guest speakers have any questions or require assistance, they should know whom to turn to for
+                help.</p>
+            </div>
+            <div class="item" *ngIf="DryCont2">
+              <h2>STEP 8</h2>
+              <h3>Test The equipment’s</h3>
+              <p style="text-align : justify;" class="content">Check your equipment to ensure everything is in working order. This
+                includes an audio
+                test, features check, and recording check. Make sure everyone attends your webinar dry run from the
+                computer. they'll be using for the live event to avoid any unpleasant surprises.</p>
+            </div>
+            <div class="item" *ngIf="DryCont3">
+              <h2>STEP 8</h2>
+              <h3>Agenda review</h3>
+              <p style="text-align : justify;" class="content">Review your webinar agenda and ensure that everyone understands what
+                their signalling
+                mechanisms are. If there are any lingering concerns, now is the moment to resolve them and complete
+                adjustments.</p>
+            </div>
+            <div class="item" *ngIf="DryCont4">
+              <h2>STEP 8</h2>
+              <h3>Presentation check</h3>
+              <p style="text-align : justify;" class="content">Adjust your presentation as needed, troubleshoot any technological
+                issues, and respond
+                to any unanswered questions.</p>
+            </div>
+            <div class="item" *ngIf="DryCont5">
+              <h2>STEP 8</h2>
+              <h3>Timing</h3>
+              <p style="text-align : justify;" class="content">Make sure everyone sticks to the timing and make changes accordingly.</p>
+            </div>
+            <div class="item" *ngIf="DryCont6">
+              <h2>STEP 8</h2>
+              <h3>Reviewing the recording</h3>
+              <p style="text-align : justify;" class="content">Review your dry run recording and note down any problematic areas.</p>
+            </div>
+
+            <div class="item" *ngIf="CconectCont">
+              <h2>STEP 9</h2>
+              <h3>Check on the connections</h3>
+              <p style="text-align : justify;" class="content">Check all the connections and equipment's before you start. This
+                includes.</p>
+            </div>
+            <div class="item" *ngIf="CconectCont1">
+              <h2>STEP 9</h2>
+              <h3>Check the internet speed</h3>
+              <p style="text-align : justify;" class="content">Countercheck the internet stability and make sure it is not less than
+                10mbps.</p>
+            </div>
+            <div class="item" *ngIf="CconectCont2">
+              <h2>STEP 9</h2>
+              <h3>Check on the equipment’s</h3>
+              <p style="text-align : justify;" class="content">Check on the computer, microphone and headpiece.</p>
+            </div>
+            <div class="item" *ngIf="CconectCont3">
+              <h2>STEP 9</h2>
+              <h3>Log into platform 15-30 mins prior</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="CconectCont4">
+              <h2>STEP 9</h2>
+              <h3>Perform an audio and video check</h3>
+              <p style="text-align : justify;" class="content">Test the video and audio prior to start of the webinar.</p>
+            </div>
+
+            <div class="item" *ngIf="RecWebCont">
+              <h2>STEP 10</h2>
+              <h3>Record the webinar</h3>
+              <p style="text-align : justify;" class="content">Since a Webinar is a live event, it is important to record your valuable
+                content such that it can be reviewed and publishes on a later time.</p>
+            </div>
+            <div class="item" *ngIf="RecWebCont1">
+              <h2>STEP 10</h2>
+              <h3>Use a build in screen recorder provided in the platform or
+                download one</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="RecWebCont2">
+              <h2>STEP 10</h2>
+              <h3>Set up screen recording</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="RecWebCont3">
+              <h2>STEP 10</h2>
+              <h3>Record the webinar</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="RecWebCont4">
+              <h2>STEP 10</h2>
+              <h3>Edit and save</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+
+            <div class="item" *ngIf="PrmoteSContnt">
+              <h2>STEP 11</h2>
+              <h3>Promote on social media</h3>
+              <p style="text-align : justify;" class="content"> Promoting the live webinar by going live on different sites at
+                the same time has the potential to outshine most of the other promotional activities.</p>
+            </div>
+            <div class="item" *ngIf="PrmoteSContnt1">
+              <h2>STEP 11</h2>
+              <h3>Using the webinar platform/ screen recording tool</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="PrmoteSContnt2">
+              <h2>STEP 11</h2>
+              <h3>Start Live streaming on social media such us youtube/facebook/linkedin</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="PrmoteSContnt3">
+              <h2>STEP 11</h2>
+              <h3>Gain reach and better targeting</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+            <div class="item" *ngIf="GatherCont">
+              <h2>STEP 12</h2>
+              <h3>Gather speaker and call-in guests</h3>
+              <p style="text-align : justify;" class="content">Now the webinar is ready to start.
+                Follow the steps.</p>
+            </div>
+            <div class="item" *ngIf="GatherCont1">
+              <h2>STEP 12</h2>
+              <h3>Start the program at right time</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="GatherCont2">
+              <h2>STEP 12</h2>
+              <h3>Welcome the speakers</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="GatherCont3">
+              <h2>STEP 12</h2>
+              <h3>Stick to time</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="GatherCont4">
+              <h2>STEP 12</h2>
+              <h3>End the program with a formal vote of thanks</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+            <div class="item" *ngIf="SendFeedCont">
+              <h2>STEP 13</h2>
+              <h3>Sending feedback</h3>
+              <p style="text-align : justify;" class="content">Feedback allows you to determine what works and what doesn't in your
+                webinar. This enables you to make better educated decisions the
+                following time, and therefore improve.</p>
+            </div>
+            <div class="item" *ngIf="SendFeedCont1">
+              <h2>STEP 13</h2>
+              <h3>Keep scale questions and multiple choice questions in feedback rather
+                than open ended questions for better evalution</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="SendFeedCont2">
+              <h2>STEP 13</h2>
+              <h3>Keep the language simple and direct</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="SendFeedCont3">
+              <h2>STEP 13</h2>
+              <h3>Link the certificate of participation with feedback</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="SendFeedCont4">
+              <h2>STEP 13</h2>
+              <h3>It is important to send the feedback link within 2 hours of completion of
+                the webinar</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+            <div class="item" *ngIf="ColMatCont">
+              <h2>STEP 14</h2>
+              <h3>Collecting the materials and sharing</h3>
+              <p style="text-align : justify;" class="content"> Make sure that all the materials used for webinar has been compiled
+                and ready for sharing</p>
+            </div>
+            <div class="item" *ngIf="ColMatCont1">
+              <h2>STEP 14</h2>
+              <h3>Request and collect the webinar materials from speakers</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="ColMatCont2">
+              <h2>STEP 14</h2>
+              <h3>Send the certificate of appreciation to resource persons</h3>
+              <p style="text-align : justify;" class="content"> </p>
+            </div>
+            <div class="item" *ngIf="ColMatCont3">
+              <h2>STEP 14</h2>
+              <h3>Share the materials to participant through mail</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="ColMatCont4">
+              <h2>STEP 14</h2>
+              <h3>Share the materials within 3 days of completing webinar</h3>
+              <p style="text-align : justify;" class="content"> </p>
+            </div>
+
+            <div class="item" *ngIf="EvalCOnt">
+              <h2>STEP 15</h2>
+              <h3>Evaluate the feedback</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="EvalCOnt1">
+              <h2>STEP 15</h2>
+              <h3>Review each of the feedback points</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="EvalCOnt2">
+              <h2>STEP 15</h2>
+              <h3>Discuss on the feedback with the team</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="EvalCOnt3">
+              <h2>STEP 15</h2>
+              <h3>Act on the feedback</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+            <div class="item" *ngIf="PlanFNCont">
+              <h2>STEP 16</h2>
+              <h3>Plan for next webinar</h3>
+              <p style="text-align : justify;" class="content">Congratulations on completing your webinar! Wait… This is not the end,
+                just a beginning…</p>
+            </div>
+            <div class="item" *ngIf="PlanFNCont1">
+              <h2>STEP 16</h2>
+              <h3>Review the strength and weakness</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="PlanFNCont2">
+              <h2>STEP 16</h2>
+              <h3>Give adequate space between the two webinars</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+            <div class="item" *ngIf="PlanFNCont3">
+              <h2>STEP 16</h2>
+              <h3>Start discussing with the team members</h3>
+              <p style="text-align : justify;" class="content"></p>
+            </div>
+
+
+
+
+
+
+          </div>
+          <div style="display: block;">
+            <p class="content" style="color: #0046b5;">Selected {{SelectedCount}} / {{TotalCount}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="butt">
+        <button ion-button class="but bb m-b-1 butw" (click)="btnClick($event)" *ngIf="BtnShow">{{Select}}</button>
+        <button ion-button class="but bb m-b-2 butw gray" (click)="GoMacroWhell($event)">Go to Macro Wheel</button>
+      </div>
+
+
+    </div>
+    <div *ngIf="ExpandTrue" class="titlecont">
+      <h2>Webinar Title</h2>
+      <h3>{{WebinarDetail.webinar_Title}}</h3>
+      <!-- <h3>Introduction on Self Connection and Prototype</h3> -->
+      <div class="prototype">
+        <div class="items">Presenter</div>
+        <div class="items grey">{{WebinarDetail.webinar_Name}}</div>
+        <div class="items2">Created On </div>
+        <div class="items2 grey">{{WebinarDetail.webinar_Date | date: 'dd/MM/yyyy'}}</div>
+      </div>
+    </div>
+
+    <div style="display: block;" id="fadeIn">
+      <div class="overalldot">
+        <div *ngIf="TotalCount==8" [ngClass]="(Expandbtn==true)?'dot-box1':'dot-box'">
+          <span class="dot1" [ngClass]="(DecidingPlatFormClick1==true)?'Activepart':''"></span>
+          <span class="dot2" [ngClass]="(DecidingPlatFormClick2==true)?'Activepart':''"></span>
+          <span class="dot3" [ngClass]="(DecidingPlatFormClick3==true)?'Activepart':''"></span>
+          <span class="dot4" [ngClass]="(DecidingPlatFormClick4==true)?'Activepart':''"></span>
+          <span class="dot5" [ngClass]="(DecidingPlatFormClick5==true)?'Activepart':''"></span>
+          <span class="dot6" [ngClass]="(DecidingPlatFormClick6==true)?'Activepart':''"></span>
+          <span class="dot7" [ngClass]="(DecidingPlatFormClick7==true)?'Activepart':''"></span>
+          <span class="dot8" [ngClass]="(DecidingPlatFormClick8==true)?'Activepart':''"></span>
+        </div>
+        <div *ngIf="TotalCount==3" style="margin-bottom: 32px;" [ngClass]="(Expandbtn==true)?'dot-box1':'dot-box'">
+          <span style="transform: translate(-3px, 26px) rotate(
+              0deg);" class="dot1"
+            [ngClass]="(passistant==true)?'Activepart':(marketing1==true)?'Activepart1':(Promote1==true)?'Activepart2':(EvaFeedback1==true)?'Activepart3':(Plan1==true)?'Activepart3':''"></span>
+          <span style="transform: translate(1px, 23px) rotate(
+              12deg);" class="dot2"
+            [ngClass]="(porganizer==true)?'Activepart':(marketing2==true)?'Activepart1':(Promote2==true)?'Activepart2':(EvaFeedback2==true)?'Activepart3':(Plan2==true)?'Activepart3':''"></span>
+          <span style="transform: translate(6px, 26px) rotate(
+              24deg);" class="dot3"
+            [ngClass]="(ppresenter==true)?'Activepart':(marketing3==true)?'Activepart1':(Promote3==true)?'Activepart2':(EvaFeedback3==true)?'Activepart3':(Plan3==true)?'Activepart3':''"></span>
+        </div>
+        <div *ngIf="TotalCount==4" style="margin-bottom: 25px;" [ngClass]="(Expandbtn==true)?'dot-box1':'dot-box'">
+          <span style="transform: translate(1px, 23px) rotate(
+            0deg);" class="dot1"
+            [ngClass]="(decidingTopic1==true)?'Activepart':(CHECKconnect1==true)?'Activepart2':(recweb1==true)?'Activepart2':(Gather1==true)?'Activepart2':(Send1==true)?'Activepart3':(Collect1==true)?'Activepart3':''"></span>
+          <span style="transform: translate(2px, 18px) rotate(
+            12deg);" class="dot2"
+            [ngClass]="(decidingTopic2==true)?'Activepart':(CHECKconnect2==true)?'Activepart2':(recweb2==true)?'Activepart2':(Gather2==true)?'Activepart2':(Send2==true)?'Activepart3':(Collect2==true)?'Activepart3':''"></span>
+          <span style="transform: translate(6px, 18px) rotate(
+            24deg);" class="dot3"
+            [ngClass]="(decidingTopic3==true)?'Activepart':(CHECKconnect3==true)?'Activepart2':(recweb3==true)?'Activepart2':(Gather3==true)?'Activepart2':(Send3==true)?'Activepart3':(Collect3==true)?'Activepart3':''"></span>
+          <span style="transform: translate(6px, 22px) rotate(
+            36deg);" class="dot4"
+            [ngClass]="(decidingTopic4==true)?'Activepart':(CHECKconnect4==true)?'Activepart2':(recweb4==true)?'Activepart2':(Gather4==true)?'Activepart2':(Send4==true)?'Activepart3':(Collect4==true)?'Activepart3':''"></span>
+        </div>
+        <div *ngIf="TotalCount==5" style="margin-bottom: 0px;" [ngClass]="(Expandbtn==true)?'dot-box1':'dot-box'">
+          <span class="dot1" style="transform: translate(-11px, 27px) rotate(
+              0deg);" [ngClass]="(experience==true)?'Activepart':(setupR1==true)?'Activepart1':''"></span>
+          <span class="dot2" style="    transform: translate(-8px, 20px) rotate(
+              12deg);" [ngClass]="(expertise==true)?'Activepart':(setupR2==true)?'Activepart1':''"></span>
+          <span class="dot3" style="transform: translate(-5px, 17px) rotate(
+              24deg);" [ngClass]="(timeManagement==true)?'Activepart':(setupR3==true)?'Activepart1':''"></span>
+          <span class="dot4" style="transform: translate(3px, 19px) rotate(
+              36deg);" [ngClass]="(availability==true)?'Activepart':(setupR4==true)?'Activepart1':''"></span>
+          <span class="dot5" style="    transform: translate(7px, 24px) rotate(
+              48deg);" [ngClass]="(adaptability==true)?'Activepart':(setupR5==true)?'Activepart1':''"></span>
+        </div>
+        <div *ngIf="TotalCount==6" style="margin-bottom: 8px;" [ngClass]="(Expandbtn==true)?'dot-box1':'dot-box'">
+          <span class="dot1" style="transform: translate(-22px, 18px) rotate(
+              0deg);" [ngClass]="(preparequipments1==true)?'Activepart1':(dryRun1==true)?'Activepart1':''"></span>
+          <span class="dot2" style="transform: translate(-15px, 8px) rotate(
+              12deg);" [ngClass]="(preparequipments2==true)?'Activepart1':(dryRun2==true)?'Activepart1':''"></span>
+          <span class="dot3" style="transform: translate(-6px, 2px) rotate(
+              24deg);" [ngClass]="(preparequipments3==true)?'Activepart1':(dryRun3==true)?'Activepart1':''"></span>
+          <span class="dot4" style="transform: translate(3px, 2px) rotate(
+              36deg);" [ngClass]="(preparequipments4==true)?'Activepart1':(dryRun4==true)?'Activepart1':''"></span>
+          <span class="dot5" style="transform: translate(12px, 5px) rotate(
+              48deg);" [ngClass]="(preparequipments5==true)?'Activepart1':(dryRun5==true)?'Activepart1':''"></span>
+          <span class="dot6" style="transform: translate(18px, 13px) rotate(
+              60deg);" [ngClass]="(preparequipments6==true)?'Activepart1':(dryRun6==true)?'Activepart1':''"></span>
+        </div>
+      </div>
+
+
+      <div [ngClass]="(Expandbtn==true)?'Expandcss':'collapsecss'">
+        <!-- Recruiting Speker start -->
+        <svg *ngIf="RecruitingSpeaker" version="1.1" id="rotated" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" width="512px" height="512px" viewBox="0 0 512 512"
+          style="enable-background:new 0 0 512 512;" xml:space="preserve" [ngClass]="(Expandbtn==true)?'halfsvg':''">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <g>
+              <path [ngClass]="(RAdaptability==true)?'st1':'st0'"
+                d="M139.5,100.2l-14-19.5C47.2,137,17.4,235.6,44.8,322.8l21.8-10.5C44,235.5,70.8,149.5,139.5,100.2z" />
+              <path d="M44.5,323.4l-0.1-0.4c-6.8-21.6-10.2-44.1-10-66.8c0.2-22.5,3.8-44.7,10.7-66.1c14.4-44.4,42.1-82.3,80.2-109.6l0.3-0.2
+          l14.4,20.1l-0.3,0.2c-66.7,47.9-95.9,133-72.7,211.7l0.1,0.3L44.5,323.4z M125.5,81.3C49.4,136.1,17.1,232.9,45,322.3l21.1-10.2
+          c-5.5-18.9-8.1-38.6-7.7-58.4c0.4-19.7,3.8-39.2,10-57.9c12.9-38.7,37.3-71.8,70.5-95.7L125.5,81.3z" />
+            </g>
+            <g>
+              <path [ngClass]="(RExperience==true)?'st1':'st0'"
+                d="M363.9,99l17-17.3c-73.9-54-177-57.2-255.3-1l14,19.5C208.3,50.8,298.4,53,363.9,99z" />
+              <path
+                d="M139.4,100.8L125,80.7l0.3-0.2c38.1-27.3,82.9-41.5,129.6-40.9c22.5,0.3,44.7,4,66.1,11c21.6,7.1,41.9,17.5,60.2,30.9
+          l0.4,0.3L364,99.6l-0.3-0.2c-67.2-47.2-157.2-46.8-223.9,1.2L139.4,100.8z M126.1,80.8l13.5,18.8c33.1-23.7,72.1-36.2,112.7-36.2
+          c0.2,0,0.4,0,0.6,0c19.7,0.1,39.3,3.1,58.1,9c18.9,6,36.7,14.7,52.9,26l16.4-16.7C304.4,26.6,202.4,26.3,126.1,80.8z" />
+            </g>
+            <g>
+              <path [ngClass]="(RAvailability==true)?'st1':'st0'" d="M95.1,370.6c-13.1-18.2-22.5-37.9-28.5-58.2l-21.8,10.5c6.8,21.5,17,42.4,30.9,61.7
+          c42.3,58.9,108.5,90.4,175.8,90.7l-1.7-24C190.4,450.4,132.4,422.4,95.1,370.6z" />
+              <path d="M251.9,475.7l-0.4,0c-33.7-0.2-67.4-8.3-97.5-23.5c-15.3-7.7-29.7-17.3-42.7-28.4c-13.4-11.4-25.5-24.6-35.9-39
+          c-13.6-18.9-24-39.7-31-61.8l-0.1-0.3l22.6-10.9l0.1,0.5c6.1,20.8,15.7,40.3,28.5,58.1c35.6,49.5,93.2,79.6,154.3,80.6l0.4,0
+          L251.9,475.7z M45.3,323.1c6.9,21.9,17.2,42.5,30.7,61.2c40.3,56.2,105.7,90,175,90.6l-1.7-23.2c-29.6-0.5-59.1-7.9-85.4-21.3
+          c-27.7-14.1-50.9-34.2-69.2-59.6c-12.7-17.7-22.3-37.2-28.4-57.9L45.3,323.1z" />
+            </g>
+            <g>
+              <path [ngClass]="(RTimeManagement==true)?'st1':'st0'" d="M365.5,414.9c-35.1,25.2-75.7,37-115.8,36.3l1.7,24c44.4,0.3,89.2-13,128-40.9c39.2-28.2,66.3-67,80.1-109.6
+          l-22.2-9.2C425.2,354.3,400.9,389.5,365.5,414.9z" />
+              <path
+                d="M252.7,475.7c-0.4,0-0.8,0-1.3,0l-0.4,0l-1.8-24.8l0.4,0c1,0,2,0,3,0c40.6,0,79.4-12.5,112.5-36.3l0,0
+          c34.3-24.6,59.1-58.9,71.7-99.1l0.1-0.4l23,9.5l-0.1,0.4c-14.4,44.5-42.2,82.5-80.2,109.8C342.4,461.5,298.5,475.7,252.7,475.7z
+           M251.8,474.9c0.3,0,0.6,0,0.9,0c45.6,0,89.3-14.1,126.5-40.8c37.9-27.2,65.5-64.9,79.8-109.1l-21.5-8.9
+          c-6.2,19.5-15.3,37.8-27.1,54.3c-12.3,17.2-27.4,32.3-44.8,44.8l-0.2-0.3l0.2,0.3c-34,24.4-73.9,37-115.6,36.4L251.8,474.9z" />
+            </g>
+            <g>
+              <path [ngClass]="(RExpertise==true)?'st1':'st0'" d="M363.9,99c17.3,12.2,32.9,27.4,45.9,45.6c36.9,51.5,45,114.9,27.5,171l22.2,9.2
+          c20.6-63.6,11.7-135.7-30.2-194.2c-13.8-19.3-30.3-35.6-48.4-48.9L363.9,99z" />
+              <path d="M459.8,325.3l-23-9.5l0.1-0.4c18.4-58.6,8.4-120.8-27.4-170.7c-12.7-17.7-28.2-33-45.9-45.5l-0.4-0.3l17.5-17.9l0.3,0.2
+          c18.6,13.6,35,30.1,48.5,49c10.3,14.4,18.8,29.9,25.4,46.1c6.3,15.8,10.8,32.3,13.3,49.2c4.8,33,2,67.3-8.3,99.2L459.8,325.3z
+           M437.8,315.4l21.5,8.9c21-65.4,9.7-137.7-30.3-193.4c-13.5-18.7-29.6-35.1-48.1-48.6L364.5,99c17.6,12.4,33,27.7,45.7,45.4
+          c18.1,25.2,29.6,53.5,34.3,83.9C448.8,257.2,446.5,287.3,437.8,315.4z" />
+            </g>
+            <g (click)="TimeManagement($event)" id='Time Management' value='1'>
+              <path [ngClass]="(timeManagement==true)?'st6-active':'st6'" d="M312.4,341c-20.9,15-45.5,21-69.3,18.9l4.9,68.5c36,1,72.6-9.4,104.1-32c31.8-22.9,53.5-54.6,63.9-89.5
+          l-63.5-26.2C347.2,304.2,333.5,325.9,312.4,341z" />
+              <path d="M252.7,428.8c-1.5,0-3.1,0-4.6-0.1l-0.4,0l-5-69.3l0.5,0c24.5,2.3,49-4.4,69-18.8c20.2-14.5,34.4-35.9,40-60.1l0.1-0.5
+          l0.4,0.2l63.8,26.3l-0.1,0.3c-5.3,17.7-13.4,34.3-24,49.4c-11,15.6-24.5,29.1-40.1,40.3c-15.4,11.1-32.4,19.5-50.5,24.9
+          C285.9,426.4,269.4,428.8,252.7,428.8z M248.4,427.9c37.3,0.9,73.1-10.1,103.4-31.9c30.7-22.1,52.7-52.8,63.7-88.9l-62.7-25.9
+          c-5.7,24.2-20,45.6-40.2,60.1l-0.2-0.3l0.2,0.3c-20,14.4-44.5,21.1-69.1,19L248.4,427.9z" />
+            </g>
+            <g (click)="Availability($event)" id='Availability' value='1'>
+              <path [ngClass]="(availability==true)?'st6-active':'st6'" d="M169.1,317.5c-10.1-14-16.1-29.7-18.3-45.7l-63.2,30.4c5.2,19.2,13.9,37.8,26.2,55
+          c32.4,45.1,82.8,69.8,134.3,71.1l-4.9-68.5C214.5,357.2,187.1,342.7,169.1,317.5z" />
+              <path d="M248.5,428.7l-0.4,0c-25.9-0.7-51.6-7.3-74.5-19.2c-24-12.4-44.2-30-60.1-52.1c-12-16.8-20.9-35.3-26.2-55.1l-0.1-0.3
+          l64-30.8l0.1,0.5c2.3,16.3,8.6,32,18.2,45.5c17.3,24.1,44.2,39.5,73.8,42.2l0.3,0l0,0.3L248.5,428.7z M88.1,302.4
+          c5.3,19.6,14.1,37.9,26,54.5c31.3,43.5,79.9,69.4,133.6,71l-4.9-67.7c-29.7-2.8-56.7-18.3-74-42.5c-9.6-13.4-15.9-29.1-18.3-45.3
+          L88.1,302.4z" />
+            </g>
+            <g (click)="Expertise($event)" id='Expertise' value='1'>
+              <path [ngClass]="(expertise==true)?'st6-active':'st6'" d="M335.9,197.7c17.9,25,23,55.2,16.6,83l63.5,26.2c14.7-49,7.4-104.1-24.8-148.9
+          c-12.3-17.1-27.1-31.2-43.6-42.3l-49.1,50.1C313,173,325.9,183.7,335.9,197.7z" />
+              <path d="M416.3,307.4l-64.2-26.5l0.1-0.3c6.6-28.7,0.6-58.8-16.6-82.7l0,0c-9.6-13.4-22.5-24.4-37.2-31.8l-0.5-0.2l0.4-0.4
+          l49.3-50.3l0.3,0.2c17,11.4,31.7,25.6,43.7,42.4c15.8,22,25.9,46.5,30.1,73c4,25.3,2.2,51.6-5.2,76.2L416.3,307.4z M353.1,280.4
+          l62.7,25.9c15.2-51,6.1-104.9-24.9-148.1c-11.9-16.6-26.4-30.7-43.2-42l-48.4,49.5c14.6,7.4,27.4,18.4,37,31.8l0,0
+          C353.5,221.4,359.6,251.6,353.1,280.4z" />
+            </g>
+            <g (click)="Experience($event)" id='Experience' value='1'>
+              <path [ngClass]="(experience==true)?'st6-active':'st6'"
+                d="M298.6,165.8l49.1-50.1c-57.5-38.5-135.2-39.6-194.8,3.2l39.7,55.3C224.7,151.1,265.5,149.2,298.6,165.8z" />
+              <path d="M192.5,174.7l-40.2-56l0.3-0.2c28.9-20.8,62.9-31.9,98.4-32.1c34.7-0.3,68.2,9.7,96.8,29l0.4,0.3l-0.3,0.3l-49.3,50.3
+          l-0.3-0.1c-34.1-17.1-74.6-13.9-105.6,8.3L192.5,174.7z M153.4,118.9l39.2,54.7c31.1-22.2,71.6-25.3,105.8-8.3l48.5-49.5
+          C288.4,76.7,210.7,78,153.4,118.9z" />
+            </g>
+            <g (click)="Adaptability($event)" id='Adaptability' value='1'>
+              <path [ngClass]="(adaptability==true)?'st6-active':'st6'"
+                d="M87.6,302.2l63.2-30.4c-5.1-36.6,9.8-74.7,41.8-97.7l-39.7-55.3C93.4,161.5,69.5,235.5,87.6,302.2z" />
+              <path d="M87.3,302.8l-0.1-0.5c-9-33.3-7.8-68.2,3.6-101c11.6-33.5,33-62.1,61.9-82.9l0.3-0.2l40.2,56l-0.3,0.2
+          c-31,22.2-46.9,59.5-41.7,97.3l0,0.3L87.3,302.8z M152.8,119.4c-57.1,41.2-83.1,114.3-64.9,182.3l62.5-30.1
+          c-5.2-37.9,10.8-75.2,41.7-97.5L152.8,119.4z" />
+            </g>
+            <g>
+              <g>
+                <path class="st6-active"
+                  d="M252.5,346.8c49.3,0,89.3-40,89.3-89.3s-40-89.3-89.3-89.3c-49.3,0-89.3,40-89.3,89.3
+            S203.2,346.8,252.5,346.8z M252.5,202.5c30.4,0,55,24.6,55,55s-24.6,55-55,55s-55-24.6-55-55S222.1,202.5,252.5,202.5z" />
+                <path d="M252.5,347.2c-24,0-46.5-9.3-63.4-26.3c-16.9-16.9-26.3-39.5-26.3-63.4c0-24,9.3-46.5,26.3-63.4s39.5-26.3,63.4-26.3
+            c24,0,46.5,9.3,63.4,26.3c16.9,16.9,26.3,39.5,26.3,63.4c0,24-9.3,46.5-26.3,63.4C299,337.9,276.5,347.2,252.5,347.2z
+             M252.5,168.7c-49,0-88.9,39.9-88.9,88.9s39.9,88.9,88.9,88.9c49,0,88.9-39.9,88.9-88.9S301.5,168.7,252.5,168.7z M252.5,313
+            c-30.6,0-55.4-24.9-55.4-55.4s24.9-55.4,55.4-55.4c30.6,0,55.4,24.9,55.4,55.4S283.1,313,252.5,313z M252.5,202.9
+            c-30.1,0-54.6,24.5-54.6,54.6s24.5,54.6,54.6,54.6c30.1,0,54.6-24.5,54.6-54.6S282.6,202.9,252.5,202.9z" />
+              </g>
+
+            </g>
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="210.526" y="188.631">RECRUIT THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="220.632" y="201.263">SPEAKER</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="202.106" y="129.684" (click)="Experience($event)" id='Experience' value='1'>EXPERIENCE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="338.527" y="204.632" transform="matrix(0.358368, 0.93358, -0.93358, 0.358368, 434.061554, -209.128891)"
+            (click)="Expertise($event)" id='Expertise' value='1'>EXPERTISE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="322.526" y="378.947"
+            transform="matrix(-0.838671, 0.544639, -0.544639, -0.838671, 825.421509, 504.129791)"
+            (click)="TimeManagement($event)" id='Time Management' value='1'>TIME</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="279.579" y="372.211"
+            transform="matrix(-0.838671, 0.544639, -0.544639, -0.838671, 806.681213, 492.652954)"
+            (click)="TimeManagement($event)" id='Time Management' value='1'>MANAGEMENT</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-205.23" y="-348.631" transform="matrix(-0.754709, -0.65606, 0.65606, -0.754709, 279.811951, -6.711132)"
+            (click)="Availability($event)" id='Availability' value='1'>AVAILABILITY</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="85.052" y="213.895" transform="matrix(0.309017, -0.951057, 0.951057, 0.309017, -107.750519, 270.220978)"
+            (click)="Adaptability($event)" id='Adaptability' value='1'>ADAPTABILITY</text>
+        </svg>
+
+        <!-- Recruiting Speker End -->
+        <!-- Assigning Roles Start -->
+        <svg *ngIf="AssigningRoles" version="1.1" id="rotated" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512"
+          enable-background="new 0 0 512 512" [ngClass]="(Expandbtn==true)?'halfsvg':''" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Organizer==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,28.387c125.23,0,227.111,101.884,227.111,227.116
+              c0,30.769-6.163,60.121-17.297,86.905l25.765,10.673c12.504-30.074,19.422-63.031,19.422-97.578
+              c0-140.611-114.392-255.007-255.001-255.007h-0.002v27.891H255.503z" />
+            <path [ngClass]="(Assistant==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.503c0-125.231,101.884-227.115,227.114-227.116V0.496
+              C114.89,0.497,0.496,114.893,0.496,255.503c0,34.547,6.918,67.504,19.422,97.578l25.769-10.673
+              C34.551,315.624,28.387,286.271,28.387,255.503z" />
+            <path [ngClass]="(Presenter==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M465.317,342.408c-34.189,82.231-115.353,140.206-209.814,140.206
+              c-94.463,0-175.629-57.975-209.816-140.206l-25.769,10.673c38.387,92.331,129.52,157.423,235.584,157.423
+              c106.063,0,197.193-65.094,235.579-157.423L465.317,342.408z" />
+            <path (click)="presenter($event)" id='Presenter' value='1' [ngClass]="(ppresenter==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M255.501,375.034c-49.716,0-92.434-30.514-110.428-73.792
+              l-75.459,31.255c30.29,72.854,102.201,124.219,185.888,124.219c83.689,0,155.598-51.364,185.888-124.219l-75.459-31.255
+              C347.938,344.521,305.219,375.034,255.501,375.034z" />
+            <path (click)="assistant($event)" id='Assistant' value='1' [ngClass]="(passistant==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M54.286,255.501c0,27.261,5.461,53.267,15.327,76.996l75.459-31.255
+              c-5.862-14.097-9.105-29.547-9.105-45.741c0-65.909,53.625-119.534,119.534-119.534V54.286
+              C144.553,54.286,54.286,144.553,54.286,255.501z" />
+            <path (click)="organizer($event)" id='Organizer' value='1' [ngClass]="(porganizer==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M255.501,135.967c65.911,0,119.533,53.625,119.533,119.534
+              c0,16.194-3.243,31.645-9.104,45.741l75.459,31.255c9.866-23.729,15.327-49.735,15.327-76.996
+              c0-110.948-90.267-201.215-201.215-201.215l0,0V135.967L255.501,135.967z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592c0,14.169,2.836,27.687,7.965,40.021
+                  c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568c5.128-12.335,7.967-25.853,7.967-40.021
+                  C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244c-27.395,0-50.868-16.759-60.746-40.582
+                  c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743c36.31,0,65.743,29.435,65.743,65.743
+                  c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592
+                  c0,14.169,2.836,27.687,7.965,40.021c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568
+                  c5.128-12.335,7.967-25.853,7.967-40.021C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244
+                  c-27.395,0-50.868-16.759-60.746-40.582c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743
+                  c36.31,0,65.743,29.435,65.743,65.743c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+            </g>
+            <circle fill="none" cx="255.86" cy="256.465" r="79.225" />
+
+            <path fill="none" d="M167.894,127.007c70.967-48.385,167.717-30.08,216.101,40.889c48.383,70.961,30.077,167.716-40.888,216.098
+              c-70.966,48.383-167.715,30.079-216.1-40.886C78.623,272.144,96.928,175.39,167.894,127.007z" />
+
+            <path fill="none" d="M410.992,252.678c1.56,85.877-66.791,156.757-152.67,158.312c-85.872,1.563-156.755-66.79-158.312-152.666
+              c-1.56-85.875,66.79-156.756,152.666-158.315C338.552,98.449,409.434,166.803,410.992,252.678z" />
+
+            <path fill="none" d="M169.547,385.106c-71.582-47.471-91.125-143.979-43.65-215.558c47.467-71.578,143.978-91.124,215.557-43.652
+              c71.579,47.47,91.123,143.978,43.652,215.558C337.637,413.033,241.125,432.58,169.547,385.106z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="222.704" y="172.162">ASSIGNING
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="237.811" y="183.074">ROLE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="92.969" y="172.127" transform="matrix(0.390731, -0.920505, 0.920505, 0.390731, -84.14225, 239.151413)"
+            (click)="assistant($event)" id='Assistant' value='1'>ASSISTANT
+
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="353.179" y="182.232" transform="matrix(0.48481, 0.87462, -0.87462, 0.48481, 359.230255, -252.124863)"
+            (click)="organizer($event)" id='Organizer' value='1'>ORGANIZER
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-300.877" y="-407.916" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="presenter($event)" id='Presenter'
+            value='1'>PRESENTER
+
+          </text>
+        </svg>
+        <!-- Assigning Roles End -->
+        <!-- Deciding on the topic Start -->
+        <svg *ngIf="Decidingonthetopic" version="1.1" id="rotated" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512"
+          enable-background="new 0 0 512 512" [ngClass]="(Expandbtn==true)?'halfsvg':''" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Determine==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891
+		C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(Setgoalsobjectives==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891
+		C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(Maketopics==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.613,255.5c0,0,0,0,0,0.002
+		c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002
+		V255.5H482.613z" />
+            <path [ngClass]="(fixtopic==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002
+		c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="Deciding4($event)" id='fix the topic' value='1'
+              [ngClass]="(decidingTopic4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.967,255.5L135.967,255.5H54.286
+		c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="Deciding3($event)" id='Make the list of topics' value='1'
+              [ngClass]="(decidingTopic3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681
+		c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="Deciding2($event)" id='Determine your target audience' value='1'
+              [ngClass]="(decidingTopic2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681
+		C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="Deciding1($event)" id='set goals and objectives' value='1'
+              [ngClass]="(decidingTopic1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.5h81.681c0-65.909,53.624-119.533,119.533-119.533V54.286
+		C144.552,54.286,54.286,144.553,54.286,255.5z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59
+				c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243
+				c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591
+				c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z
+				 M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none" d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123
+		c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none" d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922
+		c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none" d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122
+		c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none" d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922
+		c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="207.83" y="173.138">DECIDING THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="233.937" y="184.927">TOPIC</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="93.305" y="156.295" transform="matrix(0.601815, -0.798635, 0.798635, 0.601815, -77.355804, 181.950333)"
+            (click)="Deciding1($event)" id='set goals and objectives' value='1'>SET GOALS AND
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="523.621" y="195.874" transform="matrix(0.601815, -0.798635, 0.798635, 0.601815, -349.987335, 499.771057)"
+            (click)="Deciding1($event)" id='set goals and objectives' value='1'>OBJECTIVES
+
+          </text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;">
+            <tspan x="0" dy="1em">​</tspan>
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="318.148" y="145.348" transform="matrix(0.601815, 0.798635, -0.798635, 0.601815, 264.726074, -232.678604)"
+            (click)="Deciding2($event)" id='Determine your target audience' value='1'>DETERMINE YOUR
+
+          </text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;">
+            <tspan x="0" dy="1em">​</tspan>
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="548.884" y="198.4" transform="matrix(0.601815, 0.798635, -0.798635, 0.601815, 156.796997, -442.85553)"
+            (click)="Deciding2($event)" id='Determine your target audience' value='1'>TARGET AUDIENCE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="324.042" y="360.926"
+            transform="matrix(-0.743145, 0.669131, -0.669131, -0.743145, 887.117126, 385.342773)"
+            (click)="Deciding3($event)" id='Make the list of topics' value='1'>MAKE THE LIST
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="590.147" y="220.295" transform="matrix(-0.743145, 0.669131, -0.669131, -0.743145, 972.351746, 104.33387)"
+            (click)="Deciding3($event)" id='Make the list of topics' value='1'>OF TOPICS
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="90.779" y="364.294" transform="matrix(-0.681998, -0.731354, 0.731354, -0.681998, -21.940269, 711.322571)"
+            (click)="Deciding4($event)" id='fix the topic' value='1'>FIX THE TOPIC
+
+          </text>
+        </svg>
+        <!-- Deciding on the topic end -->
+        <!-- DECIDING ON THE PLATFORM START-->
+        <svg *ngIf="DecidingonPlatform" version="1.1" id="rotated" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512"
+          enable-background="new 0 0 512 512" xml:space="preserve" [ngClass]="(Expandbtn==true)?'halfsvg':''">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <g>
+              <path [ngClass]="(DecidingPlatMainGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+                d="M255.503,28.387c62.613,0,119.392,25.471,160.515,66.595l19.714-19.713
+			C389.556,29.094,325.807,0.496,255.503,0.496c-0.002,0-0.002,0-0.004,0v27.891C255.501,28.387,255.501,28.387,255.503,28.387z" />
+              <path [ngClass]="(DecidingPlatMainGreen7==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M94.983,94.982L75.271,75.27
+			C29.095,121.443,0.496,185.195,0.496,255.499h27.891C28.389,192.885,53.86,136.107,94.983,94.982z" />
+              <path [ngClass]="(DecidingPlatMainGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.614,255.499h27.89c0-70.304-28.6-134.056-74.772-180.23
+			l-19.714,19.713C457.142,136.105,482.612,192.884,482.614,255.499z" />
+              <path [ngClass]="(DecidingPlatMainGreen8==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.499,28.387V0.496C185.195,0.497,121.444,29.095,75.271,75.27
+			l19.712,19.713C136.107,53.859,192.886,28.388,255.499,28.387z" />
+              <path [ngClass]="(DecidingPlatMainGreen6==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+                d="M28.387,255.503c0-0.002,0-0.002,0-0.004H0.496
+			c0,0.002,0,0.002,0,0.004c0,70.304,28.597,134.053,74.772,180.229l19.714-19.714C53.858,374.895,28.387,318.116,28.387,255.503z" />
+              <path [ngClass]="(DecidingPlatMainGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,482.614c-0.002,0-0.002,0-0.004,0v27.89
+			c0.002,0,0.002,0,0.004,0c70.304,0,134.055-28.598,180.229-74.772L416.02,416.02C374.896,457.144,318.118,482.614,255.503,482.614
+			z" />
+              <path [ngClass]="(DecidingPlatMainGreen5==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M94.983,416.018l-19.714,19.714
+			c46.175,46.173,109.927,74.772,180.23,74.772v-27.89C192.884,482.612,136.105,457.142,94.983,416.018z" />
+              <path [ngClass]="(DecidingPlatMainGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M510.504,255.499h-27.89c0,0.002,0,0.002,0,0.004
+			c0,62.615-25.471,119.394-66.595,160.517l19.712,19.712c46.175-46.174,74.772-109.925,74.772-180.229
+			C510.504,255.501,510.504,255.501,510.504,255.499z" />
+              <path (click)="DecidingPlatForm6($event)" id='Mobile utilization' value='1'
+                [ngClass]="(DecidingPlatFormClick6==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.967,255.501c0,0,0,0,0-0.002H54.286v0.002
+			c0,55.473,22.566,105.776,59,142.213l57.729-57.732C149.374,318.338,135.967,288.456,135.967,255.501z" />
+              <path (click)="DecidingPlatForm5($event)" id='Engagement tool' value='1'
+                [ngClass]="(DecidingPlatFormClick5==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M171.016,339.981l-57.729,57.732
+			c36.436,36.434,86.739,59.002,142.212,59.002v-81.682C222.545,375.034,192.662,361.628,171.016,339.981z" />
+              <path (click)="DecidingPlatForm7($event)" id='Multi-stream capabilities' value='1'
+                [ngClass]="(DecidingPlatFormClick7==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M171.018,171.018l-57.729-57.729
+			c-36.434,36.435-59.002,86.737-59.002,142.211h81.681C135.969,222.545,149.374,192.663,171.018,171.018z" />
+              <path (click)="DecidingPlatForm8($event)" id='Video & Audio quality' value='1'
+                [ngClass]="(DecidingPlatFormClick8==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.499,135.967V54.286c-55.473,0-105.777,22.567-142.21,59.002
+			l57.729,57.729C192.662,149.374,222.545,135.967,255.499,135.967z" />
+              <path (click)="DecidingPlatForm4($event)" id='Recording option' value='1'
+                [ngClass]="(DecidingPlatFormClick4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.034c0,0,0,0-0.002,0v81.682c0.002,0,0.002,0,0.002,0
+			c55.476,0,105.778-22.566,142.213-59.002l-57.73-57.73C318.34,361.628,288.457,375.034,255.501,375.034z" />
+              <path (click)="DecidingPlatForm3($event)" id='Budget' value='1'
+                [ngClass]="(DecidingPlatFormClick3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.034,255.501c0,32.955-13.406,62.839-35.051,84.482l57.73,57.73
+			c36.436-36.435,59.002-86.738,59.002-142.213v-0.002h-81.682C375.034,255.501,375.034,255.501,375.034,255.501z" />
+              <path (click)="DecidingPlatForm1($event)" id='Ease of use' value='1'
+                [ngClass]="(DecidingPlatFormClick1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.499,54.286v81.681c0.002,0,0.002,0,0.002,0
+			c32.956,0,62.837,13.406,84.48,35.05l57.732-57.729c-36.437-36.435-86.739-59.001-142.213-59.001
+			C255.501,54.286,255.501,54.286,255.499,54.286z" />
+              <path (click)="DecidingPlatForm2($event)" id='Audience size' value='1'
+                [ngClass]="(DecidingPlatFormClick2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.034,255.499h81.682c0-55.474-22.568-105.777-59.002-142.212
+			l-57.732,57.729C361.628,192.662,375.032,222.545,375.034,255.499z" />
+              <g>
+                <g>
+                  <path fill="#FECB08" d="M329.422,181.577c-18.938-18.938-45.084-30.666-73.919-30.666c-0.002,0-0.002,0-0.004,0
+					c-28.835,0.001-54.981,11.729-73.92,30.668c-18.938,18.938-30.667,45.085-30.667,73.92c0,0.002,0,0.002,0,0.004
+					c0,28.835,11.728,54.98,30.666,73.919c18.939,18.939,45.085,30.669,73.922,30.671c0.002,0,0.002,0,0.004,0
+					c28.835,0,54.983-11.729,73.921-30.669c18.939-18.938,30.669-45.086,30.669-73.921c0-0.002,0-0.002,0-0.004
+					C360.091,226.662,348.361,200.516,329.422,181.577z M255.501,321.244c0,0,0,0-0.002,0c-18.154,0-34.59-7.359-46.486-19.257
+					c-11.897-11.896-19.255-28.333-19.255-46.486c0,0,0,0,0-0.002c0.002-18.153,7.36-34.589,19.257-46.485
+					c11.896-11.896,28.331-19.255,46.484-19.256c0.002,0,0.002,0,0.002,0c18.153,0,34.59,7.358,46.486,19.255
+					c11.897,11.896,19.257,28.333,19.257,46.486c0,0.002,0,0.002,0,0.002c0,18.155-7.357,34.592-19.255,46.488
+					C290.093,313.887,273.656,321.244,255.501,321.244z" />
+                </g>
+                <g>
+                  <path fill="none" stroke="#000000" stroke-width="2" d="M329.422,181.577c-18.938-18.938-45.084-30.666-73.919-30.666
+					c-0.002,0-0.002,0-0.004,0c-28.835,0.001-54.981,11.729-73.92,30.668c-18.938,18.938-30.667,45.085-30.667,73.92
+					c0,0.002,0,0.002,0,0.004c0,28.835,11.728,54.98,30.666,73.919c18.939,18.939,45.085,30.669,73.922,30.671
+					c0.002,0,0.002,0,0.004,0c28.835,0,54.983-11.729,73.921-30.669c18.939-18.938,30.669-45.086,30.669-73.921
+					c0-0.002,0-0.002,0-0.004C360.091,226.662,348.361,200.516,329.422,181.577z M255.501,321.244c0,0,0,0-0.002,0
+					c-18.154,0-34.59-7.359-46.486-19.257c-11.897-11.896-19.255-28.333-19.255-46.486c0,0,0,0,0-0.002
+					c0.002-18.153,7.36-34.589,19.257-46.485c11.896-11.896,28.331-19.255,46.484-19.256c0.002,0,0.002,0,0.002,0
+					c18.153,0,34.59,7.358,46.486,19.255c11.897,11.896,19.257,28.333,19.257,46.486c0,0.002,0,0.002,0,0.002
+					c0,18.155-7.357,34.592-19.255,46.488C290.093,313.887,273.656,321.244,255.501,321.244z" />
+                </g>
+              </g>
+            </g>
+            <path fill="none" d="M114.383,190.143c36.095-77.939,128.537-111.857,206.475-75.759c77.934,36.093,111.856,128.536,75.76,206.472
+		c-36.095,77.937-128.535,111.856-206.473,75.763C112.208,360.521,78.286,268.079,114.383,190.143z" />
+
+            <circle fill="none" cx="255.5" cy="255.499" r="155.517" />
+
+            <path fill="none" d="M320.856,114.382c77.938,36.095,111.857,128.537,75.759,206.473
+		c-36.093,77.937-128.537,111.856-206.473,75.761c-77.934-36.094-111.856-128.533-75.762-206.472
+		C150.477,112.207,242.919,78.286,320.856,114.382z" />
+
+            <path fill="none" d="M397.038,191.061c35.592,78.17,1.071,170.389-77.101,205.977c-78.166,35.589-170.388,1.069-205.976-77.1
+		C78.374,241.77,112.89,149.55,191.059,113.96C269.229,78.373,361.451,112.89,397.038,191.061z" />
+
+            <path fill="none" d="M399.961,313.087c-31.804,79.786-122.266,118.68-202.05,86.872c-79.782-31.802-118.677-122.266-86.873-202.049
+		c31.804-79.782,122.264-118.679,202.048-86.874C392.871,142.843,431.769,233.305,399.961,313.087z" />
+
+            <path fill="none" d="M317.524,398.11c-78.764,34.259-170.382-1.822-204.636-80.588c-34.256-78.759,1.824-170.382,80.587-204.637
+		c78.761-34.254,170.382,1.824,204.638,80.587C432.367,272.236,396.288,363.857,317.524,398.11z" />
+
+            <path fill="none" d="M191.308,397.147c-78.234-35.453-112.911-127.611-77.456-205.844
+		c35.451-78.229,127.613-112.909,205.843-77.456c78.229,35.453,112.909,127.61,77.457,205.844
+		C361.698,397.922,269.538,432.603,191.308,397.147z" />
+
+            <path fill="none" d="M110.847,312.593c-31.535-79.894,7.668-170.221,87.563-201.751c79.89-31.533,170.22,7.671,201.752,87.563
+		c31.531,79.891-7.669,170.218-87.563,201.751C232.705,431.687,142.376,392.484,110.847,312.593z" />
+
+            <circle fill="none" cx="255.86" cy="256.464" r="79.225" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="143.43" y="125.667" transform="matrix(0.927184, -0.374607, 0.374607, 0.927184, -23.974852, 73.003716)"
+            (click)="DecidingPlatForm8($event)" id='Video & Audio quality' value='1'>VIDEO / AUDIO</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(0.927184, 0.374607, -0.374607, 0.927184, 64.020157, -96.175507)" x="268.201" y="104.309"
+            (click)="DecidingPlatForm1($event)" id='Ease of use' value='1'>EASE OF USE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(0.390731, 0.920505, -0.920505, 0.390731, 445.744293, -270.301422)" x="377.601" y="225.057"
+            (click)="DecidingPlatForm2($event)" id='Audience size' value='1'>AUDIENCE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.438371, 0.898794, -0.898794, -0.438371, 885.534058, 58.490131)" x="414.601" y="323.093"
+            (click)="DecidingPlatForm3($event)" id='Budget' value='1'>BUDGET
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.933581, 0.358367, -0.358367, -0.933581, 994.543152, 496.70813)" x="554.6307983398438"
+            y="329.9945068359375" (click)="DecidingPlatForm4($event)" id='Recording option' value='1'>RECORDING
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.951057, 0.309017, -0.309017, -0.951057, 1019.252075, 433.734222)" x="626.187"
+            y="259.094" (click)="DecidingPlatForm4($event)" id='Recording option' value='1'>OPTION
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.898794, -0.438371, 0.438371, -0.898794, 611.637695, 978.373962)" x="579.121"
+            y="332.543" (click)="DecidingPlatForm5($event)" id='Engagement tool' value='1'>ENGAGEMENT</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.913546, -0.406736, 0.406736, -0.913546, 772.276428, 871.558899)" x="697.98" y="202.32"
+            (click)="DecidingPlatForm5($event)" id='Engagement tool' value='1'>TOOL</text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 23.6px;"
+            x="717.811" y="198.812"> </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="78.879" y="322.913"
+            transform="matrix(-0.309017, -0.951057, 0.951057, -0.309017, -171.423767, 518.213379)"
+            (click)="DecidingPlatForm6($event)" id='Mobile utilization' value='1'>MOBILE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(-0.34202, -0.939693, 0.939693, -0.34202, -41.195107, 1024.804443)" x="572.827" y="392.266"
+            (click)="DecidingPlatForm6($event)" id='Mobile utilization' value='1'>UTILIZATION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            transform="matrix(0.309017, -0.951056, 0.951056, 0.309017, -251.605194, 718.468506)" x="558.024" y="188.558"
+            (click)="DecidingPlatForm7($event)" id='Multi-stream capabilities' value='1'>MULTI-STREAM</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="223.495" y="183.934">PLATFORM</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="211.705" y="172.988">DECIDING THE</text>
+        </svg>
+        <!-- DECIDING ON THE PLATFORM END -->
+        <!-- Prepare the equipments Start -->
+        <svg *ngIf="PrepareEq" version="1.1" id="rotated" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512"
+          enable-background="new 0 0 512 512" xml:space="preserve" [ngClass]="(Expandbtn==true)?'halfsvg':''">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(PrepareEqGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,28.387c41.364,0,80.175,11.123,113.615,30.523l13.953-24.143
+		C345.524,12.984,301.947,0.496,255.503,0.496c-45.808,0-88.83,12.149-126.024,33.383l13.784,24.24
+		C176.389,39.207,214.705,28.387,255.503,28.387z" />
+            <path [ngClass]="(PrepareEqGreen6==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M143.263,58.119l-13.784-24.24C52.503,77.821,0.497,160.698,0.496,255.5
+		h27.892C28.389,171.067,74.706,97.255,143.263,58.119z" />
+            <path [ngClass]="(PrepareEqGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.614,255.5h27.89c0-94.166-51.31-176.565-127.433-220.732
+		l-13.953,24.143C436.916,98.245,482.612,171.633,482.614,255.5z" />
+            <path [ngClass]="(PrepareEqGreen5==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.388,255.502c0-0.001,0-0.002,0-0.003H0.496c0,0.001,0,0.002,0,0.003
+		c0,94.166,51.309,176.564,127.434,220.73l13.952-24.143C74.084,412.754,28.388,339.367,28.388,255.502z" />
+            <path [ngClass]="(PrepareEqGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,482.613c-41.366,0-80.18-11.121-113.621-30.523l-13.952,24.143
+		c37.547,21.783,81.126,34.271,127.573,34.271c45.808,0,88.827-12.148,126.02-33.381l-13.784-24.238
+		C334.614,471.793,296.299,482.613,255.503,482.613z" />
+            <path [ngClass]="(PrepareEqGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.614,255.5c0,0.001,0,0.002,0,0.003
+		c0,84.433-46.317,158.246-114.876,197.382l13.784,24.238c76.978-43.941,128.981-126.818,128.981-221.621c0-0.001,0-0.002,0-0.003
+		H482.614z" />
+            <path (click)="Preparequipments4($event)" id='Webcam' value='1'
+              [ngClass]="(preparequipments4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.033c-21.771,0-42.199-5.854-59.8-16.066l-40.862,70.703
+		c29.627,17.191,64.015,27.045,100.662,27.045c36.144,0,70.09-9.586,99.438-26.34l-40.366-70.988
+		C297.139,369.34,276.974,375.033,255.501,375.033z" />
+            <path (click)="Preparequipments5($event)" id='Lighting' value='1'
+              [ngClass]="(preparequipments5==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.968,255.501c0-0.001,0-0.001,0-0.002H54.287v0.001
+		c0,74.3,40.486,139.32,100.552,174.169l40.862-70.703C160.02,338.266,135.968,299.641,135.968,255.501z" />
+            <path (click)="Preparequipments6($event)" id='Earpiece' value='1'
+              [ngClass]="(preparequipments6==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M196.428,151.616l-40.366-70.988
+		C95.323,115.302,54.287,180.697,54.287,255.5h81.681C135.969,211.063,160.347,172.214,196.428,151.616z" />
+            <path (click)="Preparequipments3($event)" id='Microphone' value='1'
+              [ngClass]="(preparequipments3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.034,255.501c0,44.438-24.377,83.288-60.461,103.885l40.366,70.988
+		c60.739-34.674,101.776-100.07,101.776-174.875V255.5h-81.682C375.034,255.5,375.034,255.5,375.034,255.501z" />
+            <path (click)="Preparequipments2($event)" id='Stable Internet Connection' value='1'
+              [ngClass]="(preparequipments2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.034,255.5h81.682c0-74.301-40.488-139.32-100.555-174.171
+		l-40.862,70.703C350.981,172.735,375.032,211.36,375.034,255.5z" />
+            <path (click)="Preparequipments1($event)" id='Computer/tablets' value='1'
+              [ngClass]="(preparequipments1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M156.063,80.627l40.366,70.988
+		c17.435-9.953,37.602-15.648,59.073-15.648c21.771,0,42.198,5.854,59.798,16.064l40.862-70.703
+		c-29.627-17.188-64.013-27.042-100.66-27.042C219.356,54.286,185.411,63.873,156.063,80.627z" />
+            <g>
+              <g>
+                <path fill="#FECB08"
+                  d="M307.824,164.966c-15.4-8.934-33.272-14.056-52.321-14.056c-18.79,0-36.435,4.982-51.689,13.692
+				c-31.572,18.022-52.902,52.014-52.903,90.897v0.003c0,38.621,21.043,72.417,52.266,90.531
+				c15.4,8.936,33.275,14.059,52.327,14.059c18.788,0,36.433-4.982,51.687-13.691c31.572-18.021,52.903-52.014,52.903-90.898V255.5
+				C360.091,216.877,339.046,183.08,307.824,164.966z M321.244,255.501c0,24.487-13.395,45.831-33.249,57.145
+				c-9.585,5.463-20.671,8.598-32.494,8.598c-11.988,0-23.216-3.225-32.895-8.83c-19.632-11.371-32.848-32.592-32.848-56.913
+				c0-0.001,0-0.001,0-0.002c0.001-24.485,13.396-45.828,33.249-57.141c9.586-5.463,20.67-8.6,32.494-8.6
+				c11.988,0,23.216,3.224,32.892,8.828c19.634,11.372,32.852,32.591,32.852,56.914C321.244,255.5,321.244,255.5,321.244,255.501z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M307.824,164.966c-15.4-8.934-33.272-14.056-52.321-14.056
+				c-18.79,0-36.435,4.982-51.689,13.692c-31.572,18.022-52.902,52.014-52.903,90.897v0.003c0,38.621,21.043,72.417,52.266,90.531
+				c15.4,8.936,33.275,14.059,52.327,14.059c18.788,0,36.433-4.982,51.687-13.691c31.572-18.021,52.903-52.014,52.903-90.898V255.5
+				C360.091,216.877,339.046,183.08,307.824,164.966z M321.244,255.501c0,24.487-13.395,45.831-33.249,57.145
+				c-9.585,5.463-20.671,8.598-32.494,8.598c-11.988,0-23.216-3.225-32.895-8.83c-19.632-11.371-32.848-32.592-32.848-56.913
+				c0-0.001,0-0.001,0-0.002c0.001-24.485,13.396-45.828,33.249-57.141c9.586-5.463,20.67-8.6,32.494-8.6
+				c11.988,0,23.216,3.224,32.892,8.828c19.634,11.372,32.852,32.591,32.852,56.914C321.244,255.5,321.244,255.5,321.244,255.501z" />
+              </g>
+            </g>
+            <path fill="none" d="M180.91,119.036c75.368-41.196,169.857-13.495,211.052,61.874c41.193,75.362,13.493,169.857-61.873,211.051
+		c-75.364,41.193-169.855,13.494-211.051-61.871C77.843,254.723,105.543,160.229,180.91,119.036z" />
+
+            <path fill="none" d="M334.069,121.288c74.123,43.394,99.034,138.657,55.639,212.781c-43.39,74.119-138.658,99.033-212.779,55.64
+		c-74.12-43.392-99.033-138.656-55.641-212.778C164.682,102.807,259.947,77.894,334.069,121.288z" />
+
+            <path fill="none" d="M410.995,258.071c-1.422,85.88-72.19,154.344-158.072,152.922c-85.874-1.422-154.343-72.192-152.921-158.07
+		c1.421-85.876,72.19-154.343,158.067-152.923C343.949,101.423,412.417,172.192,410.995,258.071z" />
+
+            <path fill="none" d="M331.262,391.313c-75.01,41.843-169.735,14.957-211.577-60.055c-41.841-75.005-14.956-169.734,60.053-211.576
+		c75.006-41.842,169.733-14.956,211.577,60.051C433.156,254.742,406.271,349.471,331.262,391.313z" />
+
+            <path fill="none" d="M178.349,390.526c-74.577-42.609-100.489-137.605-57.877-212.182
+		c42.607-74.572,137.607-100.489,212.181-57.878c74.575,42.608,100.489,137.605,57.881,212.181
+		C347.924,407.223,252.925,433.138,178.349,390.526z" />
+
+            <path fill="none" d="M100.129,248.779c3.71-85.811,76.279-152.364,162.091-148.653c85.806,3.71,152.364,76.281,148.653,162.089
+		c-3.709,85.808-76.278,152.364-162.087,148.655C162.975,407.16,96.418,334.591,100.129,248.779z" />
+
+            <circle fill="none" cx="255.861" cy="256.464" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="211.2" y="174.315">PREPARE THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="206.99" y="186.105">EQUIPEMENT'S</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="217.096" y="96" (click)="Preparequipments1($event)" id='Computer/tablets' value='1'>COMPUTER</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="219.621" y="109.474" (click)="Preparequipments1($event)" id='Computer/tablets' value='1'>/ TABLETS</text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 23.6px;"
+            x="592.674" y="131.368"> </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="376.62" y="182.305" transform="matrix(0.469472, 0.882948, -0.882948, 0.469472, 377.32782, -264.994263)"
+            (click)="Preparequipments2($event)" id='Stable Internet Connection' value='1'>STABLE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="351.874" y="181.217" transform="matrix(0.48481, 0.87462, -0.87462, 0.48481, 366.089081, -243.654831)"
+            (click)="Preparequipments2($event)" id='Stable Internet Connection' value='1'>INTERNET </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="661.726" y="183.579" transform="matrix(0.45399, 0.891007, -0.891007, 0.45399, 226.839127, -525.28656)"
+            (click)="Preparequipments2($event)" id='Stable Internet Connection' value='1'>CONNECTION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="353.346" y="325.822"
+            transform="matrix(-0.529919, 0.848048, -0.848048, -0.529919, 880.616638, 164.672577)"
+            (click)="Preparequipments3($event)" id='Microphone' value='1'>MICROPHONE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-278.802" y="-411.248" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="Preparequipments4($event)"
+            id='Webcam' value='1'>WEBCAM</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="80.175" y="335.238" transform="matrix(-0.438371, -0.898794, 0.898794, -0.438371, -134.59877, 576.822327)"
+            (click)="Preparequipments5($event)" id='Lighting' value='1'>LIGHTING</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="82.146" y="187.93" transform="matrix(0.438371, -0.898794, 0.898794, 0.438371, -94.107964, 201.776474)"
+            (click)="Preparequipments6($event)" id='Earpiece' value='1'>EARPIECE</text>
+        </svg>
+        <!-- Prepare the equipments end -->
+        <!-- SetupRegister start -->
+        <svg *ngIf="SetupRegister" version="1.1" id="rotated" [ngClass]="(Expandbtn==true)?'halfsvg':''"
+          style="margin-top: 20px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
+          xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(SetupRGreen5==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M123.155,71.167L106.79,48.373
+		C15.035,114.249-19.946,229.781,12.182,331.96l25.586-12.323C11.267,229.682,42.666,128.955,123.155,71.167z" />
+            <path [ngClass]="(SetupRGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M386.009,69.791l19.87-20.292
+		c-86.554-63.207-207.287-67.04-299.089-1.126l16.365,22.794C203.688,13.347,309.233,15.834,386.009,69.791z" />
+            <path [ngClass]="(SetupRGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M71.166,387.845c-15.304-21.315-26.38-44.383-33.397-68.208
+		L12.182,331.96c7.928,25.211,19.937,49.61,36.19,72.25c49.5,68.946,127.039,105.835,205.88,106.286l-2.016-28.086
+		C182.814,481.356,114.768,448.575,71.166,387.845z" />
+            <path [ngClass]="(SetupRGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M387.846,439.834c-41.075,29.49-88.657,43.287-135.609,42.576
+		l2.016,28.086c51.97,0.298,104.51-15.239,149.959-47.868c45.946-32.987,77.652-78.428,93.829-128.405l-26.03-10.733
+		C457.825,368.78,429.368,410.021,387.846,439.834z" />
+            <path [ngClass]="(SetupRGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M386.009,69.791c20.278,14.253,38.552,32.093,53.824,53.365
+		c43.281,60.28,52.77,134.577,32.177,200.333l26.03,10.733c24.101-74.456,13.731-158.986-35.411-227.432
+		c-16.221-22.592-35.452-41.737-56.75-57.292L386.009,69.791z" />
+            <path (click)="SetupR3($event)" id='Clear Concise forms' value='1'
+              [ngClass]="(setupR3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M325.679,353.245c-24.475,17.572-53.308,24.64-81.128,22.086
+		l5.755,80.191c42.147,1.126,84.994-11.006,121.886-37.492c37.294-26.775,62.634-64.007,74.896-104.819l-74.346-30.66
+		C366.405,310.067,350.418,335.483,325.679,353.245z" />
+            <path (click)="SetupR4($event)" id='Contact details of host' value='1'
+              [ngClass]="(setupR4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M157.754,325.678c-11.784-16.414-18.835-34.788-21.438-53.499
+		l-73.993,35.634c6.093,22.508,16.245,44.322,30.645,64.378c37.961,52.873,96.933,81.719,157.337,83.332l-5.755-80.191
+		C211.009,372.251,178.94,355.185,157.754,325.678z" />
+            <path (click)="SetupR2($event)" id='Registration fee' value='1'
+              [ngClass]="(setupR2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M353.244,185.322c20.996,29.242,26.99,64.705,19.498,97.229
+		l74.346,30.66c17.251-57.421,8.612-121.934-29.057-174.401c-14.371-20.02-31.758-36.589-51.093-49.546l-57.46,58.676
+		C326.351,156.389,341.479,168.932,353.244,185.322z" />
+            <path (click)="SetupR1($event)" id='Registration tool' value='1'
+              [ngClass]="(setupR1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M309.479,147.939l57.46-58.676
+		c-67.36-45.144-158.385-46.369-228.13,3.706l46.513,64.785C222.915,130.765,270.785,128.563,309.479,147.939z" />
+            <path (click)="SetupR5($event)" id='Follow-up' value='1' [ngClass]="(setupR5==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M62.324,307.813l73.993-35.634
+		c-5.957-42.832,11.435-87.45,49.005-114.424L138.809,92.97C69.101,143.016,41.153,229.588,62.324,307.813z" />
+            <path fill="#FFC200" stroke="#000000" stroke-width="2" d="M255.501,360.072c57.752,0,104.57-46.818,104.57-104.572
+		s-46.818-104.572-104.57-104.572c-57.754,0-104.573,46.818-104.573,104.572S197.747,360.072,255.501,360.072z M255.501,191.038
+		c35.601,0,64.462,28.861,64.462,64.462s-28.861,64.462-64.462,64.462c-35.603,0-64.463-28.861-64.463-64.462
+		S219.898,191.038,255.501,191.038z" />
+            <circle fill="none" cx="255.86" cy="256.464" r="79.224" />
+
+            <circle fill="none" cx="255.501" cy="255.499" r="155.515" />
+            <g>
+              <path fill="none" d="M193.3,112.967c78.72-34.354,170.381,1.61,204.734,80.332c34.351,78.715-1.611,170.381-80.332,204.734
+			c-78.716,34.354-170.379-1.612-204.733-80.329C78.615,238.985,114.581,147.319,193.3,112.967z" />
+
+            </g>
+            <g>
+              <circle fill="none" cx="255.501" cy="255.499" r="155.515" />
+            </g>
+            <g>
+              <path fill="none" d="M373.752,356.501c-55.783,65.31-153.946,73.031-219.254,17.247c-65.306-55.779-73.029-153.946-17.247-219.253
+			c55.78-65.307,153.943-73.03,219.251-17.247C421.812,193.029,429.533,291.194,373.752,356.501z" />
+            </g>
+            <g>
+              <path fill="none" d="M200.237,400.862c-80.284-30.521-120.623-120.347-90.099-200.629
+			c30.521-80.279,120.347-120.621,200.628-90.098c80.281,30.521,120.618,120.344,90.101,200.626
+			C370.344,391.045,280.519,431.385,200.237,400.862z" />
+
+            </g>
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="232.347" y="169.769">SET UP</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="206.447" y="183.467">REGISTRATION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="199.186" y="102.176" (click)="SetupR1($event)" id='Registration tool' value='1'>REGISTRATION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="223.288" y="113.629" (click)="SetupR1($event)" id='Registration tool' value='1'>TOOL</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="357.876" y="196.716" transform="matrix(0.34202, 0.939693, -0.939693, 0.34202, 451.837097, -245.016129)"
+            (click)="SetupR2($event)" id='Registration fee' value='1'>REGISTRATION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="387.892" y="204.052" transform="matrix(0.390731, 0.920505, -0.920505, 0.390731, 424.732605, -242.611908)"
+            (click)="SetupR2($event)" id='Registration fee' value='1'>FEE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="289.834" y="387.443" transform="matrix(-0.777146, 0.629321, -0.629321, -0.777146, 864.393494, 464.31192)"
+            (click)="SetupR3($event)" id='Clear Concise forms' value='1'>CLEAR CONCISE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="327.785" y="380.408"
+            transform="matrix(-0.766045, 0.642787, -0.642787, -0.766045, 856.545105, 437.899719)"
+            (click)="SetupR3($event)" id='Clear Concise forms' value='1'>FORM</text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 18.9px;"
+            x="619.116" y="459.453"> </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="105.619" y="402.714" transform="matrix(-0.777146, -0.62932, 0.62932, -0.777146, 31.743595, 792.325684)"
+            (click)="SetupR4($event)" id='Contact details of host' value='1'>CONTACT DETAIL</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="137.207" y="370.002" transform="matrix(-0.75471, -0.656059, 0.656059, -0.75471, 50.302227, 754.411072)"
+            (click)="SetupR4($event)" id='Contact details of host' value='1'>OF HOST</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="63.476" y="200.758" transform="matrix(0.25882, -0.965926, 0.965926, 0.25882, -109.727158, 250.645065)"
+            (click)="SetupR5($event)" id='Follow-up' value='1'>FOLLOW-UP</text>
+        </svg>
+        <!-- SetupRegister End -->
+        <!-- Marketting start -->
+        <svg *ngIf="Marketting" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]='(MarketingGreen1==true)?"st1":"st3"' stroke="#000000" stroke-width="2" d="M255.503,28.387c125.23,0,227.111,101.884,227.111,227.116
+		c0,30.769-6.163,60.121-17.297,86.905l25.765,10.673c12.504-30.074,19.422-63.031,19.422-97.578
+		c0-140.611-114.392-255.007-255.001-255.007h-0.002v27.891H255.503z" />
+            <path [ngClass]='(MarketingGreen3==true)?"st1":"st3"' stroke="#000000" stroke-width="2" d="M28.387,255.503c0-125.231,101.884-227.115,227.114-227.116V0.496
+		C114.89,0.497,0.496,114.893,0.496,255.503c0,34.547,6.918,67.504,19.422,97.578l25.769-10.673
+		C34.551,315.624,28.387,286.271,28.387,255.503z" />
+            <path [ngClass]='(MarketingGreen2==true)?"st1":"st3"' stroke="#000000" stroke-width="2" d="M465.317,342.408c-34.189,82.231-115.353,140.206-209.814,140.206
+		c-94.463,0-175.629-57.975-209.816-140.206l-25.769,10.673c38.387,92.331,129.52,157.423,235.584,157.423
+		c106.063,0,197.193-65.094,235.579-157.423L465.317,342.408z" />
+            <path (click)="Marketing2($event)" id='Promoting' value='1'
+              [ngClass]="(marketing2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.034c-49.716,0-92.434-30.514-110.428-73.792
+		l-75.459,31.255c30.29,72.854,102.201,124.219,185.888,124.219c83.689,0,155.598-51.364,185.888-124.219l-75.459-31.255
+		C347.938,344.521,305.219,375.034,255.501,375.034z" />
+            <path (click)="Marketing3($event)" id='Follow-up' value='1'
+              [ngClass]="(marketing3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.501c0,27.261,5.461,53.267,15.327,76.996l75.459-31.255
+		c-5.862-14.097-9.105-29.547-9.105-45.741c0-65.909,53.625-119.534,119.534-119.534V54.286
+		C144.553,54.286,54.286,144.553,54.286,255.501z" />
+            <path (click)="Marketing1($event)" id='Promotional Material' value='1'
+              [ngClass]="(marketing1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,135.967c65.911,0,119.533,53.625,119.533,119.534
+		c0,16.194-3.243,31.645-9.104,45.741l75.459,31.255c9.866-23.729,15.327-49.735,15.327-76.996
+		c0-110.948-90.267-201.215-201.215-201.215l0,0V135.967L255.501,135.967z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592c0,14.169,2.836,27.687,7.965,40.021
+				c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568c5.128-12.335,7.967-25.853,7.967-40.021
+				C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244c-27.395,0-50.868-16.759-60.746-40.582
+				c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743c36.31,0,65.743,29.435,65.743,65.743
+				c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592
+				c0,14.169,2.836,27.687,7.965,40.021c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568
+				c5.128-12.335,7.967-25.853,7.967-40.021C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244
+				c-27.395,0-50.868-16.759-60.746-40.582c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743
+				c36.31,0,65.743,29.435,65.743,65.743c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+            </g>
+            <circle fill="none" cx="255.86" cy="256.465" r="79.225" />
+
+            <path fill="none" d="M167.894,127.007c70.967-48.385,167.717-30.08,216.101,40.889c48.383,70.961,30.077,167.716-40.888,216.098
+		c-70.966,48.383-167.715,30.079-216.1-40.886C78.623,272.144,96.928,175.39,167.894,127.007z" />
+
+            <path fill="none" d="M410.992,252.678c1.56,85.877-66.791,156.757-152.67,158.312c-85.872,1.563-156.755-66.79-158.312-152.666
+		c-1.56-85.875,66.79-156.756,152.666-158.315C338.552,98.449,409.434,166.803,410.992,252.678z" />
+
+            <path fill="none" d="M169.547,385.106c-71.582-47.471-91.125-143.979-43.65-215.558c47.467-71.578,143.978-91.124,215.557-43.652
+		c71.579,47.47,91.123,143.978,43.652,215.558C337.637,413.033,241.125,432.58,169.547,385.106z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="216.57" y="177.589">MARKETING</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="81.25" y="189.509" transform="matrix(0.390731, -0.920505, 0.920505, 0.390731, -99.813988, 221.084076)"
+            (click)="Marketing3($event)" id='Follow-up' value='1' (click)="Marketing3($event)" id='Follow-up'
+            value='1'>FOLLOW-UP</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="339.66" y="171.981" transform="matrix(0.484809, 0.87462, -0.87462, 0.484809, 360.872406, -244.661804)"
+            (click)="Marketing1($event)" id='Promotional Material' value='1'>PROMOTIONAL
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="352.538" y="175.402" transform="matrix(0.469471, 0.882948, -0.882948, 0.469471, 359.222839, -238.028793)"
+            (click)="Marketing1($event)" id='Promotional Material' value='1'>MATERIAL</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-296.975" y="-408.833" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="Marketing2($event)" id='Promoting'
+            value='1'>PROMOTING</text>
+        </svg>
+        <!-- Marketting end -->
+        <!-- Dry run start -->
+        <svg *ngIf="Dryrun" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(DryRunGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,28.387c41.364,0,80.175,11.123,113.615,30.523l13.953-24.143
+		C345.524,12.984,301.947,0.496,255.503,0.496c-45.808,0-88.83,12.149-126.024,33.383l13.784,24.24
+		C176.389,39.207,214.705,28.387,255.503,28.387z" />
+            <path [ngClass]="(DryRunGreen6==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M143.263,58.119l-13.784-24.24C52.503,77.821,0.497,160.698,0.496,255.5
+		h27.892C28.389,171.067,74.706,97.255,143.263,58.119z" />
+            <path [ngClass]="(DryRunGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.614,255.5h27.89c0-94.166-51.31-176.565-127.433-220.732
+		l-13.953,24.143C436.916,98.245,482.612,171.633,482.614,255.5z" />
+            <path [ngClass]="(DryRunGreen5==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.388,255.502c0-0.001,0-0.002,0-0.003H0.496c0,0.001,0,0.002,0,0.003
+		c0,94.166,51.309,176.564,127.434,220.73l13.952-24.143C74.084,412.754,28.388,339.367,28.388,255.502z" />
+            <path [ngClass]="(DryRunGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,482.613c-41.366,0-80.18-11.121-113.621-30.523l-13.952,24.143
+		c37.547,21.783,81.126,34.271,127.573,34.271c45.808,0,88.827-12.148,126.02-33.381l-13.784-24.238
+		C334.614,471.793,296.299,482.613,255.503,482.613z" />
+            <path [ngClass]="(DryRunGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.614,255.5c0,0.001,0,0.002,0,0.003
+		c0,84.433-46.317,158.246-114.876,197.382l13.784,24.238c76.978-43.941,128.981-126.818,128.981-221.621c0-0.001,0-0.002,0-0.003
+		H482.614z" />
+            <path (click)="DryRun4($event)" id='Presentation check' value='1'
+              [ngClass]="(dryRun4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.033c-21.771,0-42.199-5.854-59.8-16.066l-40.862,70.703
+		c29.627,17.191,64.015,27.045,100.662,27.045c36.144,0,70.09-9.586,99.438-26.34l-40.366-70.988
+		C297.139,369.34,276.974,375.033,255.501,375.033z" />
+            <path (click)="DryRun5($event)" id='Timing' value='1' [ngClass]="(dryRun5==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M135.968,255.501c0-0.001,0-0.001,0-0.002H54.287v0.001
+		c0,74.3,40.486,139.32,100.552,174.169l40.862-70.703C160.02,338.266,135.968,299.641,135.968,255.501z" />
+            <path (click)="DryRun6($event)" id='Reviewing the recording' value='1'
+              [ngClass]="(dryRun6==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M196.428,151.616l-40.366-70.988
+		C95.323,115.302,54.287,180.697,54.287,255.5h81.681C135.969,211.063,160.347,172.214,196.428,151.616z" />
+            <path (click)="DryRun3($event)" id='Agenda review' value='1' [ngClass]="(dryRun3==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M375.034,255.501c0,44.438-24.377,83.288-60.461,103.885l40.366,70.988
+		c60.739-34.674,101.776-100.07,101.776-174.875V255.5h-81.682C375.034,255.5,375.034,255.5,375.034,255.501z" />
+            <path (click)="DryRun2($event)" id='Test The equipment’s' value='1'
+              [ngClass]="(dryRun2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.034,255.5h81.682c0-74.301-40.488-139.32-100.555-174.171
+		l-40.862,70.703C350.981,172.735,375.032,211.36,375.034,255.5z" />
+            <path (click)="DryRun1($event)" id='Introductions' value='1' [ngClass]="(dryRun1==true)?'st6-active':'st6'"
+              stroke="#000000" stroke-width="2" d="M156.063,80.627l40.366,70.988
+		c17.435-9.953,37.602-15.648,59.073-15.648c21.771,0,42.198,5.854,59.798,16.064l40.862-70.703
+		c-29.627-17.188-64.013-27.042-100.66-27.042C219.356,54.286,185.411,63.873,156.063,80.627z" />
+            <g>
+              <g>
+                <path fill="#FECB08"
+                  d="M307.824,164.966c-15.4-8.934-33.272-14.056-52.321-14.056c-18.79,0-36.435,4.982-51.689,13.692
+				c-31.572,18.022-52.902,52.014-52.903,90.897v0.003c0,38.621,21.043,72.417,52.266,90.531
+				c15.4,8.936,33.275,14.059,52.327,14.059c18.788,0,36.433-4.982,51.687-13.691c31.572-18.021,52.903-52.014,52.903-90.898V255.5
+				C360.091,216.877,339.046,183.08,307.824,164.966z M321.244,255.501c0,24.487-13.395,45.831-33.249,57.145
+				c-9.585,5.463-20.671,8.598-32.494,8.598c-11.988,0-23.216-3.225-32.895-8.83c-19.632-11.371-32.848-32.592-32.848-56.913
+				c0-0.001,0-0.001,0-0.002c0.001-24.485,13.396-45.828,33.249-57.141c9.586-5.463,20.67-8.6,32.494-8.6
+				c11.988,0,23.216,3.224,32.892,8.828c19.634,11.372,32.852,32.591,32.852,56.914C321.244,255.5,321.244,255.5,321.244,255.501z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M307.824,164.966c-15.4-8.934-33.272-14.056-52.321-14.056
+				c-18.79,0-36.435,4.982-51.689,13.692c-31.572,18.022-52.902,52.014-52.903,90.897v0.003c0,38.621,21.043,72.417,52.266,90.531
+				c15.4,8.936,33.275,14.059,52.327,14.059c18.788,0,36.433-4.982,51.687-13.691c31.572-18.021,52.903-52.014,52.903-90.898V255.5
+				C360.091,216.877,339.046,183.08,307.824,164.966z M321.244,255.501c0,24.487-13.395,45.831-33.249,57.145
+				c-9.585,5.463-20.671,8.598-32.494,8.598c-11.988,0-23.216-3.225-32.895-8.83c-19.632-11.371-32.848-32.592-32.848-56.913
+				c0-0.001,0-0.001,0-0.002c0.001-24.485,13.396-45.828,33.249-57.141c9.586-5.463,20.67-8.6,32.494-8.6
+				c11.988,0,23.216,3.224,32.892,8.828c19.634,11.372,32.852,32.591,32.852,56.914C321.244,255.5,321.244,255.5,321.244,255.501z" />
+              </g>
+            </g>
+            <path fill="none" d="M180.91,119.036c75.368-41.196,169.857-13.495,211.052,61.874c41.193,75.362,13.493,169.857-61.873,211.051
+		c-75.364,41.193-169.855,13.494-211.051-61.871C77.843,254.723,105.543,160.229,180.91,119.036z" />
+
+            <path fill="none" d="M334.069,121.288c74.123,43.394,99.034,138.657,55.639,212.781c-43.39,74.119-138.658,99.033-212.779,55.64
+		c-74.12-43.392-99.033-138.656-55.641-212.778C164.682,102.807,259.947,77.894,334.069,121.288z" />
+
+            <path fill="none" d="M410.995,258.071c-1.422,85.88-72.19,154.344-158.072,152.922c-85.874-1.422-154.343-72.192-152.921-158.07
+		c1.421-85.876,72.19-154.343,158.067-152.923C343.949,101.423,412.417,172.192,410.995,258.071z" />
+
+            <path fill="none" d="M331.262,391.313c-75.01,41.843-169.735,14.957-211.577-60.055c-41.841-75.005-14.956-169.734,60.053-211.576
+		c75.006-41.842,169.733-14.956,211.577,60.051C433.156,254.742,406.271,349.471,331.262,391.313z" />
+
+            <path fill="none" d="M178.349,390.526c-74.577-42.609-100.489-137.605-57.877-212.182
+		c42.607-74.572,137.607-100.489,212.181-57.878c74.575,42.608,100.489,137.605,57.881,212.181
+		C347.924,407.223,252.925,433.138,178.349,390.526z" />
+
+            <path fill="none" d="M100.129,248.779c3.71-85.811,76.279-152.364,162.091-148.653c85.806,3.71,152.364,76.281,148.653,162.089
+		c-3.709,85.808-76.278,152.364-162.087,148.655C162.975,407.16,96.418,334.591,100.129,248.779z" />
+
+            <circle fill="none" cx="255.861" cy="256.464" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="223.934" y="177.183">DRY RUN</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="209.264" y="102.496" (click)="DryRun1($event)" id='Introductions' value='1'>INTRODUCTION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="367.306" y="177.85" transform="matrix(0.515038, 0.857167, -0.857167, 0.515038, 343.144012, -253.115601)"
+            (click)="DryRun2($event)" id='Test The equipment’s' value='1'>TEST THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="339.965" y="189.852" transform="matrix(0.5, 0.866025, -0.866025, 0.5, 357.176239, -241.039642)"
+            (click)="DryRun2($event)" id='Test The equipment’s' value='1'>EQUIPMENTS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="333.963" y="333.223" transform="matrix(-0.529919, 0.848048, -0.848048, -0.529919, 878.72937, 183.279526)"
+            (click)="DryRun3($event)" id='Agenda review' value='1'>AGENDA REVIEW</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-306.373" y="-417.246" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="DryRun4($event)"
+            id='Presentation check' value='1'>PRESENTATION
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-280.709" y="-405.91" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="DryRun4($event)"
+            id='Presentation check' value='1'>CHECK
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="92.566" y="330.556"
+            transform="matrix(-0.469472, -0.882947, 0.882947, -0.469472, -113.656555, 585.218811)"
+            (click)="DryRun5($event)" id='Timing' value='1'>TIMING
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="51.888" y="185.184" transform="matrix(0.438371, -0.898794, 0.898794, 0.438371, -94.541351, 191.993988)"
+            (click)="DryRun6($event)" id='Reviewing the recording' value='1'>REVIEWING THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="95.233" y="194.521" transform="matrix(0.438372, -0.898794, 0.898794, 0.438372, -105.488335, 219.829468)"
+            (click)="DryRun6($event)" id='Reviewing the recording' value='1'>RECORDING
+
+          </text>
+        </svg>
+        <!-- Dry run end -->
+        <!-- PERFORMING-->
+        <!-- Record the webinar-->
+        <svg *ngIf="Recordthewebinar" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(RecordthewebGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891
+		C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(RecordthewebGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891
+		C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(RecordthewebGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.613,255.5c0,0,0,0,0,0.002
+		c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002
+		V255.5H482.613z" />
+            <path [ngClass]="(RecordthewebGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002
+		c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="RecordWebinar4($event)" id='Edit and save' value='1'
+              [ngClass]="(recweb4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.967,255.5L135.967,255.5H54.286
+		c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="RecordWebinar3($event)" id='Record the webinar' value='1'
+              [ngClass]="(recweb3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681
+		c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="RecordWebinar2($event)" id='Set up screen recording' value='1'
+              [ngClass]="(recweb2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681
+		C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="RecordWebinar1($event)" id='Use a build in screen recorder download' value='1'
+              [ngClass]="(recweb1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.5h81.681c0-65.909,53.624-119.533,119.533-119.533V54.286
+		C144.552,54.286,54.286,144.553,54.286,255.5z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59
+				c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243
+				c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591
+				c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z
+				 M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none" d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123
+		c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none" d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922
+		c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none" d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122
+		c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none" d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922
+		c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+            <circle fill="none" cx="255.86" cy="256.465" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="215.265" y="172.515">RECORD THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="227.268" y="183.851">WEBINAR
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="332.63" y="169.847" transform="matrix(0.65606, 0.754709, -0.754709, 0.65606, 254.943314, -248.383499)"
+            (click)="RecordWebinar2($event)" id='Set up screen recording' value='1'>SET-UP SCREEN
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="322.626" y="159.178" transform="matrix(0.656058, 0.75471, -0.75471, 0.656058, 251.813049, -215.045441)"
+            (click)="RecordWebinar2($event)" id='Set up screen recording' value='1'>RECORDING
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="34.551" y="151.176" transform="matrix(0.681999, -0.731353, 0.731353, 0.681999, -49.464764, 123.710228)"
+            (click)="RecordWebinar1($event)" id='Use a build in screen recorder download' value='1'>USE A BUILD IN
+            SCREEN
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="62.558" y="163.845" transform="matrix(0.681998, -0.731354, 0.731354, 0.681998, -64.979141, 141.572906)"
+            (click)="RecordWebinar1($event)" id='Use a build in screen recorder download' value='1'>RECORDER PLATFORM
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="98.568" y="170.514"
+            transform="matrix(0.681999, -0.731354, 0.731354, 0.681999, -70.060272, 156.427856)">OR DOWNLOAD
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="325.961" y="373.901"
+            transform="matrix(-0.731354, 0.681998, -0.681998, -0.731354, 900.141968, 390.539032)"
+            (click)="RecordWebinar3($event)" id='Record the webinar' value='1'>RECORD THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="642.045" y="301.215" transform="matrix(-0.694658, 0.71934, -0.71934, -0.694658, 1050.789062, 85.356529)"
+            (click)="RecordWebinar3($event)" id='Record the webinar' value='1'>WEBINAR
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="86.565" y="361.898" transform="matrix(-0.642788, -0.766044, 0.766044, -0.642788, -42.919044, 696.492187)"
+            (click)="RecordWebinar4($event)" id='Edit and save' value='1'>EDIT AND SAVE
+
+          </text>
+        </svg>
+        <!-- Record the webinar END-->
+        <!--check on the connection-->
+        <svg *ngIf="checkontheconnection" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Checkontheconnectiongreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891
+         C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(Checkontheconnectiongreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891
+         C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(Checkontheconnectiongreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.613,255.5c0,0,0,0,0,0.002
+         c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002
+         V255.5H482.613z" />
+            <path [ngClass]="(Checkontheconnectiongreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002
+         c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="CheckConnect4($event)" id='Perform a audio and video check' value='1'
+              [ngClass]="(CHECKconnect4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.967,255.5L135.967,255.5H54.286
+         c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="CheckConnect3($event)" id='Log into platform 15-30 mins prior' value='1'
+              [ngClass]="(CHECKconnect3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681
+         c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="CheckConnect2($event)" id='Check on the equipments' value='1'
+              [ngClass]="(CHECKconnect2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681
+         C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="CheckConnect1($event)" id='Check the internet speed' value='1'
+              [ngClass]="(CHECKconnect1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.5h81.681c0-65.909,53.624-119.533,119.533-119.533V54.286
+         C144.552,54.286,54.286,144.553,54.286,255.5z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59
+             c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243
+             c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+             S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591
+             c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z
+              M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+             S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none" d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123
+         c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none" d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922
+         c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none" d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122
+         c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none" d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922
+         c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+            <circle fill="none" cx="255.86" cy="256.465" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="216.494" y="171.777">CHECK THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="211.727" y="183.959">CONNECTION
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="325.407" y="152.28" transform="matrix(0.615661, 0.788011, -0.788011, 0.615661, 272.831329, -230.109207)"
+            (click)="CheckConnect2($event)" id='Check on the equipments' value='1'>CHECK ON THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="331.022" y="162.612" transform="matrix(0.601814, 0.798636, -0.798636, 0.601814, 276.000061, -232.812576)"
+            (click)="CheckConnect2($event)" id='Check on the equipments' value='1'>EQUIPMENT'S
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="300.865" y="369.589" transform="matrix(-0.731354, 0.681998, -0.681998, -0.731354, 888.22699, 385.223175)"
+            (click)="CheckConnect3($event)" id='Log into platform 15-30 mins prior' value='1'>LOG INTO
+            PLATFORM</text>
+          <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 16.8px;"
+            x="668.052" y="235.198">
+            <tspan x="668.052001953125" dy="1em">​</tspan>
+            <tspan x="668.052001953125" dy="1em">​</tspan>
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="304.009" y="365.787"
+            transform="matrix(-0.731355, 0.681997, -0.681997, -0.731355, 871.688599, 379.289185)"
+            (click)="CheckConnect3($event)" id='Log into platform 15-30 mins prior' value='1'>15-30 MINS
+            PRIOR</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="83.754" y="364.117" transform="matrix(-0.681998, -0.731354, 0.731354, -0.681998, -25.895967, 715.007996)"
+            (click)="CheckConnect4($event)" id='Perform a audio and video check' value='1'>PERFOEM A
+            AUDIO</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="90.105" y="352.97" transform="matrix(-0.681998, -0.731354, 0.731354, -0.681998, -5.404024, 702.621094)"
+            (click)="CheckConnect4($event)" id='Perform a audio and video check' value='1'>AND AUDIO
+            CHECK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="68.218" y="161.5" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, -62.738499, 122.198242)"
+            (click)="CheckConnect1($event)" id='Check the internet speed' value='1'>CHECK INTERNET</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="114.43" y="167.491" transform="matrix(0.71934, -0.694658, 0.694658, 0.71934, -67.308907, 131.632355)"
+            (click)="CheckConnect1($event)" id='Check the internet speed' value='1'>SPEED</text>
+        </svg>
+        <!--check on the connection end-->
+        <!-- gather speaker in guest -->
+        <svg *ngIf="Gatherspeakerandcallinguests" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Gatherspeakergreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891
+		C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(Gatherspeakergreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891
+		C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(Gatherspeakergreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M482.613,255.5c0,0,0,0,0,0.002
+		c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002
+		V255.5H482.613z" />
+            <path [ngClass]="(Gatherspeakergreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002
+		c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="GatherSpeaker4($event)" id='End the program with a formal vote of thanks' value='1'
+              [ngClass]="(Gather4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M135.967,255.5L135.967,255.5H54.286
+		c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="GatherSpeaker3($event)" id='Stick to time' value='1'
+              [ngClass]="(Gather3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681
+		c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="GatherSpeaker2($event)" id='Welcome the speakers' value='1'
+              [ngClass]="(Gather2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681
+		C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="GatherSpeaker1($event)" id='Start the program at right time' value='1'
+              [ngClass]="(Gather1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.5h81.681c0-65.909,53.624-119.533,119.533-119.533V54.286
+		C144.552,54.286,54.286,144.553,54.286,255.5z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59
+				c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243
+				c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2" d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591
+				c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z
+				 M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743
+				S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none" d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123
+		c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none" d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922
+		c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none" d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122
+		c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none" d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922
+		c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+            <circle fill="none" cx="255.86" cy="256.465" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="200.595" y="176.516">GATHER SPEAKER</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="209.93" y="187.185">CALL-IN GUEST</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="324.627" y="157.177" transform="matrix(0.66913, 0.743145, -0.743145, 0.66913, 244.096008, -230.089279)"
+            (click)="GatherSpeaker2($event)" id='Welcome the speakers' value='1'>WELCOME THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="333.296" y="157.844" transform="matrix(0.669131, 0.743145, -0.743145, 0.669131, 238.506393, -215.687469)"
+            (click)="GatherSpeaker2($event)" id='Welcome the speakers' value='1'>SPEAKER</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="317.292" y="373.901"
+            transform="matrix(-0.681998, 0.731354, -0.731354, -0.681998, 890.353027, 353.562469)"
+            (click)="GatherSpeaker3($event)" id='Stick to time' value='1'>STICK TO TIME</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="73.228" y="371.233" transform="matrix(-0.71934, -0.694658, 0.694658, -0.71934, -18.119738, 734.774536)"
+            (click)="GatherSpeaker4($event)" id='End the program with a formal vote of thanks' value='1'>SEND THE
+            PROGRAM</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="633.376" y="395.24" transform="matrix(-0.71934, -0.694658, 0.694658, -0.71934, 362.12085, 1119.560913)"
+            (click)="GatherSpeaker4($event)" id='End the program with a formal vote of thanks' value='1'>WITH A
+            FORMAL</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="670.719" y="413.912" transform="matrix(-0.71934, -0.694658, 0.694658, -0.71934, 386.215607, 1150.513916)"
+            (click)="GatherSpeaker4($event)" id='End the program with a formal vote of thanks' value='1'>VOTE OF
+            THANKS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="58.557" y="148.508" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, -55.803028, 139.602539)"
+            (click)="GatherSpeaker1($event)" id='Start the program at right time' value='1'>START THE PROGRAM
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="107.236" y="165.179" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, -72.704071, 149.787216)"
+            (click)="GatherSpeaker1($event)" id='Start the program at right time' value='1'>RIGHT TIME </text>
+        </svg>
+        <!-- gather speaker in guest end  -->
+        <!-- promote on social  -->
+        <svg *ngIf="Promoteonsocial" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Promoteonsocialgreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,28.387c125.23,0,227.111,101.884,227.111,227.116
+		c0,30.769-6.163,60.121-17.297,86.905l25.765,10.673c12.504-30.074,19.422-63.031,19.422-97.578
+		c0-140.611-114.392-255.007-255.001-255.007h-0.002v27.891H255.503z" />
+            <path [ngClass]="(Promoteonsocialgreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.503c0-125.231,101.884-227.115,227.114-227.116V0.496	
+		C114.89,0.497,0.496,114.893,0.496,255.503c0,34.547,6.918,67.504,19.422,97.578l25.769-10.673
+		C34.551,315.624,28.387,286.271,28.387,255.503z" />
+            <path [ngClass]="(Promoteonsocialgreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M465.317,342.408c-34.189,82.231-115.353,140.206-209.814,140.206
+		c-94.463,0-175.629-57.975-209.816-140.206l-25.769,10.673c38.387,92.331,129.52,157.423,235.584,157.423
+		c106.063,0,197.193-65.094,235.579-157.423L465.317,342.408z" />
+            <path (click)="PromoteonsocialM2($event)" id='Live streaming on social media(youtube/facebook/linkedin)'
+              value='1' [ngClass]="(Promote2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.034c-49.716,0-92.434-30.514-110.428-73.792
+		l-75.459,31.255c30.29,72.854,102.201,124.219,185.888,124.219c83.689,0,155.598-51.364,185.888-124.219l-75.459-31.255
+		C347.938,344.521,305.219,375.034,255.501,375.034z" />
+            <path (click)="PromoteonsocialM3($event)" id='Gain reach and better targeting' value='1'
+              [ngClass]="(Promote3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.501c0,27.261,5.461,53.267,15.327,76.996l75.459-31.255
+		c-5.862-14.097-9.105-29.547-9.105-45.741c0-65.909,53.625-119.534,119.534-119.534V54.286
+		C144.553,54.286,54.286,144.553,54.286,255.501z" />
+            <path (click)="PromoteonsocialM1($event)" id='Testing the equipments & connectivity' value='1'
+              [ngClass]="(Promote1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,135.967c65.911,0,119.533,53.625,119.533,119.534
+		c0,16.194-3.243,31.645-9.104,45.741l75.459,31.255c9.866-23.729,15.327-49.735,15.327-76.996
+		c0-110.948-90.267-201.215-201.215-201.215l0,0V135.967L255.501,135.967z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592c0,14.169,2.836,27.687,7.965,40.021
+				c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568c5.128-12.335,7.967-25.853,7.967-40.021
+				C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244c-27.395,0-50.868-16.759-60.746-40.582
+				c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743c36.31,0,65.743,29.435,65.743,65.743
+				c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592
+				c0,14.169,2.836,27.687,7.965,40.021c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568
+				c5.128-12.335,7.967-25.853,7.967-40.021C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244
+				c-27.395,0-50.868-16.759-60.746-40.582c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743
+				c36.31,0,65.743,29.435,65.743,65.743c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+            </g>
+            <circle fill="none" cx="255.86" cy="256.465" r="79.225" />
+
+            <path fill="none" d="M167.894,127.007c70.967-48.385,167.717-30.08,216.101,40.889c48.383,70.961,30.077,167.716-40.888,216.098
+		c-70.966,48.383-167.715,30.079-216.1-40.886C78.623,272.144,96.928,175.39,167.894,127.007z" />
+
+            <path fill="none" d="M410.992,252.678c1.56,85.877-66.791,156.757-152.67,158.312c-85.872,1.563-156.755-66.79-158.312-152.666
+		c-1.56-85.875,66.79-156.756,152.666-158.315C338.552,98.449,409.434,166.803,410.992,252.678z" />
+
+            <path fill="none" d="M169.547,385.106c-71.582-47.471-91.125-143.979-43.65-215.558c47.467-71.578,143.978-91.124,215.557-43.652
+		c71.579,47.47,91.123,143.978,43.652,215.558C337.637,413.033,241.125,432.58,169.547,385.106z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="213.129" y="174.394">PROMOTE ON</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="210.035" y="186.089">SOCIAL MEDIA</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="59.947" y="187.851" transform="matrix(0.48481, -0.874619, 0.874619, 0.48481, -99.619392, 183.843246)"
+            (click)="PromoteonsocialM3($event)" id='Gain reach and better targeting' value='1'>GAIN REACH AND</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="59.769" y="191.176" transform="matrix(0.5, -0.866025, 0.866025, 0.5, -95.208565, 189.806046)"
+            (click)="PromoteonsocialM3($event)" id='Gain reach and better targeting' value='1'>BETTER
+            TARGETING</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="328.99" y="180.925" transform="matrix(0.48481, 0.87462, -0.87462, 0.48481, 359.489471, -256.144958)"
+            (click)="PromoteonsocialM1($event)" id='Testing the equipments & connectivity' value='1'>TESTING
+            EQUIPMENTS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="303.232" y="195.168" transform="matrix(0.48481, 0.87462, -0.87462, 0.48481, 376.405609, -226.172623)"
+            (click)="PromoteonsocialM1($event)" id='Testing the equipments & connectivity' value='1'>AND
+            CONNECTIVITY</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-312.32" y="-415.135" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="PromoteonsocialM2($event)"
+            id='Live streaming on social media(youtube/facebook/linkedin)' value='1'>LIVE STREAMING </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-315.173" y="-404.385" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="PromoteonsocialM2($event)"
+            id='Live streaming on social media(youtube/facebook/linkedin)' value='1'>ON SOCIAL MEDIA</text>
+        </svg>
+        <!-- promote on social  eend -->
+        <!-- PERFORMING END-->
+        <!--REVIEWING START  -->
+        <!-- EVALUATE THE FEEDBACK -->
+        <svg *ngIf="Evaluatethefeed" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+          height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Evaluatethefeedgreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M255.503,28.387c125.23,0,227.111,101.884,227.111,227.116
+		c0,30.769-6.163,60.121-17.297,86.905l25.765,10.673c12.504-30.074,19.422-63.031,19.422-97.578
+		c0-140.611-114.392-255.007-255.001-255.007h-0.002v27.891H255.503z" />
+            <path [ngClass]="(Evaluatethefeedgreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M28.387,255.503c0-125.231,101.884-227.115,227.114-227.116V0.496
+		C114.89,0.497,0.496,114.893,0.496,255.503c0,34.547,6.918,67.504,19.422,97.578l25.769-10.673
+		C34.551,315.624,28.387,286.271,28.387,255.503z" />
+            <path [ngClass]="(Evaluatethefeedgreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2" d="M465.317,342.408c-34.189,82.231-115.353,140.206-209.814,140.206
+		c-94.463,0-175.629-57.975-209.816-140.206l-25.769,10.673c38.387,92.331,129.52,157.423,235.584,157.423
+		c106.063,0,197.193-65.094,235.579-157.423L465.317,342.408z" />
+            <path (click)="EvaluateFeedback2($event)" id='Discuss on the feedback with the team' value='1'
+              [ngClass]="(EvaFeedback2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,375.034c-49.716,0-92.434-30.514-110.428-73.792
+		l-75.459,31.255c30.29,72.854,102.201,124.219,185.888,124.219c83.689,0,155.598-51.364,185.888-124.219l-75.459-31.255
+		C347.938,344.521,305.219,375.034,255.501,375.034z" />
+            <path (click)="EvaluateFeedback3($event)" id='Act on the feedback' value='1'
+              [ngClass]="(EvaFeedback3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M54.286,255.501c0,27.261,5.461,53.267,15.327,76.996l75.459-31.255
+		c-5.862-14.097-9.105-29.547-9.105-45.741c0-65.909,53.625-119.534,119.534-119.534V54.286
+		C144.553,54.286,54.286,144.553,54.286,255.501z" />
+            <path (click)="EvaluateFeedback1($event)" id='Review each of the feedback points' value='1'
+              [ngClass]="(EvaFeedback1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2" d="M255.501,135.967c65.911,0,119.533,53.625,119.533,119.534
+		c0,16.194-3.243,31.645-9.104,45.741l75.459,31.255c9.866-23.729,15.327-49.735,15.327-76.996
+		c0-110.948-90.267-201.215-201.215-201.215l0,0V135.967L255.501,135.967z" />
+            <g>
+              <g>
+                <path fill="#FECB08" d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592c0,14.169,2.836,27.687,7.965,40.021
+				c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568c5.128-12.335,7.967-25.853,7.967-40.021
+				C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244c-27.395,0-50.868-16.759-60.746-40.582
+				c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743c36.31,0,65.743,29.435,65.743,65.743
+				c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592
+				c0,14.169,2.836,27.687,7.965,40.021c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568
+				c5.128-12.335,7.967-25.853,7.967-40.021C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244
+				c-27.395,0-50.868-16.759-60.746-40.582c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743
+				c36.31,0,65.743,29.435,65.743,65.743c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+            </g>
+            <circle fill="none" cx="255.86" cy="256.465" r="79.225" />
+
+            <path fill="none" d="M167.894,127.007c70.967-48.385,167.717-30.08,216.101,40.889c48.383,70.961,30.077,167.716-40.888,216.098
+		c-70.966,48.383-167.715,30.079-216.1-40.886C78.623,272.144,96.928,175.39,167.894,127.007z" />
+
+            <path fill="none" d="M410.992,252.678c1.56,85.877-66.791,156.757-152.67,158.312c-85.872,1.563-156.755-66.79-158.312-152.666
+		c-1.56-85.875,66.79-156.756,152.666-158.315C338.552,98.449,409.434,166.803,410.992,252.678z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="207.93" y="174.515">EVALUATE THE
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="219.266" y="185.851">FEEDBACK
+
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="69.893" y="186.518" transform="matrix(0.406737, -0.913545, 0.913545, 0.406737, -101.300545, 207.04422)"
+            (click)="EvaluateFeedback3($event)" id='Act on the feedback' value='1'>ACT ON THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="598.033" y="211.191" transform="matrix(0.406737, -0.913545, 0.913545, 0.406737, -325.927582, 681.829651)"
+            (click)="EvaluateFeedback3($event)" id='Act on the feedback' value='1'>FEEDBACK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="335.297" y="163.845" transform="matrix(0.45399, 0.891007, -0.891007, 0.45399, 368.025208, -245.879608)"
+            (click)="EvaluateFeedback1($event)" id='Review each of the feedback points' value='1'>REVIEW EACH THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="646.713" y="293.213" transform="matrix(0.453991, 0.891006, -0.891006, 0.453991, 331.364685, -576.702271)"
+            (click)="EvaluateFeedback1($event)" id='Review each of the feedback points' value='1'>FEEDBACK
+            POINTS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-305.748" y="-420.58" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="EvaluateFeedback2($event)"
+            id='Discuss on the feedback with the team' value='1'>DISCUSS ON THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-290.141" y="-407.91" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="EvaluateFeedback2($event)"
+            id='Discuss on the feedback with the team' value='1'>FEEDBACK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-302.507" y="-395.239" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="EvaluateFeedback2($event)"
+            id='Discuss on the feedback with the team' value='1'>WITH THE TEAM</text>
+        </svg>
+        <!-- EVALUATE THE FEEDBACK END -->
+        <!-- Plan for the next webinar -->
+        <svg *ngIf="Planfornextweb" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated" x="0px"
+          y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g>
+            <path [ngClass]="(Planfornextgreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M255.503,28.387c125.23,0,227.111,101.884,227.111,227.116 c0,30.769-6.163,60.121-17.297,86.905l25.765,10.673c12.504-30.074,19.422-63.031,19.422-97.578 c0-140.611-114.392-255.007-255.001-255.007h-0.002v27.891H255.503z" />
+            <path [ngClass]="(Planfornextgreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M28.387,255.503c0-125.231,101.884-227.115,227.114-227.116V0.496 C114.89,0.497,0.496,114.893,0.496,255.503c0,34.547,6.918,67.504,19.422,97.578l25.769-10.673 C34.551,315.624,28.387,286.271,28.387,255.503z" />
+            <path [ngClass]="(Planfornextgreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M465.317,342.408c-34.189,82.231-115.353,140.206-209.814,140.206 c-94.463,0-175.629-57.975-209.816-140.206l-25.769,10.673c38.387,92.331,129.52,157.423,235.584,157.423 c106.063,0,197.193-65.094,235.579-157.423L465.317,342.408z" />
+            <path (click)="PlanWebinar2($event)" id='Give adequate space between the two webinars' value='1'
+              [ngClass]="(Plan2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M255.501,375.034c-49.716,0-92.434-30.514-110.428-73.792 l-75.459,31.255c30.29,72.854,102.201,124.219,185.888,124.219c83.689,0,155.598-51.364,185.888-124.219l-75.459-31.255 C347.938,344.521,305.219,375.034,255.501,375.034z" />
+            <path (click)="PlanWebinar3($event)" id='Start discussing with the team members' value='1'
+              [ngClass]="(Plan3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M54.286,255.501c0,27.261,5.461,53.267,15.327,76.996l75.459-31.255 c-5.862-14.097-9.105-29.547-9.105-45.741c0-65.909,53.625-119.534,119.534-119.534V54.286 C144.553,54.286,54.286,144.553,54.286,255.501z" />
+            <path (click)="PlanWebinar1($event)" id='Review the strength and weakness' value='1'
+              [ngClass]="(Plan1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M255.501,135.967c65.911,0,119.533,53.625,119.533,119.534 c0,16.194-3.243,31.645-9.104,45.741l75.459,31.255c9.866-23.729,15.327-49.735,15.327-76.996 c0-110.948-90.267-201.215-201.215-201.215l0,0V135.967L255.501,135.967z" />
+            <g>
+              <g>
+                <path fill="#FECB08"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592c0,14.169,2.836,27.687,7.965,40.021 c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568c5.128-12.335,7.967-25.853,7.967-40.021 C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244c-27.395,0-50.868-16.759-60.746-40.582 c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743c36.31,0,65.743,29.435,65.743,65.743 c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.503,150.911h-0.002c-57.673,0.001-104.59,46.919-104.59,104.592 c0,14.169,2.836,27.687,7.965,40.021c15.745,37.87,53.123,64.568,96.627,64.568c43.5,0,80.88-26.698,96.623-64.568 c5.128-12.335,7.967-25.853,7.967-40.021C360.093,197.829,313.172,150.911,255.503,150.911z M255.501,321.244 c-27.395,0-50.868-16.759-60.746-40.582c-3.214-7.751-4.998-16.247-4.998-25.161c0-36.309,29.434-65.742,65.744-65.743 c36.31,0,65.743,29.435,65.743,65.743c0,8.914-1.781,17.41-4.996,25.161C306.369,304.485,282.896,321.244,255.501,321.244z" />
+              </g>
+            </g>
+            <circle fill="none" cx="255.86" cy="256.465" r="79.225" />
+
+            <path fill="none"
+              d="M167.894,127.007c70.967-48.385,167.717-30.08,216.101,40.889c48.383,70.961,30.077,167.716-40.888,216.098 c-70.966,48.383-167.715,30.079-216.1-40.886C78.623,272.144,96.928,175.39,167.894,127.007z" />
+
+            <path fill="none"
+              d="M410.992,252.678c1.56,85.877-66.791,156.757-152.67,158.312c-85.872,1.563-156.755-66.79-158.312-152.666 c-1.56-85.875,66.79-156.756,152.666-158.315C338.552,98.449,409.434,166.803,410.992,252.678z" />
+
+            <path fill="none"
+              d="M169.547,385.106c-71.582-47.471-91.125-143.979-43.65-215.558c47.467-71.578,143.978-91.124,215.557-43.652 c71.579,47.47,91.123,143.978,43.652,215.558C337.637,413.033,241.125,432.58,169.547,385.106z" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="220.824" y="169.986">PLAN FOR </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="204.172" y="183.741">NEXT WEBINAR</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="324.791" y="173.56" transform="matrix(0.515038, 0.857167, -0.857167, 0.515038, 345.833984, -245.444199)"
+            (click)="PlanWebinar1($event)" id='Review the strength and weakness' value='1'>REVIEW
+            STRENGTH</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="677.388" y="218.527" transform="matrix(0.515038, 0.857167, -0.857167, 0.515038, 196.972336, -558.013062)"
+            (click)="PlanWebinar1($event)" id='Review the strength and weakness' value='1'>AND WEAKNESS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="46.989" y="173.292" transform="matrix(0.515038, -0.857167, 0.857167, 0.515038, -87.853821, 183.022232)"
+            (click)="PlanWebinar3($event)" id='Start discussing with the team members' value='1'>START DISCUSS
+            WITH</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="674.053" y="341.226" transform="matrix(0.515038, -0.857167, 0.857167, 0.515038, -542.736816, 638.417297)"
+            (click)="PlanWebinar3($event)" id='Start discussing with the team members' value='1'>THE TEAM
+            MEMBERS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-309.134" y="-423.675" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="PlanWebinar2($event)"
+            id='Give adequate space between the two webinars' value='1'>GIVE ADEQUATE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-324.083" y="-411.711" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="PlanWebinar2($event)"
+            id='Give adequate space between the two webinars' value='1'>SPACE BETWEEN THE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-297.964" y="-399.948" transform="matrix(-1, 0, 0, -1, 0, 0)" (click)="PlanWebinar2($event)"
+            id='Give adequate space between the two webinars' value='1'>TWO WEBINAR</text>
+        </svg>
+        <!-- Plan for the next webinar end-->
+        <!-- sending feedback -->
+        <svg *ngIf="Sendingfeed" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1" id="rotated" x="0px" y="0px"
+          width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g transform="matrix(1, 0, 0, 1, 0.00002, 0.000004)">
+            <path [ngClass]="(sendingfeedGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891 C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(sendingfeedGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891 C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(sendingfeedGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M482.613,255.5c0,0,0,0,0,0.002 c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002 V255.5H482.613z" />
+            <path [ngClass]="(sendingfeedGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002 c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="SendingFeedback4($event)" id='send the feedback link within 2 hours of webinar ends'
+              value='1' [ngClass]="(Send4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M135.967,255.5L135.967,255.5H54.286 c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="SendingFeedback3($event)" id='Link the certificate of participation with feedback' value='1'
+              [ngClass]="(Send3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681 c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="SendingFeedback2($event)" id='Keep the language simple and direct' value='1'
+              [ngClass]="(Send2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681 C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="SendingFeedback1($event)" id='Keep scale questions and multiple choice questions' value='1'
+              [ngClass]="(Send1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M54.286,255.5h81.681c0-65.909,53.624-119.533,119.533-119.533V54.286 C144.552,54.286,54.286,144.553,54.286,255.5z" />
+            <g>
+              <g>
+                <path fill="#FECB08"
+                  d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59 c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243 c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743 S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591 c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743 S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none"
+              d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123 c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none"
+              d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922 c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none"
+              d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122 c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none"
+              d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922 c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+            <circle fill="none" cx="255.86" cy="256.465" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="226.488" y="170.583">SENDING </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="218.863" y="182.766">FEEDBACK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="85.318" y="149.693" transform="matrix(0.694659, -0.719339, 0.719339, 0.694659, -60.046535, 127.221161)"
+            (click)="SendingFeedback1($event)" id='Keep scale questions and multiple choice questions' value='1'>KEEP
+            SCALE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="673.386" y="262.538" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, -545.159424, 484.665619)"
+            (click)="SendingFeedback1($event)" id='Keep scale questions and multiple choice questions' value='1'>AND
+            MULTIPLE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="699.393" y="281.877" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, -577.598877, 508.122284)"
+            (click)="SendingFeedback1($event)" id='Keep scale questions and multiple choice questions' value='1'>CHOICE
+            QUESTION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="325.706" y="143.524" transform="matrix(0.656059, 0.75471, -0.75471, 0.656059, 241.527084, -227.294312)"
+            (click)="SendingFeedback2($event)" id='Keep the language simple and direct' value='1'>KEEP LANGUAGE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="620.706" y="353.896" transform="matrix(0.656059, 0.75471, -0.75471, 0.656059, 190.334717, -587.250244)"
+            (click)="SendingFeedback2($event)" id='Keep the language simple and direct' value='1'>SIMPLE AND
+            DIRECT</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="310.18" y="382.103" transform="matrix(-0.731354, 0.681998, -0.681998, -0.731354, 909.224731, 393.101135)"
+            (click)="SendingFeedback3($event)" id='Link the certificate of participation with feedback'>LINK CERTIFICATE
+            OF</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="640.044" y="417.246"
+            transform="matrix(-0.731354, 0.681998, -0.681998, -0.731354, 1149.800171, 199.465546)"
+            (click)="SendingFeedback3($event)"
+            id='Link the certificate of participation with feedback'>PARTICIPATION</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="667.385" y="434.584"
+            transform="matrix(-0.731354, 0.681998, -0.681998, -0.731354, 1178.427368, 181.19249)"
+            (click)="SendingFeedback3($event)" id='Link the certificate of participation with feedback'>WITH
+            FEEDBACK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="67.819" y="366.766" transform="matrix(-0.707107, -0.707106, 0.707106, -0.707107, -15.030262, 724.185364)"
+            (click)="SendingFeedback4($event)" id='send the feedback link within 2 hours of webinar ends' value='1'>SEND
+            THE
+            FEEDBACK</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="592.032" y="485.264"
+            transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 275.894318, 1166.904541)"
+            (click)="SendingFeedback4($event)" id='send the feedback link within 2 hours of webinar ends'
+            value='1'>WITHIN TWO
+            HOURS</text>
+        </svg>
+        <!-- sending feedback end -->
+        <!-- •	Collecting the materials and sharing -->
+        <svg *ngIf="Collectingthematerialsandsharing" [ngClass]="(Expandbtn==true)?'halfsvg':''" version="1.1"
+          id="rotated" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512"
+          enable-background="new 0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <style type="text/css">
+            .st0 {
+              fill: #EDEDED;
+            }
+
+            .st1 {
+              fill: #058305;
+            }
+
+            .st2 {
+              fill: #DBDBDB;
+            }
+
+            .st3 {
+              fill: #CCCCCC;
+            }
+
+            .st4 {
+              fill: #B2B2B2;
+            }
+
+            .st5 {
+              opacity: 0.5;
+            }
+
+            .st6-active {
+              fill: #FECB08;
+            }
+
+            .st6 {
+              fill: #fecd085b;
+            }
+
+            .st7 {
+              fill: #0046B5;
+            }
+
+            .st8 {
+              fill: #FFFFFF;
+            }
+          </style>
+          <g transform="matrix(1, 0, 0, 1, 0.00002, 0.000004)">
+            <path [ngClass]="(CollectGreen2==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M255.502,28.387c125.228,0,227.109,101.881,227.111,227.113h27.891 C510.502,114.889,396.109,0.496,255.502,0.496H255.5v27.891C255.5,28.387,255.5,28.387,255.502,28.387z" />
+            <path [ngClass]="(CollectGreen1==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M255.5,28.387V0.496C114.891,0.498,0.497,114.891,0.496,255.5h27.891 C28.388,130.269,130.271,28.387,255.5,28.387z" />
+            <path [ngClass]="(CollectGreen3==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M482.613,255.5c0,0,0,0,0,0.002 c0,125.229-101.882,227.111-227.111,227.111c-0.002,0-0.002,0-0.002,0v27.891h0.002c140.609,0,255.002-114.393,255.002-255.002 V255.5H482.613z" />
+            <path [ngClass]="(CollectGreen4==true)?'st1':'st0'" stroke="#000000" stroke-width="2"
+              d="M28.387,255.502c0-0.002,0-0.002,0-0.002H0.496v0.002 c0,140.609,114.394,255,255.004,255.002v-27.891C130.27,482.613,28.387,380.731,28.387,255.502z" />
+            <path (click)="Collectingthematerial4($event)" id='Share the materials within 3 days of completing webinar'
+              value='1' [ngClass]="(Collect4==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M135.967,255.5L135.967,255.5H54.286 c0,110.947,90.266,201.214,201.214,201.214v-81.681C189.59,375.033,135.967,321.41,135.967,255.5z" />
+            <path (click)="Collectingthematerial3($event)" id='Share the materials to participant through mail'
+              value='1' [ngClass]="(Collect3==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M375.033,255.5c0,65.91-53.623,119.533-119.533,119.533v81.681 c110.947,0,201.214-90.267,201.214-201.214H375.033L375.033,255.5z" />
+            <path (click)="Collectingthematerial2($event)" id='Send the certificate of appreciation to resource persons'
+              value='1' [ngClass]="(Collect2==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M375.033,255.5h81.681c0-110.947-90.267-201.214-201.214-201.214v81.681 C321.41,135.967,375.033,189.591,375.033,255.5z" />
+            <path (click)="Collectingthematerial1($event)" id='Request and collect the webinar materials from speakers'
+              value='1' [ngClass]="(Collect1==true)?'st6-active':'st6'" stroke="#000000" stroke-width="2"
+              d="M 54 255.5 L 135.681 255.5 C 135.681 189.591 189.305 135.967 255.214 135.967 L 255.214 54.286 C 144.266 54.286 54 144.553 54 255.5 Z" />
+            <g>
+              <g>
+                <path fill="#FECB08"
+                  d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591c0,57.671,46.918,104.59,104.591,104.59 c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243 c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743 S291.81,321.243,255.5,321.243z" />
+              </g>
+              <g>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                  d="M255.5,150.909c-57.673,0-104.59,46.918-104.591,104.591 c0,57.671,46.918,104.59,104.591,104.59c57.672,0,104.592-46.919,104.592-104.59C360.092,197.827,313.172,150.909,255.5,150.909z M255.5,321.243c-36.311,0-65.744-29.434-65.744-65.743s29.434-65.743,65.744-65.743c36.31,0,65.743,29.434,65.743,65.743 S291.81,321.243,255.5,321.243z" />
+              </g>
+            </g>
+            <path fill="none"
+              d="M144.479,364.4c-60.146-61.317-59.196-159.779,2.124-219.923c61.313-60.143,159.779-59.194,219.922,2.123 c60.143,61.315,59.195,159.777-2.121,219.922C303.088,426.666,204.622,425.718,144.479,364.4z" />
+
+            <path fill="none"
+              d="M146.599,144.477c61.317-60.146,159.78-59.195,219.923,2.124c60.143,61.313,59.194,159.779-2.123,219.922 c-61.315,60.144-159.777,59.195-219.922-2.12C84.333,303.085,85.282,204.62,146.599,144.477z" />
+
+            <path fill="none"
+              d="M366.522,146.599c60.146,61.317,59.195,159.779-2.124,219.923c-61.313,60.144-159.779,59.195-219.922-2.122 c-60.143-61.315-59.195-159.777,2.121-219.922C207.914,84.333,306.379,85.282,366.522,146.599z" />
+
+            <path fill="none"
+              d="M364.4,366.521c-61.316,60.146-159.779,59.196-219.923-2.123c-60.143-61.313-59.195-159.779,2.123-219.922 c61.315-60.143,159.777-59.194,219.922,2.121C426.666,207.913,425.718,306.378,364.4,366.521z" />
+
+            <circle fill="none" cx="255.86" cy="256.465" r="79.224" />
+
+          </g>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="112.626" y="147.59" transform="matrix(0.694659, -0.719339, 0.719339, 0.694659, -102.33622, 176.223892)"
+            (click)="Collectingthematerial1($event)" id='Request and collect the webinar materials from speakers'
+            value='1'>REQUEST AND COLLECT
+          </text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="-813.987" y="-229.759" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, 816.469543, -214.691849)"
+            (click)="Collectingthematerial1($event)" id='Request and collect the webinar materials from speakers'
+            value='1'>THE WEBINAR
+            MATERIALS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="695.459" y="257.787" transform="matrix(0.694658, -0.71934, 0.71934, 0.694658, -551.329163, 517.112915)"
+            (click)="Collectingthematerial1($event)" id='Request and collect the webinar materials from speakers'
+            value='1'>FROM SPEAKERS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="587.173" y="331.039" transform="matrix(0.694658, 0.71934, -0.71934, 0.694658, 148.573654, -565.411499)"
+            (click)="Collectingthematerial2($event)" id='Send the certificate of appreciation to resource persons'
+            value='1'>SEND THE
+            CERTIFICATE</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="626.029" y="344.415" transform="matrix(0.694658, 0.71934, -0.71934, 0.694658, 128.092712, -588.090515)"
+            (click)="Collectingthematerial2($event)" id='Send the certificate of appreciation to resource persons'
+            value='1'>OF APPRECIATION
+            TO</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="649.597" y="365.436" transform="matrix(0.694658, 0.71934, -0.71934, 0.694658, 117.658104, -612.238281)"
+            (click)="Collectingthematerial2($event)" id='Send the certificate of appreciation to resource persons'
+            value='1'>RESOURCE PERSON</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="296.075" y="378.812" transform="matrix(-0.694658, 0.71934, -0.71934, -0.694658, 904.946594, 368.112518)"
+            (click)="Collectingthematerial3($event)" id='Share the materials to participant through mail'
+            value='1'>SHARE THE
+            MATERIALS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="612.652" y="424.674" transform="matrix(-0.694658, 0.71934, -0.71934, -0.694658, 1132.591919, 180.633011)"
+            (click)="Collectingthematerial3($event)" id='Share the materials to participant through mail' value='1'>TO
+            PARTICIPANT</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="629.851" y="453.975" transform="matrix(-0.694658, 0.71934, -0.71934, -0.694658, 1154.69519, 181.900345)"
+            (click)="Collectingthematerial3($event)" id='Share the materials to participant through mail'
+            value='1'>THROUGH MAIL</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="541.311" y="6.818" transform="matrix(-0.694658, -0.71934, 0.71934, -0.694658, 556.533508, 819.962585)"
+            (click)="Collectingthematerial4($event)" id='Share the materials within 3 days of completing webinar'
+            value='1'>SHARE THE
+            MATERIALS</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="577.618" y="275.622" transform="matrix(-0.694658, -0.71934, 0.71934, -0.694658, 384.461182, 1009.956726)"
+            (click)="Collectingthematerial4($event)" id='Share the materials within 3 days of completing webinar'
+            value='1'>WITHIN 3 DAYS
+            OF</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; white-space: pre;"
+            x="585.262" y="34.208" transform="matrix(-0.694658, -0.71934, 0.71934, -0.694658, 580.488953, 847.934875)"
+            (click)="Collectingthematerial4($event)" id='Share the materials within 3 days of completing webinar'
+            value='1'>COMPLETING
+            WEBINAR</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="217.09" y="169.884">COLLECTING</text>
+          <text
+            style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; white-space: pre;"
+            x="193.522" y="183.26">MATERIAL / SHARING</text>
+        </svg>
+        <!-- •	Collecting the materials and sharing end-->
+        <!-- REVIEWING END  -->
+
+
+
+      </div>
+    </div>
+
+  </div>
+  <div class="result" *ngIf="ExpandTrue">
+    <div class="items">
+      <h3 class="blue">{{totalHourse}}</h3>
+      <p><b>Hours</b> Spent</p>
+    </div>
+    <div class="items">
+      <h3 class="blue">{{SelectedCount}} / {{TotalCount}}</h3>
+      <p><b>Micro Wheel</b> Completed</p>
+    </div>
+    <div class="items">
+      <h3 class="yello">{{CompletedPercent}}%</h3>
+      <p><b>Micro Wheel</b> Completed</p>
+    </div>
+    <div class="items">
+      <h3 class="lightblue">{{overAllpercent}}%</h3>
+      <p><b>Action</b> Pending</p>
+    </div>
+  </div>
+</ion-content>
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border slidein" style="background:white !important">
+  <ion-toolbar>
+    <div class="flex-tool">
+      <ion-icon class="fot-icons active" [routerLink]="['/mywebinar']" src="../../assets/img/45-home.svg"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/1.svg" [routerLink]="['/personal-detaills']"></ion-icon>
+      <button *ngIf="Expandbtn" ion-button class="but bbbb m-b-2" (click)="collapse()">Expand</button>
+      <button *ngIf="collapsebtn" ion-button class="but bbb m-b-2" (click)="Expand()">collapse</button>
+      <ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='Admin'" [routerLink]="['/admin-webinar']"
+        src="../../assets/img/21.svg"></ion-icon>
+      <ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='User'" [routerLink]="['/createwebinar']"
+        src="../../assets/img/21.svg"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>

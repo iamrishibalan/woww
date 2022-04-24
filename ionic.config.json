@@ -1,0 +1,7 @@
+{
+  "name": "webinar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

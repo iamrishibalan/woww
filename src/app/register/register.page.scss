@@ -1,0 +1,893 @@
+@import "../../app/webload.scss";
+
+.slidein{
+  animation: slideMe .2s ease-in;
+}
+
+// .slideout{
+//   animation: slidem .2s ease-out
+// }
+// @keyframes slidem{
+
+//   0%{
+//     transform: skewX(0deg) translateX(0%);
+//   }
+//   100%{
+//     transform: skew(0deg);
+//   }
+// }
+
+
+@keyframes slideMe{
+  0%{
+    transform: skewX(0deg) translateX(100%)
+  }
+  100%{
+    transform: skew(0deg)
+  }
+}
+
+// .slideout{
+//   animation: slide .2s ease-out;
+// }
+
+// @keyframes slide{
+//   0%{
+//     transform: skewX(0deg) 
+//   }
+//   100%{
+//     transform: skew(0deg) translateX(100%)
+//   }
+// }
+
+ion-content {
+  --background: url(../../assets/img/login-bg.png) no-repeat center/cover fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+ion-segment {
+  margin: 4%;
+  background: #2f043d;
+  width: 92%;
+  border-radius: 100px;
+  padding: 5px;
+  --background-activated: transparent;
+  --ripple-color: transparent;
+  min-height: 52px;
+}
+ion-segment-button {
+  color: #fff;
+}
+.segment-button-checked {
+  background: #c000c4;
+  border: none;
+  color: #fff;
+  border-radius: 100px;
+  --indicator-color: none;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: rgb(24, 24, 24);
+  margin: 20px 0px;
+  border-radius: 4px;
+  min-height: 38px;
+}
+
+.Forgotpassword {
+  background: #42025200;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #ccadcb;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  color: #ccadcb;
+  margin: 60px 0px 20px;
+}
+
+.register,
+.SignIn {
+  background: #54006a;
+  width: 100%;
+  border-radius: 100px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  color: #fff;
+}
+
+img {
+  max-height: 60%;
+  max-width: 60%;
+  margin: 10px auto 10px;
+  pointer-events: none;
+}
+.flex-box {
+  padding: 20px;
+  .item-box {
+    text-align: center;
+  }
+}
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-icon {
+    font-size: 54px;
+    margin: 10px;
+    padding: 0px;
+  }
+}
+.item-box p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.error-mess {
+  color: red;
+  text-align: left !important;
+  font-size: 15px;
+}
+
+.error-m {
+  color: red;
+  text-align: left !important;
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.error-mess2 {
+  color: red;
+  text-align: left !important;
+  font-size: 15px;
+  margin-top: -15px;
+}
+.error-mess1 {
+  color: red;
+  text-align: left !important;
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.net {
+  text-align: left;
+  background-color: #fff;
+  font-size: 12px;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 3px;
+  margin-top: -24px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (min-width: 360px) {
+  .Forgotpassword {
+    background: #42025200;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid #ccadcb;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #ccadcb;
+    margin: 30px 0px 20px;
+  }
+
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 12px;
+    height: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 3px;
+    margin-top: -25px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 14px;
+  }
+  ion-segment {
+   margin-top: 45px;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+    min-height: 52px;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 50%;
+    margin: 0px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 20px 2px;
+    border-radius: 4px;
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 48px;
+      margin: 10px;
+      padding: 0px;
+    }
+  }
+
+  .flex-box {
+    padding: 20px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 1em;
+    margin-top: -5px;
+    max-width: 75vw !important; // this is applying perfectly
+   // max-height: 5vh !important;
+  }
+
+  ion-icon {
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-hight: 720px) {
+  .Forgotpassword {
+    background: #42025200;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid #ccadcb;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #ccadcb;
+    margin: 30px 0px 20px;
+  }
+
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 12px;
+    height: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 3px;
+    margin-top: -25px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 14px;
+  }
+  ion-segment {
+    margin: 4%;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    height: 54px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+    min-height: 54px;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 50%;
+    margin: 0px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 20px 2px;
+    border-radius: 4px;
+    height: 38px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 48px;
+      margin: 10px;
+      padding: 0px;
+    }
+  }
+
+  .flex-box {
+    padding: 20px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+
+    max-width: 75vw !important; // this is applying perfectly
+    //max-height: 5vh !important;
+  }
+
+  ion-icon {
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: black;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 359px) {
+  .segment-button-checked {
+    background: #c000c4;
+    border: none;
+    color: #fff;
+    border-radius: 100px;
+    --indicator-color: none;
+  }
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 12px;
+    height: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 3px;
+    margin-top: -26px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  ion-segment {
+    margin: 4%;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    height: 53px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+    min-height: 60px;
+  }
+
+  img {
+    max-height: 46%;
+    max-width: 46%;
+    margin: -15px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 20px 2px;
+    border-radius: 4px;
+    height: 25px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 13px;
+    font-size: 13px;
+    margin-top: 15px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 5px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 40px;
+      margin: 10px;
+      padding: 0px;
+    }
+  }
+
+  .flex-box {
+    padding: 30px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+
+    max-width: 75vw !important; // this is applying perfectly
+    font-size: 12px;
+  }
+
+  ion-icon {
+    font-size: 16px;
+    padding-bottom: 22px;
+  }
+}
+
+.item-interactive.ion-invalid {
+  --highlight-background: none !important;
+}
+.item-interactive.ion-valid {
+  --highlight-background: none !important;
+}
+
+@media screen and (min-width: 375px) and (max-width: 410px) {
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .Forgotpassword {
+    background: #42025200;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid #ccadcb;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #ccadcb;
+    margin: 15px 0px 20px;
+  }
+
+  ion-segment-button {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 14px;
+    height: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 5px;
+    margin-top: -32px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 18px;
+  }
+  ion-segment {
+    margin: 4%;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    height: 57px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+    min-height: 60px;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 70%;
+    margin: 0px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 25px 2px;
+    border-radius: 4px;
+    height: 43px;
+    font-size: 20px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 55px;
+      margin: 16px;
+      padding: 1px;
+    }
+  }
+
+  .flex-box {
+    padding: 20px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+
+    max-width: 75vw !important; // this is applying perfectly
+  }
+
+  ion-icon {
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: black;
+  }
+}
+
+
+
+Forgotpassword.item-highlight,
+.item-inner-highlight {
+  background: none !important;
+}
+
+@media screen and (min-width: 414px) and (max-width: 479px) {
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .Forgotpassword {
+    background: #42025200;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid #ccadcb;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #ccadcb;
+    margin: 15px 0px 20px;
+  }
+
+  ion-segment-button {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 14px;
+    height: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 5px;
+    margin-top: -32px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 18px;
+  }
+  ion-segment {
+    margin: 4%;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    height: 66px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 55%;
+    margin: 0px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 25px 2px;
+    border-radius: 4px;
+    height: 43px;
+    font-size: 20px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 60px;
+      margin: 18px;
+      padding: 1px;
+    }
+  }
+
+  .flex-box {
+    padding: 20px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+
+    max-width: 75vw !important; // this is applying perfectly
+  }
+
+  ion-icon {
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: black;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 539px) {
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .Forgotpassword {
+    background: #42025200;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid #ccadcb;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #ccadcb;
+    margin: 15px 0px 20px;
+  }
+
+  ion-segment-button {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .net {
+    text-align: left;
+    background-color: #fff;
+    font-size: 14px;
+    height: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-top: 5px;
+    margin-top: -32px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 18px;
+  }
+  ion-segment {
+    margin: 4%;
+    background: #2f043d;
+    width: 92%;
+    border-radius: 100px;
+    padding: 3px;
+    height: 66px;
+    --background-activated: transparent;
+    --ripple-color: transparent;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 55%;
+    margin: 0px auto 0px;
+    pointer-events: none;
+  }
+
+  ion-item {
+    --background: #ffffff;
+    --color: rgb(24, 24, 24);
+    margin: 25px 2px;
+    border-radius: 4px;
+    height: 43px;
+    font-size: 20px;
+  }
+
+  .register,
+  .SignIn {
+    background: #54006a;
+    width: 100%;
+    border-radius: 100px;
+    padding: 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    color: #fff;
+  }
+
+  .item-box {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .item-box p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 67px;
+      margin: 20px;
+      padding: 2px;
+    }
+  }
+
+  .flex-box {
+    padding: 20px;
+    .item-box {
+      text-align: center;
+      font-size: 2px;
+    }
+  }
+
+  ion-input {
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+
+    max-width: 75vw !important; // this is applying perfectly
+  }
+
+  ion-icon {
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: black;
+  }
+}
+

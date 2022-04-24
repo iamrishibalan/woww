@@ -1,0 +1,183 @@
+<ion-header class="ion-no-border slidein " translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon class="foure" *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" src="../../assets/img/35.svg"></ion-icon>
+    <ion-icon class="foure" *ngIf="userDetail.reg_UserType=='User'" (click)='User()' src="../../assets/img/7.svg"></ion-icon>
+    <!-- <ion-icon  class="edit" src="../../assets/img/11.svg"></ion-icon> -->
+    <ion-icon class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="personal m-b-2 ">
+  <div class="item-0">
+    <img src="../../assets/img/user-1.png">
+  </div>
+  <div class="item-1">
+    <h2>{{userDetail.reg_Name}}</h2>
+    <div style="height: 50px;">
+      <a [routerLink]="['/personal-detaills']" class="active">Personal Details</a><a [routerLink]="['/myactivities']">My Activities</a>
+    </div>
+  </div>
+</div>
+<ion-content class="slidein">
+  <div class="myprofile ">
+    <div class="form-prof">
+      <form [formGroup]="webinarForm" (submit)="doSignup()">
+        <div style="display: flex;align-items: center;">
+          <h3>My Credentials</h3>
+          <!-- <p *ngIf="HideDetail" style="color: green;margin-left: auto;font-size: 15px" (click)="submit()">
+            Update & Save
+          </p> -->
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="email" class="form-control" formControlName="reg_Email" type="Email" placeholder="Email">
+            </ion-input>
+            <ion-icon src="../../assets/img/1.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.reg_Email.errors?.required">
+            Email is required.
+          </div>
+          <div class="error-mess1" *ngIf="EmailExit">
+            Email Already Exist
+          </div>
+        </div>
+        <div class="form-group" style="position: relative;">
+          <ion-item class="form-input">
+            <div>
+              <ion-input name="password" class="form-control" (input)="passwordvalidation($event.target.value)"
+                [(ngModel)]="reg_Password" formControlName="reg_Password" type="password" placeholder="password">
+              </ion-input>
+              <ion-text *ngIf="firstpassword">{{reg_Password}}</ion-text>
+            </div>
+            <ion-icon style="padding-left: 36px;" src="../../assets/img/3.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.reg_Password.errors?.required">
+            Password is required.
+          </div>
+        </div>
+        <div class="form-group" *ngIf="HideDetail">
+          <ion-item class="form-input">
+            <div>
+              <ion-input name="Npassword" class="form-control" (input)="newpasswordvalidation($event.target.value)"
+                [(ngModel)]="Newpassword" formControlName="Newpassword" type="password" placeholder="New password">
+              </ion-input>
+              <div *ngIf="newpassword" class="net">{{Newpassword}}</div>
+            </div>
+            <ion-icon *ngIf="key1" name="key-outline" style="padding-left: 36px;"></ion-icon>
+            <ion-icon *ngIf="key2" name="key-outline" style="color: red;padding-left: 36px;"></ion-icon>
+            <ion-icon *ngIf="key3" name="key-outline" style="color: green;padding-left: 36px;"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.Newpassword.errors?.required">
+            New Password is required.
+          </div>
+        </div>
+
+
+        <div class="form-group" *ngIf="HideDetail">
+          <ion-item class="form-input">
+            <div>
+              <ion-input name="Cpassword" class="form-control" (input)="conpasswordvalidation($event.target.value)"
+              [(ngModel)]="reg_Confirmpassword" formControlName="reg_Confirmpassword" type="password"
+              placeholder="Confirm password"></ion-input>
+              <div *ngIf="confirmpassword" class="net">{{reg_Confirmpassword}}</div>
+            </div>
+            <ion-icon *ngIf="key11" name="key-outline"style="padding-left: 36px;"></ion-icon>
+            <ion-icon *ngIf="key22" name="key-outline" style="color: red;padding-left: 36px;"></ion-icon>
+            <ion-icon *ngIf="key33" name="key-outline" style="color: green;padding-left: 36px;"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted && webinarForm.controls.reg_Confirmpassword.errors?.required">
+            Confirm Password is required.
+          </div>
+          <div class="error-mess1" *ngIf="MustMatch">
+            New Password And Confirm Password Is Must Match
+          </div>
+        </div>
+      </form>
+
+
+      <form [formGroup]="Information" (submit)="Informations()">
+        <div style="display: flex;align-items: center;">
+          <h3>Information</h3>
+          <!-- <p *ngIf="HideDetail" style="color: green;margin-left: auto;font-size: 15px" (click)="submit1()">
+            Update & Save
+          </p> -->
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="designer" type="text" class="form-control" formControlName="reg_Profession"
+              placeholder="Profession"></ion-input>
+            <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted1 && Information.controls.reg_Profession.errors?.required">
+            Profession is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="Institution" type="text" class="form-control" formControlName="reg_Institution"
+              placeholder="Institution / Company"></ion-input>
+            <ion-icon src="../../assets/img/7.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted1 && Information.controls.reg_Institution.errors?.required">
+            Institution is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="it" type="text" class="form-control" formControlName="reg_Department"
+              placeholder="Department"></ion-input>
+            <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted1 && Information.controls.reg_Department.errors?.required">
+            Department is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="Purpose" type="text" class="form-control" formControlName="reg_Purpose"
+              placeholder="Purpose"></ion-input>
+            <ion-icon src="../../assets/img/16.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted1 && Information.controls.reg_Purpose.errors?.required">
+            Purpose is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <ion-item class="form-input">
+            <ion-input name="Place" type="text" class="form-control" formControlName="reg_Place" placeholder="Place">
+            </ion-input>
+            <ion-icon src="../../assets/img/17.svg"></ion-icon>
+          </ion-item>
+          <div class="error-mess1" *ngIf="isSubmitted1 && Information.controls.reg_Place.errors?.required">
+            Place is required.
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<div class="webinar-bg"></div>
+
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="flex-tool">
+      <ion-icon class="fot-icons " src="../../assets/img/45-home.svg" [routerLink]="['/mywebinar']" ></ion-icon>
+      <ion-icon class="fot-icons active" src="../../assets/img/1.svg"></ion-icon>
+      <button ion-button class="but m-b-2" *ngIf="!HideDetail"   (click)='edit()' > Edit profile </button>
+      <button ion-button class="but m-b-2" *ngIf="HideDetail" (click)="submit1()" > Update & Save </button>
+      <ion-icon class="fot-icons"  *ngIf="userDetail.reg_UserType=='Admin'" [routerLink]="['/admin-webinar']" src="../../assets/img/21.svg"></ion-icon>
+      <ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='User'" [routerLink]="['/createwebinar']" src="../../assets/img/21.svg"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+
+<div class="loaders" *ngIf="load" >  
+  <div class="imgstyle">
+  <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+</div>
+</div>

@@ -1,0 +1,155 @@
+<ion-content class="bg-main slidein slideout need" >
+  <ion-segment (ionChange)="segmentChanged($event)" [value]="segment">
+    <ion-segment-button value="regidter">
+      <ion-label>
+        Register  
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="signin">
+      <ion-label>
+        Sign In
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'regidter'">
+    <div class="flex-box">
+      <div class="item-box">
+        <img src="../../assets/img/WOWLogo.svg" />
+        <form [formGroup]="registerForm" class="form" id='myForm' (submit)="doSignup()" novalidate>
+          <div class="form-group">
+            <ion-item>
+              <ion-input name="name" type="text" #name placeholder="Enter Name" class="form-control" formControlName="Name" clearInput>
+              </ion-input>
+              <ion-icon name="person"></ion-icon>
+            </ion-item>
+            <div class="error-mess1" *ngIf="isSubmitted && registerForm.controls.Name.errors?.required">
+              Name is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Email Id" class="form-control"
+                formControlName="emailId"></ion-input>
+              <ion-icon name="mail"></ion-icon>
+            </ion-item>
+            <div class="error-mess1" *ngIf="isSubmitted && registerForm.controls.emailId.errors?.required">
+              Email id is required.
+            </div>
+            <div class="error-mess1" *ngIf="isSubmitted && registerForm.controls.emailId.errors?.email">
+              Enter valid email id.
+            </div>
+            <div class="error-mess1" *ngIf="InvalidEmail">
+              Email Address is Already Exist
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-input [(ngModel)]="password" (input)="passwordValidation($event.target.value)" class="form-control"
+                text-right id="input" formControlName="password" name="password" value="{{password}}" type="password"
+                placeholder="Password">
+              </ion-input>
+              <ion-icon *ngIf="key1" name="key-outline"></ion-icon>
+              <ion-icon *ngIf="key2" name="key-outline" style="color: red;"></ion-icon>
+              <ion-icon *ngIf="key3" name="key-outline" style="color: green;"></ion-icon>
+            </ion-item>
+            <div *ngIf="activepassord" class="net">{{password}}</div>
+            <div class="error-mess" *ngIf="isSubmitted && registerForm.controls.password.errors?.required">
+              Password is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-input [(ngModel)]="confirmPassword" (input)="confirmpasswordValidation($event.target.value)"
+                class="form-control" formControlName="confirmPassword" name="confirm" type="password"
+                placeholder="Confirm Password"></ion-input>
+              <ion-icon *ngIf="key11" name="key-outline"></ion-icon>
+              <ion-icon *ngIf="key22" name="key-outline" style="color: red;"></ion-icon>
+              <ion-icon *ngIf="key33" name="key-outline" style="color: green;"></ion-icon>
+            </ion-item>
+            <div *ngIf="activepassword" class="net">{{confirmPassword}}</div>
+            <div class="error-mess" *ngIf="isSubmitted && registerForm.controls.confirmPassword.errors?.required">
+              Confirm password is required.
+            </div>
+            <div class="error-mess" *ngIf="passwordcheck">
+              Confirm password do not match.
+            </div>
+          </div>
+          <button ion-button type="submit" class="register"> Register </button>
+        </form>
+        <p>or</p>
+        <div class="icon-box">
+          <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+            <ion-icon src="../../assets/img/g.svg"></ion-icon>
+          </a>
+          <a>
+            <ion-icon src="../../assets/img/f.svg"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/signup">
+            <ion-icon src="../../assets/img/in.svg"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'signin'">
+    <div class="flex-box">
+      <div class="item-box">
+        <img src="../../assets/img/WOWLogo.svg" />
+        <form [formGroup]="signinForm" class="form">
+          <div class="form-group">
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Email Id" class="form-control"
+                formControlName="emailid"></ion-input>
+              <ion-icon name="mail"></ion-icon>
+            </ion-item>
+            <div class="error-m" *ngIf="signinSubmitted && signinForm.controls.emailid.errors?.required">
+              Email id is required.
+            </div>
+            <div class="error-m" *ngIf="signinSubmitted && signinForm.controls.emailid.errors?.email">
+              Enter valid email id.
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" class="form-control"
+                formControlName="signinPassword"></ion-input>
+              <ion-icon name="key-outline"></ion-icon>
+            </ion-item>
+            <div class="error-mess2" *ngIf="signinSubmitted && signinForm.controls.signinPassword.errors?.required">
+              Password is required.
+            </div>
+            <div class="error-mess2" *ngIf="InvalidUserNameorpass">
+              Invalid User Name Or Password
+            </div>
+          </div>
+          
+          <button class="SignIn" (click)="SignIn()">Sign In</button>
+          <button class="Forgotpassword" (click)="goforgotpassword()">Forgot Password ?</button>
+        </form>
+        <p>or</p>
+        <div class="icon-box">
+          <div>
+            <ion-icon src="../../assets/img/g.svg" (click)="googlelogin()"></ion-icon>
+          </div>
+          <div>
+            <ion-icon src="../../assets/img/f.svg" (click)="facebooklogin()"></ion-icon>
+          </div>
+          <div>
+            <ion-icon src="../../assets/img/in.svg"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</ion-content>
+
+<div class="loaders" *ngIf="load" >  
+  <div class="imgstyle">
+  <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+</div>
+</div>

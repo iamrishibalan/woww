@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+      <ion-buttons slot="start">
+          <ion-menu-button class="menucs"></ion-menu-button>
+      </ion-buttons>
+      <ion-icon class="foure" src="../../assets/img/35.svg"></ion-icon>
+      <ion-icon class="foure acvct" style="color: #ff7716;" src="../../assets/img/36.svg"></ion-icon>
+      <ion-icon class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="myprofile">
+  <div class="item-prof" *ngIf="UserAc">
+    <img src="../../assets/img/user.png" />
+</div>
+<div class="item-prof" *ngIf="AdminAc">
+    <img src="../../assets/img/Admin-profil.png" />
+</div>
+  <ion-icon class="close" (click)="dismiss()" src="../../assets/img/24.svg"></ion-icon>
+  <ion-content>
+  <div class="flex-box">
+    <h2>{{webinarUserDetail.reg_Name}}</h2>
+    <h3 *ngIf="(webinarUserDetail.reg_UserType=='Admin')?true:false" style="color: #ff7716;">Admin</h3>
+    <h3 *ngIf="(webinarUserDetail.reg_UserType=='User')?true:false">User</h3>
+    <div class="item-box">
+      <div class="item">
+          <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Profession}}</h4>
+      </div>
+      <div class="item">
+          <ion-icon src="../../assets/img/42.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Institution}}</h4>
+      </div>
+      <div class="item">
+          <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Department}}</h4>
+      </div>
+      <div class="item">
+          <ion-icon src="../../assets/img/17.svg"></ion-icon>
+          <h4>{{webinarUserDetail.reg_Place}}</h4>
+      </div>
+  </div>
+    <div class="r-box auto"> <ion-text class="texth1">Primary Log</ion-text></div>
+    
+    <div class="r-box">
+        <ion-icon src="../../assets/img/1.svg"></ion-icon>
+        <ion-text class="texth1">Primary Log ID
+         <h4>{{webinarUserDetail.reg_Email}}</h4></ion-text>
+        <ion-text class="texth2">Primary ID
+          <h4>{{RprimaryCount}} Webinar</h4></ion-text>
+    </div>
+    <img src="../../assets/img/arow-1.png">
+    <div class="r-box orange auto"> 
+      <ion-text class="texth1">Guest Log <span>{{GuestRecord.length}}</span></ion-text>
+    </div>
+      <div class="r-box orange"  *ngFor="let gust of GuestRecord;index as i">
+        <ion-icon src="../../assets/img/44.svg"></ion-icon>
+        <ion-text class="texth1">Guest {{i+1}} - Log ID
+         <h4>{{gust[0].webinar_Email}}</h4></ion-text>
+        <ion-text class="texth2">Guest {{i+1}} - ID
+          <h4>{{gust.length}} Webinar</h4></ion-text>
+    </div>
+    
+    <!-- <div class="r-box orange">
+      <ion-icon src="../../assets/img/44.svg"></ion-icon>
+      <ion-text class="texth1">Guest 1 - Log ID
+       <h4>veera2367@gmail.com</h4></ion-text>
+      <ion-text class="texth2">Guest 1 - ID
+        <h4>02 Webinar</h4></ion-text>
+  </div> -->
+  
+  </div>
+  </ion-content>  
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <button ion-button class="but" [routerLink]="['/webinaruser']" > Webinar  <span>{{TotalCount}}</span></button>
+    <button ion-button class="but butc ablue"> Logs<span>{{GuestRecord.length}}</span></button>
+    <button ion-button class="but" [routerLink]="['/feedback-admin']" > Feedback  <span>{{RegisterUser.length + GuestUser.length}}</span></button>
+  </ion-toolbar>
+</ion-footer>
+</div>
+<div class="overlay" (click)="dismiss()"></div>
+
+<div class="loaders" *ngIf="load">
+  <div class="imgstyle">
+      <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+  </div>
+</div>

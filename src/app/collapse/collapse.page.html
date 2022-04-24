@@ -1,0 +1,742 @@
+<ion-header class="ion-no-border slidein" translucent>
+	<ion-toolbar color="menu" style="margin-top: 20px;" [class.show-background]="showToolbar">
+		<ion-buttons slot="start">
+			<ion-menu-button class="menucs"></ion-menu-button>
+			<ion-back-button text="" icon=""></ion-back-button>
+		</ion-buttons>
+		<ion-icon *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" class="foure"
+			src="../../assets/img/35.svg"></ion-icon>
+		<ion-icon *ngIf="userDetail.reg_UserType=='User'" (click)='User()' class="foure" src="../../assets/img/7.svg">
+		</ion-icon>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="slidein">
+	<div class="introduction ">
+		<div *ngIf="CollapseTrue">
+			<h3 class="Content">Macro Wheel- Tells you the stepwise approach to
+				the webinar</h3>
+			<p class="subcontent" >Hello User, Each spoke in the Macro wheel represents each step in webinar. Select on the step you would like to explore and click.
+			</p>
+			<p style="text-align: center;">
+				<!-- <button (click)="RecruitBtn()" ion-button class="but m-b-2 butw butt">Recruit Now</button> -->
+			</p>
+		</div>
+		<div *ngIf="ExpandTrue">
+			<h2>Webinar Title</h2>
+			<h3 style="width:300px">{{WebinarDetail.webinar_Title}}</h3>
+			<h3 style="display: none;">Introduction on Self Connection and Prototype</h3>
+			<div class="prototype">
+				<div class="items">Presenter</div>
+				<div class="items grey">{{WebinarDetail.webinar_Name}}</div>
+				<div class="items2">Created On </div>
+				<div class="items2 grey">{{WebinarDetail.webinar_Date | date: 'dd/MM/yyyy'}}</div>
+			</div>
+		</div>
+		<div style="position:relative !important;" id="fadeIn">
+			<div style="text-align: center;" *ngIf="CollapseTrue">
+				<!-- <img class="selectimg" src="../../assets/img/exp.png" width="150px" height="120px"> -->
+			</div>
+			<div [ngClass]="(expandbtn==true)?'dot-box1':'dot-box'">
+				<span class="dot1" [ngClass]="(yone==true)?'Planning-active':''"></span>
+				<span class="dot2" [ngClass]="(ytwo==true)?'Planning-active':''"></span>
+				<span class="dot3" [ngClass]="(ythree==true)?'Planning-active':''"></span>
+				<span class="dot4" [ngClass]="(yfour==true)?'Planning-active':''"></span>
+				<span class="dot5" [ngClass]="(bone==true)?'Preparing-active':''"></span>
+				<span class="dot6" [ngClass]="(btwo==true)?'Preparing-active':''"></span>
+				<span class="dot7" [ngClass]="(bthree==true)?'Preparing-active':''"></span>
+				<span class="dot8" [ngClass]="(bfour==true)?'Preparing-active':''"></span>
+				<span class="dot9" [ngClass]="(gone==true)?'Performing-active':''"></span>
+				<span class="dot10" [ngClass]="(gtwo==true)?'Performing-active':''"></span>
+				<span class="dot11" [ngClass]="(gthree==true)?'Performing-active':''"></span>
+				<span class="dot12" [ngClass]="(gfour==true)?'Performing-active':''"></span>
+				<span class="dot13" [ngClass]="(oone==true)?'Review-active':''"></span>
+				<span class="dot14" [ngClass]="(otwo==true)?'Review-active':''"></span>
+				<span class="dot15" [ngClass]="(othree==true)?'Review-active':''"></span>
+				<span class="dot16" [ngClass]="(ofour==true)?'Review-active':''"></span>
+			</div>
+			<div [ngClass]="(expandbtn==true)?'Expandcss':'Expand1'">
+				<svg version="1.1" id="rotate" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="circle-svg" width="100%"
+					viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" [ngClass]="(expandbtn==true)?'layer':''">
+					<g>
+						<path [ngClass]='(Prepare4==true)?"greenColor":"fillColor"' d="M475.591,314.659l27.161,7.277c1.434-5.361,2.695-10.792,3.782-16.286l-27.576-5.485
+		C477.989,305.055,476.866,309.888,475.591,314.659z" />
+						<path [ngClass]='(Prepare5==true)?"greenColor":"fillColor"' d="M471.274,328.899l26.626,9.038c1.784-5.259,3.406-10.594,4.852-16.001l-27.161-7.277
+		C474.306,319.472,472.862,324.219,471.274,328.899z" />
+						<path [ngClass]='(Prepare3==true)?"greenColor":"fillColor"' d="M478.958,300.165l27.576,5.485c1.076-5.439,1.978-10.941,2.703-16.498l-27.874-3.671
+		C480.719,290.428,479.915,295.324,478.958,300.165z" />
+						<path [ngClass]='(Prepare6==true)?"greenColor":"fillColor"' d="M466.033,342.826l25.979,10.761c2.128-5.134,4.09-10.354,5.888-15.649l-26.626-9.038
+		C469.674,333.613,467.929,338.257,466.033,342.826z" />
+						<path [ngClass]='(Prepare1==true)?"greenColor":"fillColor"' d="M510.86,272.513c0.356-5.523,0.54-11.095,0.54-16.708h-28.111
+		c0,4.995-0.164,9.953-0.483,14.87L510.86,272.513z" />
+						<path [ngClass]='(Prepare2==true)?"greenColor":"fillColor"' d="M482.806,270.675c-0.321,4.98-0.805,9.918-1.442,14.807l27.874,3.671
+		c0.718-5.494,1.26-11.042,1.623-16.64L482.806,270.675z" />
+						<path [ngClass]='(DryRun6==true)?"greenColor":"fillColor"' d="M255.945,483.148v28.112c5.613,0,11.185-0.184,16.707-0.542l-1.838-28.052
+		C265.899,482.984,260.941,483.148,255.945,483.148z" />
+						<path [ngClass]='(DryRun5==true)?"greenColor":"fillColor"' d="M270.814,482.667l1.838,28.052c5.599-0.361,11.146-0.905,16.64-1.622l-3.67-27.873
+		C280.733,481.86,275.797,482.344,270.814,482.667z" />
+						<path [ngClass]='(DryRun3==true)?"greenColor":"fillColor"' d="M300.305,478.818l5.485,27.576c5.494-1.087,10.926-2.35,16.287-3.782l-7.278-27.16
+		C310.027,476.727,305.194,477.85,300.305,478.818z" />
+						<path [ngClass]='(DryRun4==true)?"greenColor":"fillColor"' d="M285.622,481.224l3.67,27.873c5.557-0.725,11.06-1.627,16.498-2.702l-5.485-27.576
+		C295.464,479.775,290.567,480.578,285.622,481.224z" />
+						<path [ngClass]='(DryRun2==true)?"greenColor":"fillColor"' d="M314.799,475.452l7.278,27.16c5.406-1.446,10.741-3.066,16-4.852l-9.037-26.626
+		C324.358,472.723,319.611,474.164,314.799,475.452z" />
+						<path [ngClass]='(DryRun1==true)?"greenColor":"fillColor"' d="M329.04,471.135l9.037,26.626c5.297-1.798,10.516-3.76,15.649-5.889l-10.76-25.979
+		C338.397,467.788,333.752,469.534,329.04,471.135z" />
+						<path [ngClass]='(Marketing1==true)?"greenColor":"fillColor"' d="M394.348,436.174l17.112,22.304c8.849-6.799,17.241-14.161,25.119-22.038l-19.878-19.879
+		C409.69,423.571,402.222,430.123,394.348,436.174z" />
+						<path [ngClass]='(Marketing2==true)?"greenColor":"fillColor"' d="M369.631,452.716l14.06,24.35c9.675-5.598,18.95-11.812,27.77-18.588l-17.112-22.304
+		C386.497,442.206,378.243,447.735,369.631,452.716z" />
+						<path [ngClass]='(Marketing3==true)?"greenColor":"fillColor"' d="M342.967,465.894l10.76,25.979c10.35-4.292,20.353-9.246,29.964-14.807l-14.06-24.35
+		C361.079,457.664,352.177,462.074,342.967,465.894z" />
+						<path [ngClass]='(Promoteonsocial1==true)?"greenColor":"fillColor"' d="M75.026,393.76l-22.304,17.114c6.798,8.849,14.16,17.241,22.038,25.118l19.878-19.878
+		C87.629,409.104,81.077,401.635,75.026,393.76z" />
+						<path [ngClass]='(Promoteonsocial2==true)?"greenColor":"fillColor"' d="M58.483,369.045l-24.35,14.059c5.598,9.677,11.812,18.951,18.589,27.771l22.304-17.114
+		C68.995,385.91,63.465,377.656,58.483,369.045z" />
+						<path [ngClass]='(Promoteonsocial3==true)?"greenColor":"fillColor"' d="M45.307,342.381l-25.979,10.76c4.291,10.349,9.246,20.352,14.806,29.963l24.35-14.059
+		C53.535,360.492,49.126,351.59,45.307,342.381z" />
+						<path [ngClass]='(Evaluatethefeed1==true)?"greenColor":"fillColor"' d="M117.808,75.349l-17.114-22.304c-8.849,6.798-17.241,14.161-25.119,22.038l19.879,19.879
+		C102.464,87.951,109.933,81.399,117.808,75.349z" />
+						<path [ngClass]='(Evaluatethefeed2==true)?"greenColor":"fillColor"' d="M142.522,58.806l-14.059-24.35c-9.676,5.598-18.951,11.811-27.771,18.588l17.114,22.304
+		C125.656,69.317,133.911,63.787,142.522,58.806z" />
+						<path [ngClass]='(Evaluatethefeed3==true)?"greenColor":"fillColor"' d="M169.188,45.628L158.427,19.65c-10.349,4.292-20.353,9.247-29.963,14.807l14.059,24.35
+		C151.075,53.858,159.978,49.448,169.188,45.628z" />
+						<path [ngClass]='(Planfornext1==true)?"greenColor":"fillColor"' d="M197.05,36.398L189.708,9.26c-10.77,2.921-21.331,6.536-31.614,10.824l10.82,25.947
+		C178.065,42.215,187.465,38.997,197.05,36.398z" />
+						<path [ngClass]='(Planfornext2==true)?"greenColor":"fillColor"' d="M226.199,30.503l-3.736-27.867c-11.078,1.495-22.02,3.712-32.755,6.624l7.342,27.138
+		C206.603,33.806,216.341,31.833,226.199,30.503z" />
+						<path [ngClass]='(Planfornext3==true)?"greenColor":"fillColor"' d="M255.873,28.462l-0.067-28.12c-11.204,0.031-22.34,0.808-33.343,2.293l3.736,27.867
+		C235.992,29.181,245.902,28.49,255.873,28.462z" />
+						<path [ngClass]='(SetupR5==true)?"greenColor":"fillColor"' d="M416.701,416.561l19.878,19.879c4.729-4.729,9.268-9.645,13.615-14.729l-21.377-18.257
+		C424.948,407.978,420.909,412.353,416.701,416.561z" />
+						<path [ngClass]='(SetupR1==true)?"greenColor":"fillColor"' d="M458.546,359.035l25.052,12.766c3.033-5.942,5.844-12.015,8.415-18.214l-25.979-10.761
+		C463.746,348.343,461.244,353.747,458.546,359.035z" />
+						<path [ngClass]='(SetupR3==true)?"greenColor":"fillColor"' d="M439.88,389.441l22.744,16.524c3.93-5.4,7.652-10.961,11.158-16.671l-23.974-14.689
+		C446.689,379.686,443.377,384.635,439.88,389.441z" />
+						<path [ngClass]='(SetupR4==true)?"greenColor":"fillColor"' d="M428.817,403.453l21.377,18.257c4.342-5.08,8.491-10.331,12.43-15.744l-22.744-16.524
+		C436.374,394.259,432.683,398.932,428.817,403.453z" />
+						<path [ngClass]='(SetupR2==true)?"greenColor":"fillColor"' d="M449.809,374.605l23.974,14.689c3.492-5.688,6.768-11.523,9.815-17.494l-25.052-12.766
+		C455.832,364.35,452.918,369.543,449.809,374.605z" />
+						<path [ngClass]='(AssigningRoles1==true)?"greenColor":"fillColor"' d="M353.727,19.737l-10.76,25.979c9.21,3.819,18.112,8.23,26.664,13.177l14.06-24.35
+		C374.079,28.985,364.076,24.029,353.727,19.737z" />
+						<path [ngClass]='(AssigningRoles2==true)?"greenColor":"fillColor"' d="M411.46,53.132c-8.819-6.777-18.094-12.99-27.77-18.588l-14.06,24.35
+		c8.612,4.981,16.866,10.512,24.717,16.543L411.46,53.132z" />
+						<path [ngClass]='(AssigningRoles3==true)?"greenColor":"fillColor"' d="M416.701,95.05l19.878-19.879c-7.877-7.877-16.271-15.24-25.119-22.038l-17.112,22.304
+		C402.222,81.487,409.69,88.039,416.701,95.05z" />
+						<path [ngClass]='(Recruit2==true)?"greenColor":"fillColor"' d="M439.88,122.169l22.744-16.525c-3.938-5.413-8.087-10.664-12.429-15.744l-21.378,18.257
+		C432.683,112.679,436.374,117.351,439.88,122.169z" />
+						<path [ngClass]='(Recruit3==true)?"greenColor":"fillColor"' d="M449.809,137.005l23.974-14.691c-3.506-5.709-7.229-11.271-11.158-16.671l-22.744,16.525
+		C443.377,126.975,446.689,131.924,449.809,137.005z" />
+						<path [ngClass]='(Recruit1==true)?"greenColor":"fillColor"' d="M428.817,108.157L450.195,89.9c-4.349-5.085-8.888-10.001-13.616-14.729L416.701,95.05
+		C420.909,99.257,424.948,103.631,428.817,108.157z" />
+						<path [ngClass]='(Recruit4==true)?"greenColor":"fillColor"' d="M458.546,152.575l25.052-12.766c-3.048-5.972-6.323-11.807-9.815-17.495l-23.974,14.691
+		C452.918,142.067,455.832,147.261,458.546,152.575z" />
+						<path [ngClass]='(Recruit5==true)?"greenColor":"fillColor"' d="M466.033,168.784l25.979-10.761c-2.571-6.199-5.382-12.271-8.415-18.213l-25.052,12.766
+		C461.244,157.862,463.746,163.267,466.033,168.784z" />
+						<path [ngClass]='(Decidinplatform7==true)?"greenColor":"fillColor"' d="M510.186,230.765l-27.979,2.756c0.358,3.684,0.631,7.395,0.812,11.129l28.079-1.379
+		C510.894,239.074,510.589,234.905,510.186,230.765z" />
+						<path [ngClass]='(Decidinplatform8==true)?"greenColor":"fillColor"' d="M483.018,244.649c0.179,3.696,0.271,7.416,0.271,11.155H511.4
+		c0-4.203-0.103-8.382-0.304-12.534L483.018,244.649z" />
+						<path [ngClass]='(Decidinplatform6==true)?"greenColor":"fillColor"' d="M482.206,233.521l27.979-2.756c-0.407-4.18-0.915-8.33-1.521-12.447l-27.812,4.126
+		C481.392,226.108,481.844,229.801,482.206,233.521z" />
+						<path [ngClass]='(Decidinplatform5==true)?"greenColor":"fillColor"' d="M480.853,222.443l27.812-4.126c-0.61-4.152-1.322-8.272-2.13-12.358l-27.576,5.486
+		C479.677,215.081,480.309,218.747,480.853,222.443z" />
+						<path [ngClass]='(Decidinplatform4==true)?"greenColor":"fillColor"' d="M478.958,211.445l27.576-5.486c-0.814-4.116-1.727-8.196-2.737-12.238l-27.275,6.832
+		C477.419,204.151,478.232,207.782,478.958,211.445z" />
+						<path [ngClass]='(Decidinplatform3==true)?"greenColor":"fillColor"' d="M476.521,200.553l27.275-6.832c-1.016-4.068-2.13-8.099-3.339-12.089l-26.907,8.163
+		C474.627,193.345,475.617,196.933,476.521,200.553z" />
+						<path [ngClass]='(Decidinplatform2==true)?"greenColor":"fillColor"' d="M473.551,189.795l26.907-8.163c-1.215-4.012-2.526-7.983-3.931-11.909l-26.476,9.472
+		C471.302,182.69,472.468,186.224,473.551,189.795z" />
+						<path [ngClass]='(Decidinplatform1==true)?"greenColor":"fillColor"' d="M470.052,179.196l26.476-9.472c-1.412-3.946-2.917-7.848-4.515-11.701l-25.979,10.761
+		C467.456,172.212,468.794,175.685,470.052,179.196z" />
+						<path [ngClass]='(Decidintopic1==true)?"greenColor":"fillColor"' d="M255.945,0.35v28.112c7.034,0,13.991,0.323,20.862,0.949l2.579-27.996
+		C271.667,0.712,263.849,0.35,255.945,0.35z" />
+						<path [ngClass]='(Decidintopic4==true)?"greenColor":"fillColor"' d="M342.967,45.716l10.76-25.979c-7.687-3.188-15.565-6.009-23.609-8.446l-8.162,26.908
+		C329.113,40.369,336.125,42.879,342.967,45.716z" />
+						<path [ngClass]='(Decidintopic2==true)?"greenColor":"fillColor"' d="M305.79,5.215c-8.651-1.712-17.461-2.986-26.403-3.8l-2.579,27.996
+		c7.958,0.725,15.798,1.858,23.497,3.382L305.79,5.215z" />
+						<path [ngClass]='(Decidintopic3==true)?"greenColor":"fillColor"' d="M321.955,38.199l8.162-26.908c-7.952-2.409-16.068-4.441-24.327-6.076l-5.485,27.577
+		C307.655,34.248,314.878,36.054,321.955,38.199z" />
+						<path [ngClass]='(checkconnection4==true)?"greenColor":"fillColor"' d="M157.479,491.559l10.812-25.951c6.492,2.706,13.039,5.082,19.622,7.147l-8.385,26.835
+		C172.13,497.27,164.773,494.598,157.479,491.559z" />
+						<path [ngClass]='(checkconnection1==true)?"greenColor":"fillColor"' d="M255.254,483.148l-0.059,28.119c-8.322-0.015-16.679-0.439-25.042-1.283l2.814-27.979
+		C240.41,482.756,247.848,483.137,255.254,483.148z" />
+						<path [ngClass]='(checkconnection3==true)?"greenColor":"fillColor"' d="M205.36,506.236c-8.645-1.748-17.267-3.959-25.833-6.646l8.385-26.835
+		c7.625,2.393,15.298,4.359,22.991,5.915L205.36,506.236z" />
+						<path [ngClass]='(checkconnection2==true)?"greenColor":"fillColor"' d="M232.968,482.006l-2.814,27.979c-8.267-0.834-16.54-2.081-24.793-3.748l5.543-27.566
+		C218.247,480.154,225.61,481.264,232.968,482.006z" />
+						<path [ngClass]='(Recordtheweb4==true)?"greenColor":"fillColor"' d="M74.723,435.949l19.921-19.838c4.963,4.984,10.103,9.687,15.393,14.114L92.02,451.808
+		C86.074,446.833,80.3,441.548,74.723,435.949z" />
+						<path [ngClass]='(Recordtheweb1==true)?"greenColor":"fillColor"' d="M168.273,465.6l-10.815,25.957c-7.684-3.198-15.241-6.789-22.645-10.77l13.307-24.771
+		C154.71,459.557,161.436,462.754,168.273,465.6z" />
+						<path [ngClass]='(Recordtheweb3==true)?"greenColor":"fillColor"' d="M113.343,467.834c-7.317-4.921-14.437-10.265-21.323-16.026l18.017-21.582
+		c6.129,5.128,12.465,9.883,18.977,14.265L113.343,467.834z" />
+						<path [ngClass]='(Recordtheweb2==true)?"greenColor":"fillColor"' d="M148.12,456.016l-13.307,24.771c-7.319-3.936-14.485-8.254-21.471-12.953l15.67-23.344
+		C135.23,448.671,141.607,452.514,148.12,456.016z" />
+						<path [ngClass]='(Gatherspeaker4==true)?"greenColor":"fillColor"' d="M0.124,255.269l28.112,0.059c-0.016,7.034,0.294,13.992,0.904,20.864l-28,2.521
+		C0.453,270.99,0.107,263.171,0.124,255.269z" />
+						<path [ngClass]='(Gatherspeaker1==true)?"greenColor":"fillColor"' d="M45.308,342.385l-26.002,10.706c-3.172-7.695-5.977-15.577-8.397-23.628l26.926-8.105
+		C39.989,328.521,42.484,335.536,45.308,342.385z" />
+						<path [ngClass]='(Gatherspeaker3==true)?"greenColor":"fillColor"' d="M4.886,305.123c-1.694-8.655-2.951-17.468-3.745-26.411l28-2.521
+		c0.708,7.96,1.825,15.802,3.333,23.504L4.886,305.123z" />
+						<path [ngClass]='(Gatherspeaker2==true)?"greenColor":"fillColor"' d="M37.834,321.357l-26.926,8.105c-2.393-7.957-4.406-16.078-6.022-24.34l27.588-5.428
+		C33.912,307.05,35.704,314.276,37.834,321.357z" />
+						<path [ngClass]='(Sending4==true)?"greenColor":"fillColor"' d="M19.376,157.458l25.999,10.695c-2.676,6.504-5.022,13.062-7.058,19.654l-26.873-8.263
+		C13.731,172.137,16.371,164.768,19.376,157.458z" />
+						<path [ngClass]='(Sending1==true)?"greenColor":"fillColor"' d="M28.231,255.196l-28.12,0.07c-0.023-8.324,0.363-16.682,1.169-25.049l27.991,2.686
+		C28.555,240.351,28.209,247.788,28.231,255.196z" />
+						<path [ngClass]='(Sending3==true)?"greenColor":"fillColor"' d="M4.916,205.408c1.708-8.653,3.88-17.285,6.528-25.864l26.873,8.263
+		c-2.357,7.635-4.291,15.317-5.811,23.018L4.916,205.408z" />
+						<path [ngClass]='(Sending2==true)?"greenColor":"fillColor"' d="M29.271,232.903L1.28,230.218c0.797-8.271,2.006-16.55,3.636-24.81l27.591,5.417
+		C31.056,218.176,29.979,225.543,29.271,232.903z" />
+						<path [ngClass]='(CollectG4==true)?"greenColor":"fillColor"' d="M75.831,75.308l19.751,20.006c-5.006,4.941-9.729,10.06-14.18,15.332l-21.505-18.11
+		C64.898,86.612,70.207,80.86,75.831,75.308z" />
+						<path [ngClass]='(CollectG1==true)?"greenColor":"fillColor"' d="M45.778,168.731l-25.909-10.927c3.23-7.671,6.854-15.213,10.866-22.6l24.714,13.414
+		C51.879,155.192,48.653,161.904,45.778,168.731z" />
+						<path [ngClass]='(CollectG3==true)?"greenColor":"fillColor"' d="M43.779,113.79c4.954-7.296,10.327-14.394,16.118-21.254l21.505,18.11
+		c-5.154,6.106-9.937,12.421-14.345,18.915L43.779,113.79z" />
+						<path [ngClass]='(CollectG2==true)?"greenColor":"fillColor"' d="M55.449,148.618l-24.714-13.414c3.967-7.301,8.314-14.45,13.044-21.415l23.278,15.771
+		C62.848,135.759,58.979,142.12,55.449,148.618z" />
+						<path fill="none" stroke="#020202" d="M342.521,45.412l10.759-25.979c-30.119-12.49-63.144-19.388-97.781-19.388v28.112
+		C286.325,28.157,315.715,34.296,342.521,45.412z" />
+						<path fill="none" stroke="#020202" d="M255.499,28.157V0.045c-34.637,0-67.662,6.898-97.782,19.388l10.762,25.979
+		C195.283,34.296,224.675,28.157,255.499,28.157z" />
+						<path fill="none" stroke="#020202" d="M94.744,94.744L74.865,74.866c-23.53,23.53-42.486,51.63-55.433,82.852l25.979,10.761
+		C56.934,140.692,73.804,115.685,94.744,94.744z" />
+						<path fill="none" stroke="#020202" d="M168.479,45.412l-10.762-25.979C126.495,32.38,98.395,51.336,74.865,74.866l19.879,19.878
+		C115.685,73.804,140.691,56.934,168.479,45.412z" />
+						<path fill="none" stroke="#020202" d="M416.256,94.744l19.878-19.878c-23.529-23.53-51.631-42.486-82.854-55.433l-10.759,25.979
+		C370.307,56.934,395.314,73.804,416.256,94.744z" />
+						<path fill="none" stroke="#020202" d="M465.588,342.522l25.979,10.76c12.489-30.12,19.388-63.145,19.388-97.782h-28.113
+		C482.842,286.325,476.703,315.716,465.588,342.522z" />
+						<path fill="none" stroke="#020202" d="M465.588,168.479l25.979-10.761c-12.948-31.222-31.904-59.322-55.434-82.852l-19.878,19.878
+		C437.194,115.685,454.065,140.692,465.588,168.479z" />
+						<path fill="none" stroke="#020202" d="M482.842,255.5h28.113c0-34.638-6.898-67.663-19.388-97.783l-25.979,10.761
+		C476.703,195.284,482.842,224.675,482.842,255.5z" />
+						<path fill="none" stroke="#020202" d="M28.156,255.5H0.045c0,34.638,6.897,67.662,19.388,97.782l25.979-10.76
+		C34.295,315.716,28.156,286.325,28.156,255.5z" />
+						<path fill="none" stroke="#020202" d="M255.499,482.843v28.112c34.638,0,67.662-6.898,97.781-19.388l-10.759-25.979
+		C315.715,476.704,286.325,482.843,255.499,482.843z" />
+						<path fill="none" stroke="#020202" d="M342.521,465.588l10.759,25.979c31.223-12.947,59.324-31.904,82.854-55.433l-19.878-19.879
+		C395.314,437.194,370.307,454.066,342.521,465.588z" />
+						<path fill="none" stroke="#020202" d="M491.567,353.282l-25.979-10.76c-11.522,27.784-28.394,52.793-49.332,73.733l19.878,19.879
+		C459.663,412.604,478.619,384.504,491.567,353.282z" />
+						<path fill="none" stroke="#020202" d="M168.479,465.588l-10.762,25.979c30.12,12.489,63.146,19.388,97.782,19.388v-28.112
+		C224.675,482.843,195.283,476.704,168.479,465.588z" />
+						<path fill="none" stroke="#020202" d="M45.411,168.479l-25.979-10.761C6.942,187.837,0.045,220.862,0.045,255.5h28.111
+		C28.156,224.675,34.295,195.284,45.411,168.479z" />
+						<path fill="none" stroke="#020202" d="M45.411,342.522l-25.979,10.76c12.947,31.222,31.903,59.322,55.433,82.852l19.879-19.878
+		C73.804,395.315,56.934,370.307,45.411,342.522z" />
+						<path fill="none" stroke="#020202" d="M94.744,416.256l-19.879,19.878c23.529,23.528,51.63,42.486,82.852,55.434l10.762-25.979
+		C140.691,454.066,115.685,437.194,94.744,416.256z" />
+						<g>
+							<g>
+								<path fill="#FFE5D7" d="M465.588,168.479c-11.522-27.786-28.394-52.794-49.332-73.734c-20.941-20.94-45.949-37.811-73.734-49.333
+				c-26.807-11.116-56.196-17.254-87.022-17.254c-30.824,0-60.216,6.139-87.021,17.254c-27.787,11.522-52.794,28.392-73.734,49.333
+				s-37.811,45.948-49.333,73.734c-11.116,26.805-17.255,56.196-17.255,87.021s6.139,60.216,17.255,87.022
+				c11.522,27.784,28.393,52.793,49.333,73.733c20.94,20.938,45.947,37.811,73.734,49.332
+				c26.805,11.116,56.196,17.255,87.021,17.255c30.826,0,60.216-6.139,87.022-17.255c27.785-11.521,52.793-28.394,73.734-49.332
+				c20.938-20.94,37.81-45.949,49.332-73.733c11.115-26.807,17.254-56.197,17.254-87.022S476.703,195.284,465.588,168.479z
+				 M397.24,397.242c-18.462,18.463-40.513,33.337-65.012,43.498c-23.635,9.8-49.55,15.212-76.729,15.212
+				c-27.179,0-53.093-5.412-76.728-15.212c-24.5-10.161-46.55-25.035-65.014-43.499c-18.463-18.462-33.338-40.513-43.498-65.013
+				c-9.801-23.636-15.214-49.549-15.214-76.729s5.413-53.094,15.214-76.729c10.16-24.499,25.035-46.549,43.498-65.013
+				c18.464-18.463,40.514-33.338,65.014-43.498c23.635-9.801,49.549-15.214,76.728-15.214c27.18,0,53.095,5.413,76.729,15.214
+				c24.499,10.16,46.55,25.035,65.012,43.498c18.464,18.463,33.339,40.514,43.499,65.013c9.801,23.635,15.213,49.549,15.213,76.729
+				s-5.412,53.093-15.213,76.729C430.579,356.729,415.704,378.779,397.24,397.242z" />
+							</g>
+							<g>
+								<path fill="none" stroke="#000000" d="M465.588,168.479c-11.522-27.786-28.394-52.794-49.332-73.734
+				c-20.941-20.94-45.949-37.811-73.734-49.333c-26.807-11.116-56.196-17.254-87.022-17.254c-30.824,0-60.216,6.139-87.021,17.254
+				c-27.787,11.522-52.794,28.392-73.734,49.333s-37.811,45.948-49.333,73.734c-11.116,26.805-17.255,56.196-17.255,87.021
+				s6.139,60.216,17.255,87.022c11.522,27.784,28.393,52.793,49.333,73.733c20.94,20.938,45.947,37.811,73.734,49.332
+				c26.805,11.116,56.196,17.255,87.021,17.255c30.826,0,60.216-6.139,87.022-17.255c27.785-11.521,52.793-28.394,73.734-49.332
+				c20.938-20.94,37.81-45.949,49.332-73.733c11.115-26.807,17.254-56.197,17.254-87.022S476.703,195.284,465.588,168.479z
+				 M397.24,397.242c-18.462,18.463-40.513,33.337-65.012,43.498c-23.635,9.8-49.55,15.212-76.729,15.212
+				c-27.179,0-53.093-5.412-76.728-15.212c-24.5-10.161-46.55-25.035-65.014-43.499c-18.463-18.462-33.338-40.513-43.498-65.013
+				c-9.801-23.636-15.214-49.549-15.214-76.729s5.413-53.094,15.214-76.729c10.16-24.499,25.035-46.549,43.498-65.013
+				c18.464-18.463,40.514-33.338,65.014-43.498c23.635-9.801,49.549-15.214,76.728-15.214c27.18,0,53.095,5.413,76.729,15.214
+				c24.499,10.16,46.55,25.035,65.012,43.498c18.464,18.463,33.339,40.514,43.499,65.013c9.801,23.635,15.213,49.549,15.213,76.729
+				s-5.412,53.093-15.213,76.729C430.579,356.729,415.704,378.779,397.24,397.242z" />
+							</g>
+						</g>
+						<path (click)='orangetwo($event)' [ngClass]='(otwo==true)?"Review-active":"Review"'
+							(click)="RecruitBtn()" id='Collecting the materials and sharing' value='4' stroke="#000000"
+							d="M182.9,182.901l-69.143-69.143c-18.463,18.463-33.338,40.514-43.498,65.013l90.365,37.43
+		C165.829,203.654,173.443,192.357,182.9,182.901z" />
+						<path (click)='orangefour($event)' [ngClass]='(ofour==true)?"Review-active":"Review"'
+							(click)="RecruitBtn()" id='Plan for next webinar' value='3' stroke="#000000" d="M255.499,152.829V55.047c-27.179,0-53.093,5.413-76.728,15.214l37.43,90.365
+		C228.307,155.605,241.578,152.829,255.499,152.829z" />
+						<path (click)='orangethree($event)' [ngClass]='(othree==true)?"Review-active":"Review"'
+							(click)="RecruitBtn()" id='Evaluate the feedback' value='3' stroke="#000000" d="M216.201,160.625l-37.43-90.365c-24.5,10.16-46.55,25.035-65.014,43.498l69.143,69.143
+		C192.356,173.444,203.653,165.829,216.201,160.625z" />
+						<path [ngClass]="(gfour==true)?'Performing-active':'Performing'" (click)="greenfour($event)"
+							(click)="RecruitBtn()" id='Gather speaker and call-in guests' value='4' stroke="#000000" d="M152.828,255.5H55.046c0,27.18,5.413,53.093,15.214,76.729l90.365-37.43
+		C155.605,282.692,152.828,269.421,152.828,255.5z" />
+						<path (click)='orangeone($event)' [ngClass]='(oone==true)?"Review-active":"Review"'
+							(click)="RecruitBtn()" id='Sending feedback' value='4' stroke="#000000" d="M160.625,216.201l-90.365-37.43c-9.801,23.635-15.214,49.549-15.214,76.729h97.782
+		C152.828,241.579,155.605,228.308,160.625,216.201z" />
+						<path (click)="yellowthree($event)" id='Recruiting the speakers' value='5'
+							(click)="RecruitBtn()" [ngClass]="(ythree==true)?'Planning-active':'Planning'"
+							stroke="#000000" d="M350.374,216.201l90.365-37.43c-10.16-24.499-25.035-46.549-43.499-65.013L328.099,182.9
+		C337.555,192.357,345.171,203.654,350.374,216.201z" />
+						<path (click)="yellowone($event)" id='Deciding on the topic' value='4' (click)="RecruitBtn()"
+							[ngClass]="(yone==true)?'Planning-active':'Planning'" stroke="#000000" d="M294.798,160.625l37.431-90.365c-23.635-9.801-49.55-15.214-76.729-15.214v97.782
+		C269.421,152.829,282.691,155.605,294.798,160.625z" />
+						<path (click)="yellowtwo($event)" id='Assigning Roles' value='3' (click)="RecruitBtn()"
+							[ngClass]="(ytwo==true)?'Planning-active':'Planning'" stroke="#000000" d="M328.099,182.9l69.142-69.142c-18.462-18.463-40.513-33.338-65.012-43.498l-37.431,90.365
+		C307.347,165.829,318.642,173.444,328.099,182.9z" />
+						<path [ngClass]='(bthree==true)?"Preparing-active":"Preparing"' (click)="bluethree($event)"
+							(click)="RecruitBtn()" id='Marketing' value='3' stroke="#000000" d="M294.798,350.375l37.431,90.365c24.499-10.161,46.55-25.035,65.012-43.498L328.099,328.1
+		C318.642,337.556,307.347,345.171,294.798,350.375z" />
+						<path [ngClass]='(btwo==true)?"Preparing-active":"Preparing"' (click)="bluetwo($event)"
+							(click)="RecruitBtn()" id='Set-up Registration' value='5' stroke="#000000" d="M328.099,328.1l69.142,69.143c18.464-18.463,33.339-40.514,43.499-65.014l-90.365-37.43
+		C345.171,307.348,337.555,318.643,328.099,328.1z" />
+						<path (click)="yellowfour($event)" id='Deciding on the platform' value='8'
+							(click)="RecruitBtn()" [ngClass]="(yfour==true)?'Planning-active':'Planning'"
+							stroke="#000000" d="M350.374,216.201c5.02,12.106,7.797,25.378,7.797,39.299h97.781
+		c0-27.18-5.412-53.094-15.213-76.729L350.374,216.201z" />
+						<path [ngClass]='(bone==true)?"Preparing-active":"Preparing"' (click)="blueone($event)"
+							(click)="RecruitBtn()" id='Prepare the equipments' value='6' stroke="#000000" d="M350.374,294.799l90.365,37.43c9.801-23.636,15.213-49.549,15.213-76.729h-97.781
+		C358.171,269.421,355.394,282.692,350.374,294.799z" />
+						<path [ngClass]='(bfour==true)?"Preparing-active":"Preparing"' (click)="bluefour($event)"
+							(click)="RecruitBtn()" id='Dry Run' value='6' stroke="#000000" d="M255.499,358.171v97.781c27.18,0,53.095-5.412,76.729-15.212l-37.431-90.365
+		C282.691,355.395,269.421,358.171,255.499,358.171z" />
+						<path [ngClass]="(gthree==true)?'Performing-active':'Performing'" (click)="greenthree($event)"
+							(click)="RecruitBtn()" id='Promote on social media' value='3' stroke="#000000" d="M160.625,294.799l-90.365,37.43c10.16,24.5,25.035,46.551,43.498,65.013L182.9,328.1
+		C173.443,318.643,165.829,307.348,160.625,294.799z" />
+						<path [ngClass]="(gtwo==true)?'Performing-active':'Performing'" (click)="greentwo($event)"
+							(click)="RecruitBtn()" id='Record the webinar' value='4' stroke="#000000" d="M182.9,328.1l-69.143,69.142c18.464,18.464,40.514,33.338,65.014,43.499l37.43-90.365
+		C203.653,345.171,192.356,337.556,182.9,328.1z" />
+						<path [ngClass]="(gone==true)?'Performing-active':'Performing'" (click)="greenone($event)"
+							(click)="RecruitBtn()" id='Check on the connections' value='4' stroke="#000000" d="M216.201,350.375l-37.43,90.365c23.635,9.8,49.549,15.212,76.728,15.212v-97.781
+		C241.578,358.171,228.307,355.395,216.201,350.375z" />
+						<g>
+							<g>
+								<path
+									[ngClass]='(oone==true)?"Review-active":(otwo==true)?"Review-active":(othree==true)?"Review-active":(ofour==true)?"Review-active":"Review"'
+									d="M221.347,173.049c-10.904,4.522-20.722,11.14-28.938,19.359c-8.22,8.218-14.837,18.034-19.359,28.939
+				c-4.362,10.521-6.775,22.054-6.775,34.152h34.224c0-7.458,1.487-14.567,4.177-21.053c2.788-6.722,6.866-12.774,11.933-17.84
+				c5.066-5.066,11.117-9.146,17.841-11.933c6.484-2.689,13.595-4.177,21.052-4.177v-34.224
+				C243.401,166.274,231.868,168.687,221.347,173.049z" />
+							</g>
+							<g>
+								<path fill="none" stroke="#000000" d="M221.347,173.049c-10.904,4.522-20.722,11.14-28.938,19.359
+				c-8.22,8.218-14.837,18.034-19.359,28.939c-4.362,10.521-6.775,22.054-6.775,34.152h34.224c0-7.458,1.487-14.567,4.177-21.053
+				c2.788-6.722,6.866-12.774,11.933-17.84c5.066-5.066,11.117-9.146,17.841-11.933c6.484-2.689,13.595-4.177,21.052-4.177v-34.224
+				C243.401,166.274,231.868,168.687,221.347,173.049z" />
+							</g>
+						</g>
+						<g>
+							<g>
+								<path
+									[ngClass]='(gone==true)?"Performing-active":(gtwo==true)?"Performing-active":(gthree==true)?"Performing-active":(gfour==true)?"Performing-active":"Performing"'
+									d="M234.447,306.326c-6.724-2.788-12.774-6.868-17.841-11.935c-5.066-5.064-9.145-11.116-11.933-17.839
+				c-2.689-6.484-4.177-13.595-4.177-21.053h-34.224c0,12.099,2.413,23.633,6.775,34.151c4.522,10.906,11.14,20.723,19.359,28.94
+				c8.217,8.22,18.034,14.836,28.938,19.358c10.521,4.362,22.055,6.775,34.152,6.775v-34.223
+				C248.042,310.503,240.932,309.016,234.447,306.326z" />
+							</g>
+							<g>
+								<path fill="none" stroke="#000000" d="M234.447,306.326c-6.724-2.788-12.774-6.868-17.841-11.935
+				c-5.066-5.064-9.145-11.116-11.933-17.839c-2.689-6.484-4.177-13.595-4.177-21.053h-34.224c0,12.099,2.413,23.633,6.775,34.151
+				c4.522,10.906,11.14,20.723,19.359,28.94c8.217,8.22,18.034,14.836,28.938,19.358c10.521,4.362,22.055,6.775,34.152,6.775
+				v-34.223C248.042,310.503,240.932,309.016,234.447,306.326z" />
+							</g>
+						</g>
+						<g>
+							<g>
+								<path
+									[ngClass]="(yone==true)?'Planning-active':(ytwo==true)?'Planning-active':(ythree==true)?'Planning-active':(yfour==true)?'Planning-active':'Planning'"
+									d="M337.95,221.348c-4.523-10.905-11.141-20.722-19.359-28.939c-8.218-8.219-18.034-14.837-28.94-19.359
+				c-10.519-4.363-22.053-6.775-34.151-6.775v34.224c7.458,0,14.568,1.487,21.053,4.176c6.723,2.788,12.774,6.867,17.841,11.934
+				c5.065,5.065,9.146,11.118,11.933,17.84c2.689,6.485,4.177,13.595,4.177,21.053h34.223
+				C344.725,243.401,342.312,231.868,337.95,221.348z" />
+							</g>
+							<g>
+								<path fill="none" stroke="#000000" d="M337.95,221.348c-4.523-10.905-11.141-20.722-19.359-28.939
+				c-8.218-8.219-18.034-14.837-28.94-19.359c-10.519-4.363-22.053-6.775-34.151-6.775v34.224c7.458,0,14.568,1.487,21.053,4.176
+				c6.723,2.788,12.774,6.867,17.841,11.934c5.065,5.065,9.146,11.118,11.933,17.84c2.689,6.485,4.177,13.595,4.177,21.053h34.223
+				C344.725,243.401,342.312,231.868,337.95,221.348z" />
+							</g>
+						</g>
+						<g>
+							<g>
+								<path
+									[ngClass]="(bone==true)?'Preparing-active':(btwo==true)?'Preparing-active':(bthree==true)?'Preparing-active':(bfour==true)?'Preparing-active':'Preparing'"
+									d="M310.502,255.5c0,7.458-1.487,14.568-4.177,21.053c-2.787,6.723-6.867,12.774-11.933,17.839
+				c-5.066,5.066-11.118,9.146-17.841,11.935c-6.484,2.689-13.595,4.177-21.053,4.177v34.223c12.099,0,23.633-2.412,34.151-6.774
+				c10.906-4.523,20.723-11.14,28.94-19.358c8.219-8.219,14.836-18.035,19.359-28.941c4.361-10.519,6.774-22.053,6.774-34.151
+				H310.502z" />
+							</g>
+							<g>
+								<path fill="none" stroke="#000000" d="M310.502,255.5c0,7.458-1.487,14.568-4.177,21.053
+				c-2.787,6.723-6.867,12.774-11.933,17.839c-5.066,5.066-11.118,9.146-17.841,11.935c-6.484,2.689-13.595,4.177-21.053,4.177
+				v34.223c12.099,0,23.633-2.412,34.151-6.774c10.906-4.523,20.723-11.14,28.94-19.358c8.219-8.219,14.836-18.035,19.359-28.941
+				c4.361-10.519,6.774-22.053,6.774-34.151H310.502z" />
+							</g>
+						</g>
+						<circle fill="none" cx="255.722" cy="255.656" r="67.596" />
+						<text transform="matrix(0.2893 -0.9573 0.9573 0.2893 189.9932 239.438)">
+							<tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="11">R</tspan>
+							<tspan x="8.675" y="0.127" font-family="'OpenSans-Bold'" font-size="11" rotate="6.93">E
+							</tspan>
+							<tspan x="16.232" y="1.115" font-family="'OpenSans-Bold'" font-size="11" rotate="13.847">V
+							</tspan>
+							<tspan x="24.501" y="3.325" font-family="'OpenSans-Bold'" font-size="11" rotate="19.679">I
+							</tspan>
+							<tspan x="29.364" y="5.085" font-family="'OpenSans-Bold'" font-size="11" rotate="25.081">E
+							</tspan>
+							<tspan x="36.287" y="8.278" font-family="'OpenSans-Bold'" font-size="11" rotate="33.262">W
+							</tspan>
+							<tspan x="46.107" y="15.095" font-family="'OpenSans-Bold'" font-size="11" rotate="40.515">I
+							</tspan>
+							<tspan x="50.071" y="18.408" font-family="'OpenSans-Bold'" font-size="11" rotate="47.126">N
+							</tspan>
+							<tspan x="56.991" y="26.086" font-family="'OpenSans-Bold'" font-size="11" rotate="55.526">G
+							</tspan>
+						</text>
+						<circle fill="none" cx="255.721" cy="255.656" r="67.596" />
+						<text transform="matrix(-0.2791 0.9603 -0.9603 -0.2791 321.5703 271.3428)">
+							<tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="11">P</tspan>
+							<tspan x="8.349" y="0.091" font-family="'OpenSans-Bold'" font-size="11" rotate="7.254">
+								R</tspan>
+							<tspan x="16.948" y="1.316" font-family="'OpenSans-Bold'" font-size="11" rotate="14.211">E
+							</tspan>
+							<tspan x="24.322" y="3.26" font-family="'OpenSans-Bold'" font-size="11" rotate="21.01">
+								P</tspan>
+							<tspan x="32.069" y="6.353" font-family="'OpenSans-Bold'" font-size="11" rotate="27.866">A
+							</tspan>
+							<tspan x="39.952" y="10.69" font-family="'OpenSans-Bold'" font-size="11" rotate="35.7">
+								R</tspan>
+							<tspan x="46.911" y="15.904" font-family="'OpenSans-Bold'" font-size="11" rotate="41.591">I
+							</tspan>
+							<tspan x="50.807" y="19.284" font-family="'OpenSans-Bold'" font-size="11" rotate="48.198">N
+							</tspan>
+							<tspan x="57.578" y="27.085" font-family="'OpenSans-Bold'" font-size="11" rotate="56.591">G
+							</tspan>
+						</text>
+						<circle fill="none" cx="255.722" cy="255.657" r="67.597" />
+						<text transform="matrix(0.9492 0.3146 -0.3146 0.9492 273.8398 190.4326)">
+							<tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="11">P</tspan>
+							<tspan x="8.339" y="0.116" font-family="'OpenSans-Bold'" font-size="11" rotate="6.819">
+								L</tspan>
+							<tspan x="15.944" y="1.083" font-family="'OpenSans-Bold'" font-size="11" rotate="13.935">A
+							</tspan>
+							<tspan x="24.674" y="3.32" font-family="'OpenSans-Bold'" font-size="11" rotate="22.133">N
+							</tspan>
+							<tspan x="34.209" y="7.328" font-family="'OpenSans-Bold'" font-size="11" rotate="30.766">N
+							</tspan>
+							<tspan x="42.967" y="12.821" font-family="'OpenSans-Bold'" font-size="11" rotate="37.33">I
+							</tspan>
+							<tspan x="47.091" y="15.892" font-family="'OpenSans-Bold'" font-size="11" rotate="43.919">N
+							</tspan>
+							<tspan x="54.429" y="23.172" font-family="'OpenSans-Bold'" font-size="11" rotate="52.325">G
+							</tspan>
+						</text>
+						<circle fill="none" cx="255.722" cy="255.655" r="67.596" />
+						<text transform="matrix(-0.9812 -0.193 0.193 -0.9812 245.9214 322.6279)">
+							<tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="11">P</tspan>
+							<tspan x="8.323" y="0.113" font-family="'OpenSans-Bold'" font-size="11" rotate="6.75">E
+							</tspan>
+							<tspan x="15.879" y="1.072" font-family="'OpenSans-Bold'" font-size="11" rotate="13.695">R
+							</tspan>
+							<tspan x="24.29" y="3.258" font-family="'OpenSans-Bold'" font-size="11" rotate="20.603">F
+							</tspan>
+							<tspan x="31.302" y="5.915" font-family="'OpenSans-Bold'" font-size="11" rotate="28.095">O
+							</tspan>
+							<tspan x="40.167" y="10.829" font-family="'OpenSans-Bold'" font-size="11" rotate="35.955">R
+							</tspan>
+							<tspan x="47.214" y="15.946" font-family="'OpenSans-Bold'" font-size="11" rotate="44.582">M
+							</tspan>
+							<tspan x="55.349" y="24.395" font-family="'OpenSans-Bold'" font-size="11" rotate="51.79">I
+							</tspan>
+							<tspan x="58.586" y="28.415" font-family="'OpenSans-Bold'" font-size="11" rotate="58.396">N
+							</tspan>
+							<tspan x="63.866" y="37.283" font-family="'OpenSans-Bold'" font-size="11" rotate="66.75">G
+							</tspan>
+						</text>
+						<text transform="matrix(0.9808 -0.1951 0.1951 0.9808 362.6445 232.0962)"
+							(click)="yellowfour($event)" id='Deciding on the platform' value='8' (click)="RecruitBtn()">
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Decide on</tspan>
+							<tspan x="3.342" y="12.834" font-family="'OpenSans'" font-size="10.6949">Platform</tspan>
+						</text>
+						<text transform="matrix(0.1951 0.9808 -0.9808 0.1951 272.1064 363.3086)"
+							font-family="'OpenSans'" font-size="10.6949" (click)="bluefour($event)"
+							(click)="RecruitBtn()" id='Dry Run' value='6'>Dry Run</text>
+						<text transform="matrix(-0.9808 0.1951 -0.1951 -0.9808 148.5059 278.7217)"
+							(click)="greenfour($event)" (click)="RecruitBtn()" id='Gather speaker and call-in guests'
+							value='4'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Gather Speaker</tspan>
+							<tspan x="-1.527" y="12.834" font-family="'OpenSans'" font-size="10.6949"> &amp; Call in
+								Guests</tspan>
+						</text>
+						<text transform="matrix(-0.1951 -0.9808 0.9808 -0.1951 233.8608 148.2002)"
+							(click)='orangefour($event)' (click)="RecruitBtn()" id='Plan for next webinar' value='3'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Plan for next</tspan>
+							<tspan x="11.575" y="12.834" font-family="'OpenSans'" font-size="10.6949">webinar</tspan>
+						</text>
+						<text transform="matrix(0.8315 -0.5556 0.5556 0.8315 345.9541 193.3179)"
+							(click)="yellowthree($event)" id='Recruiting the speakers' value='5' (click)="RecruitBtn()">
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Recruit the</tspan>
+							<tspan x="4.773" y="12.834" font-family="'OpenSans'" font-size="10.6949">speakers</tspan>
+						</text>
+						<text transform="matrix(0.5556 0.8315 -0.8315 0.5556 312.4834 349.3574)"
+							font-family="'OpenSans'" font-size="10.6949" (click)="bluethree($event)"
+							(click)="RecruitBtn()" id='Marketing' value='3'>Marketing</text>
+						<text transform="matrix(-0.8315 0.5556 -0.5556 -0.8315 164.2002 318.4316)"
+							(click)="greenthree($event)" (click)="RecruitBtn()" id='Promote on social media' value='3'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Promote on</tspan>
+							<tspan x="-1.585" y="12.834" font-family="'OpenSans'" font-size="10.6949">Social Media
+							</tspan>
+						</text>
+						<text transform="matrix(-0.5556 -0.8315 0.8315 -0.5556 193.7505 164.583)"
+							(click)='orangethree($event)' (click)="RecruitBtn()" id='Evaluate the feedback' value='3'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Evaluate the </tspan>
+							<tspan x="8.431" y="12.834" font-family="'OpenSans'" font-size="10.6949">Feedback</tspan>
+						</text>
+						<text transform="matrix(0.5556 -0.8315 0.8315 0.5556 319.3135 165.4424)"
+							font-family="'OpenSans'" font-size="10.6949" (click)="yellowtwo($event)"
+							id='Assigning Roles' value='3' (click)="RecruitBtn()">Assign Roles</text>
+						<text transform="matrix(0.8315 0.5556 -0.5556 0.8315 360.1641 321.7949)"
+							(click)="bluetwo($event)" (click)="RecruitBtn()" id='Set-up Registration' value='5'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Setup </tspan>
+							<tspan x="-14.164" y="12.834" font-family="'OpenSans'" font-size="10.6949">Registration
+							</tspan>
+						</text>
+						<text transform="matrix(-0.5556 0.8315 -0.8315 -0.5556 195.4727 346.8105)"
+							(click)="greentwo($event)" (click)="RecruitBtn()" id='Record the webinar' value='4'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Record the</tspan>
+							<tspan x="6.082" y="12.833" font-family="'OpenSans'" font-size="10.6949">Webinar</tspan>
+						</text>
+						<text transform="matrix(-0.8315 -0.5556 0.5556 -0.8315 163.8159 196.5786)"
+							(click)='orangetwo($event)' (click)="RecruitBtn()" id='Collecting the materials and sharing'
+							value='4'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Collect materials</tspan>
+							<tspan x="21.714" y="12.834" font-family="'OpenSans'" font-size="10.6949">&amp; Share
+							</tspan>
+						</text>
+						<text transform="matrix(0.1951 -0.9808 0.9808 0.1951 276.0596 148.334)"
+							(click)="yellowone($event)" id='Deciding on the topic' value='4' (click)="RecruitBtn()">
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Decide on the</tspan>
+							<tspan x="21.171" y="12.834" font-family="'OpenSans'" font-size="10.6949">Topic</tspan>
+						</text>
+						<text transform="matrix(0.9808 0.1951 -0.1951 0.9808 363.5215 274.5713)"
+							(click)="blueone($event)" (click)="RecruitBtn()" id='Prepare the equipments' value='6'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Prepare the </tspan>
+							<tspan x="-0.256" y="12.834" font-family="'OpenSans'" font-size="10.6949">Equipment&apos;s
+							</tspan>
+						</text>
+						<text transform="matrix(-0.1951 0.9808 -0.9808 -0.1951 234.4419 371.3242)"
+							(click)="greenone($event)" (click)="RecruitBtn()" id='Check on the connections' value='4'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Check on</tspan>
+							<tspan x="-8.107" y="12.834" font-family="'OpenSans'" font-size="10.6949">Connections
+							</tspan>
+						</text>
+						<text transform="matrix(-0.9808 -0.1951 0.1951 -0.9808 138.376 235.1846)"
+							(click)='orangeone($event)' (click)="RecruitBtn()" id='Sending feedback' value='4'>
+							<tspan x="0" y="0" font-family="'OpenSans'" font-size="10.6949">Send</tspan>
+							<tspan x="-12.535" y="12.834" font-family="'OpenSans'" font-size="10.6949"> Feedback</tspan>
+						</text>
+					</g>
+					<path class="st29"
+						d="M123.7,94.9l-0.8,0.7l-5.3-6.5l-2.3,1.9l-0.6-0.7l5.4-4.5l0.6,0.7l-2.3,1.9L123.7,94.9z" />
+					<path class="st29" d="M123,84c-0.1-0.2-0.2-0.4-0.2-0.5c0-0.2,0.1-0.3,0.2-0.4s0.3-0.1,0.4-0.1c0.2,0,0.3,0.1,0.5,0.3
+   c0.1,0.2,0.2,0.4,0.2,0.5c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.3,0.1-0.4,0.1C123.3,84.4,123.1,84.3,123,84z M129.3,90.4l-0.8,0.6
+   l-4.3-5.5l0.8-0.6L129.3,90.4z" />
+					<path class="st29" d="M139.8,82.7l-2.6-3.7c-0.3-0.4-0.6-0.7-1-0.8c-0.3-0.1-0.7,0-1.1,0.3c-0.5,0.4-0.8,0.8-0.8,1.4
+   c0,0.5,0.2,1,0.6,1.7l2.3,3.2l-0.8,0.6l-2.6-3.7c-0.3-0.4-0.6-0.7-1-0.8c-0.3-0.1-0.7,0-1.1,0.3c-0.5,0.4-0.8,0.8-0.8,1.4
+   c0,0.5,0.2,1.1,0.7,1.9l2.1,3l-0.8,0.6l-4.1-5.7l0.7-0.5l0.7,0.7l0,0c0-0.4,0-0.7,0.2-1.1c0.2-0.4,0.4-0.7,0.8-0.9
+   c0.9-0.6,1.7-0.7,2.4-0.3l0,0c0-0.4,0-0.8,0.2-1.2c0.2-0.4,0.5-0.7,0.9-1c0.6-0.4,1.2-0.6,1.8-0.5c0.5,0.1,1,0.5,1.6,1.2l2.6,3.7
+   L139.8,82.7z" />
+					<path class="st29" d="M146.7,78.4c-0.8,0.5-1.8,0.7-2.6,0.5c-0.8-0.2-1.6-0.8-2.2-1.8c-0.6-0.9-0.8-1.9-0.7-2.7
+   c0.1-0.8,0.6-1.6,1.4-2c0.7-0.4,1.5-0.6,2.2-0.4c0.7,0.2,1.4,0.7,1.9,1.6l0.3,0.5l-4.1,2.5c0.4,0.7,0.9,1.1,1.6,1.2
+   c0.5,0.1,1.1,0,1.8-0.3c0.6-0.4,1.1-0.9,1.7-1.6l0.5,0.8c-0.2,0.3-0.5,0.6-0.7,0.8C147.4,77.9,147.1,78.2,146.7,78.4z M143.2,73.2
+   c-0.5,0.3-0.7,0.7-0.8,1.1c-0.1,0.5,0,1,0.3,1.6l3.1-2c-0.3-0.5-0.7-0.9-1.1-1C144.1,72.8,143.6,72.9,143.2,73.2z" />
+					<path class="st29" d="M152.9,74.6l-0.9,0.5l-5-8.5l0.9-0.5L152.9,74.6z" />
+					<path class="st29" d="M152.3,64.8c-0.1-0.2-0.1-0.4-0.1-0.5c0-0.1,0.1-0.3,0.3-0.3c0.1-0.1,0.3-0.1,0.4-0.1c0.2,0,0.3,0.2,0.4,0.4
+   c0.1,0.2,0.1,0.4,0.1,0.5c-0.1,0.2-0.1,0.3-0.3,0.3c-0.2,0.1-0.3,0.1-0.5,0.1C152.5,65.1,152.4,65,152.3,64.8z M157.5,72l-0.9,0.5
+   l-3.3-6.1l0.9-0.5L157.5,72z" />
+					<path class="st29" d="M165.5,67.9l-2-4.1c-0.2-0.5-0.5-0.8-0.9-0.9c-0.3-0.1-0.8-0.1-1.2,0.2c-0.6,0.3-1,0.7-1.1,1.2
+   c-0.1,0.5,0,1.1,0.4,2l1.7,3.2l-0.9,0.5l-3.1-6.2l0.7-0.4l0.6,0.7l0,0c0-0.4,0.2-0.7,0.4-1.1c0.3-0.3,0.6-0.6,1-0.8
+   c0.7-0.4,1.5-0.5,2-0.3c0.5,0.2,1,0.6,1.5,1.5l2,4.1L165.5,67.9z" />
+					<path class="st29" d="M172.9,64.6c-0.9,0.4-1.8,0.4-2.6,0.1c-0.8-0.3-1.5-1-1.9-2.1c-0.4-1-0.5-2-0.3-2.8c0.2-0.8,0.8-1.5,1.7-1.8
+   c0.8-0.3,1.6-0.4,2.3,0c0.7,0.3,1.2,0.9,1.7,1.8l0.3,0.6l-4.4,2c0.3,0.7,0.8,1.2,1.4,1.5c0.5,0.2,1.1,0.2,1.8-0.1
+   c0.7-0.3,1.4-0.7,1.9-1.4l0.4,0.8c-0.3,0.3-0.5,0.5-0.8,0.7C173.6,64.3,173.3,64.5,172.9,64.6z M170.1,59c-0.5,0.2-0.8,0.6-1,1
+   c-0.2,0.5-0.1,1,0.1,1.7l3.3-1.5c-0.3-0.6-0.6-1-1-1.2C171,58.6,170.6,58.8,170.1,59z" />
+					<path class="st29"
+						d="M187.9,55.9c0.3,0.7,0.2,1.5-0.2,2.1c-0.4,0.6-1,1.1-2.1,1.5c-1,0.4-1.9,0.5-2.5,0.4l-0.3-0.9
+   c0.4,0,0.8,0,1.4-0.1c0.4-0.1,0.9-0.2,1.4-0.3c0.7-0.2,1.1-0.5,1.4-0.9s0.3-0.8,0.1-1.2c-0.1-0.3-0.2-0.5-0.4-0.7
+   c-0.2-0.1-0.4-0.2-0.8-0.3c-0.3-0.1-0.8-0.1-1.5-0.1c-0.9,0-1.7-0.1-2.1-0.4c-0.5-0.3-0.8-0.7-1-1.4c-0.2-0.6-0.2-1.4,0.2-1.9
+   c0.3-0.6,0.9-1,1.8-1.4c0.8-0.3,1.8-0.4,2.6-0.4v1c-0.8,0-1.6,0.1-2.3,0.3c-0.5,0.2-0.9,0.4-1.1,0.8c-0.2,0.3-0.2,0.7-0.1,1.1
+   c0.1,0.3,0.2,0.5,0.4,0.7c0.2,0.1,0.4,0.3,0.7,0.3c0.3,0.1,0.8,0.1,1.5,0.1c1,0,1.8,0.1,2.3,0.4C187.3,54.9,187.6,55.3,187.9,55.9z" />
+					<path class="st29" d="M194.1,55.7c0.2-0.1,0.3-0.1,0.5-0.2c0.2-0.1,0.3-0.1,0.4-0.2l0.2,0.7c-0.1,0.1-0.2,0.2-0.4,0.3
+   c-0.2,0.1-0.4,0.2-0.5,0.2c-1.2,0.4-2.2-0.1-2.6-1.5l-1.2-4l-0.9,0.3l-0.1-0.5l0.8-0.7v-1.6l0.6-0.2l0.5,1.6l2-0.6l0.2,0.8l-2,0.6
+   l1.2,4c0.1,0.4,0.3,0.7,0.6,0.8C193.5,55.8,193.7,55.8,194.1,55.7z" />
+					<path class="st29" d="M202.6,54.1l-0.4-0.9l0,0c-0.2,0.5-0.5,0.9-0.7,1.1c-0.3,0.2-0.7,0.4-1.1,0.5c-0.6,0.2-1.2,0.2-1.7-0.1
+   c-0.5-0.2-0.8-0.6-0.9-1.4c-0.4-1.4,0.5-2.4,2.7-3l1.1-0.3l-0.1-0.4c-0.1-0.5-0.4-0.9-0.6-1c-0.3-0.2-0.7-0.2-1.1-0.1
+   c-0.5,0.1-1.1,0.5-1.8,1l-0.5-0.7c0.3-0.3,0.6-0.5,0.9-0.7c0.4-0.2,0.7-0.4,1.1-0.5c0.8-0.2,1.5-0.2,2,0c0.5,0.2,0.8,0.7,1,1.6
+   l1.2,4.6L202.6,54.1z M200.1,54c0.6-0.2,1-0.5,1.4-0.9c0.3-0.4,0.3-0.9,0.1-1.6l-0.2-0.6l-1,0.3c-0.8,0.2-1.4,0.5-1.7,0.8
+   s-0.4,0.7-0.2,1.1c0.1,0.4,0.3,0.6,0.5,0.7C199.4,54.1,199.7,54.1,200.1,54z" />
+					<path class="st29"
+						d="M208.8,45.2c0.3-0.1,0.6-0.1,0.8-0.1l0.1,0.9c-0.3,0-0.5,0-0.7,0.1c-0.5,0.1-0.9,0.4-1.2,1
+   c-0.3,0.5-0.3,1.1-0.2,1.8l0.8,3.6l-1,0.2l-1.6-6.8l0.8-0.2l0.4,1.2l0,0c0.1-0.5,0.4-0.9,0.6-1.2C208,45.5,208.4,45.3,208.8,45.2z" />
+					<path class="st29" d="M216.4,50.1c0.2,0,0.3-0.1,0.5-0.1c0.2-0.1,0.3-0.1,0.4-0.2l0.2,0.8c-0.1,0.1-0.2,0.1-0.5,0.2
+   c-0.2,0.1-0.4,0.1-0.6,0.2c-1.4,0.3-2.1-0.3-2.4-1.7l-0.8-4.1l-0.9,0.2l-0.1-0.5l0.9-0.6l0.1-1.6l0.6-0.1l0.3,1.5l2-0.4l0.2,0.8
+   l-2,0.4l0.8,4.1c0.1,0.4,0.2,0.7,0.5,0.9C215.8,50.1,216.1,50.2,216.4,50.1z" />
+					<path class="st29"
+						d="M227.2,49.1l-1,0.1l-1.2-9.3l5.1-0.7l0.1,0.9l-4.1,0.5l0.5,3.5l3.9-0.5l0.1,0.9l-3.9,0.5L227.2,49.1z" />
+					<path class="st29" d="M237.1,40.7c0.3,0,0.6,0,0.8,0v1c-0.3,0-0.5,0-0.7,0c-0.5,0.1-1,0.3-1.4,0.8c-0.3,0.5-0.5,1-0.4,1.8l0.3,3.7
+   l-1,0.1l-0.6-7l0.8-0.1l0.2,1.2l0,0c0.2-0.5,0.5-0.8,0.8-1.1C236.3,40.9,236.7,40.8,237.1,40.7z" />
+					<path class="st29" d="M247.6,43.7c0.1,1.1-0.2,2.1-0.7,2.7c-0.5,0.6-1.4,1-2.3,1c-0.6,0-1.1-0.1-1.7-0.3c-0.5-0.3-0.9-0.6-1.1-1.1
+   c-0.3-0.5-0.4-1.1-0.5-1.9c-0.1-1.1,0.2-2.1,0.7-2.7c0.5-0.6,1.4-1,2.3-1c0.9-0.1,1.8,0.2,2.4,0.8C247.3,41.7,247.6,42.6,247.6,43.7
+   z M242.3,44c0,0.9,0.3,1.6,0.6,2c0.4,0.4,0.9,0.6,1.6,0.6c0.7,0,1.2-0.3,1.6-0.8c0.3-0.5,0.5-1.1,0.4-2.1c0-0.9-0.3-1.6-0.6-2
+   c-0.4-0.4-0.9-0.6-1.7-0.6c-0.7,0-1.2,0.3-1.6,0.7C242.4,42.4,242.3,43.1,242.3,44z" />
+					<path class="st29" d="M260.5,47.1v-4.6c0-0.5-0.1-0.9-0.3-1.2c-0.2-0.3-0.6-0.4-1.1-0.4c-0.6,0-1.1,0.2-1.5,0.5
+   c-0.3,0.4-0.5,0.9-0.5,1.8V47h-1v-4.6c0-0.5-0.1-0.9-0.3-1.2c-0.2-0.3-0.6-0.4-1.1-0.4c-0.6,0-1.1,0.2-1.5,0.6c-0.3,0.4-0.4,1-0.4,2
+   V47h-1v-7h0.8l0.2,0.9l0,0c0.2-0.3,0.5-0.6,0.8-0.8s0.7-0.3,1.2-0.3c1,0,1.8,0.4,2.2,1.1l0,0c0.2-0.4,0.5-0.6,0.9-0.8
+   c0.4-0.2,0.8-0.3,1.4-0.3c0.8,0,1.4,0.2,1.8,0.6c0.4,0.4,0.6,1,0.6,2V47L260.5,47.1z" />
+					<path class="st29" d="M274.4,47.8l-1-0.1l0.5-6.7c0-0.5,0.1-1,0.2-1.6c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0.1-0.6,0.4-1.6,1.1l-0.5-0.7
+   l2.6-1.7l0.9,0.1L274.4,47.8z" />
+					<path class="st29" d="M285.1,47.1c-0.1,0.6-0.4,1.1-0.9,1.4c-0.5,0.2-1.2,0.4-2.1,0.3c-0.9-0.1-1.7-0.3-2.1-0.7l0.1-0.9
+   c0.3,0.2,0.6,0.4,1,0.5s0.7,0.2,1,0.3c0.5,0.1,0.9,0,1.2-0.1c0.3-0.1,0.5-0.4,0.5-0.7s-0.1-0.5-0.3-0.7c-0.2-0.2-0.6-0.5-1.2-0.8
+   c-0.6-0.3-1-0.6-1.2-0.8c-0.2-0.2-0.4-0.4-0.5-0.7c-0.1-0.2-0.1-0.5-0.1-0.8c0.1-0.5,0.3-0.9,0.8-1.2s1.1-0.3,2-0.2
+   c0.7,0.1,1.5,0.3,2.1,0.7l-0.5,0.8c-0.6-0.4-1.2-0.6-1.9-0.6c-0.5-0.1-0.8,0-1.1,0.1c-0.3,0.1-0.4,0.3-0.4,0.6c0,0.2,0,0.3,0.1,0.5
+   c0.1,0.1,0.2,0.3,0.4,0.4c0.2,0.1,0.6,0.4,1.1,0.6c0.8,0.4,1.4,0.7,1.6,1.1C285,46.3,285.1,46.6,285.1,47.1z" />
+					<path class="st29" d="M290.8,49.2c0.2,0,0.4,0,0.5,0c0.2,0,0.3,0,0.4,0l-0.1,0.8c-0.1,0-0.3,0.1-0.5,0.1c-0.2,0-0.4,0-0.6,0
+   c-1.4-0.2-1.9-1-1.7-2.4l0.6-4.1l-0.9-0.2l0.1-0.5l1-0.3l0.6-1.4l0.6,0.1l-0.2,1.6l2,0.3l-0.1,0.8l-2-0.3l-0.6,4.1
+   c-0.1,0.4,0,0.7,0.1,1C290.2,49,290.4,49.1,290.8,49.2z" />
+					<path class="st29" d="M305.6,52.9l-0.3-4.3c0-0.3,0-0.8-0.1-1.8l0,0c-0.3,0.7-0.6,1.2-0.8,1.6l-2.2,3.6l-1.1-0.3l-0.3-7.2l1,0.2
+   c0,1.8,0.1,3.2,0.1,4.2c0,0.9,0,1.6,0,1.9l0,0c0.1-0.2,0.2-0.5,0.4-0.8c0.2-0.3,0.3-0.6,0.5-0.8l2.2-3.6l1.1,0.3l0.3,4.2
+   c0.1,0.7,0.1,1.4,0.1,1.9l0,0c0-0.1,0.1-0.3,0.3-0.6c0.1-0.3,0.9-1.9,2.5-4.7l1,0.2l-3.4,6.4L305.6,52.9z" />
+					<path class="st29" d="M314.7,55.4c-1-0.3-1.7-0.8-2.1-1.6c-0.4-0.7-0.4-1.7-0.1-2.8c0.3-1,0.8-1.9,1.6-2.4c0.7-0.5,1.6-0.6,2.4-0.3
+   c0.8,0.2,1.5,0.7,1.8,1.4c0.3,0.6,0.4,1.5,0.1,2.4l-0.2,0.6l-4.6-1.4c-0.2,0.8-0.2,1.5,0.1,2c0.2,0.5,0.7,0.8,1.5,1
+   c0.7,0.2,1.5,0.3,2.3,0.2l-0.3,0.9c-0.4,0-0.7,0.1-1.1,0C315.5,55.6,315.1,55.5,314.7,55.4z M316.1,49.3c-0.5-0.1-1-0.1-1.5,0.1
+   c-0.4,0.2-0.7,0.7-0.9,1.2l3.5,1c0.2-0.6,0.2-1.1,0-1.6C316.9,49.7,316.6,49.4,316.1,49.3z" />
+					<path class="st29" d="M323.4,58.2c-0.9-0.3-1.7-0.9-2-1.7c-0.4-0.8-0.4-1.7,0-2.8c0.3-1,0.9-1.9,1.7-2.3c0.7-0.4,1.6-0.5,2.4-0.2
+   c0.8,0.3,1.4,0.7,1.7,1.5c0.3,0.7,0.3,1.5,0,2.4l-0.2,0.6l-4.6-1.6c-0.2,0.8-0.2,1.5,0,2c0.2,0.5,0.7,0.9,1.4,1.1
+   c0.7,0.2,1.5,0.3,2.3,0.3l-0.3,0.9c-0.4,0-0.7,0-1.1,0C324.2,58.4,323.9,58.3,323.4,58.2z M325.2,52.1c-0.5-0.2-1-0.1-1.5,0.1
+   c-0.4,0.2-0.7,0.6-1,1.2l3.4,1.1c0.2-0.6,0.2-1.1,0.1-1.6C326,52.6,325.7,52.3,325.2,52.1z" />
+					<path class="st29" d="M331.6,57.2c0.3-0.2,0.6-0.4,1.1-0.6l2.9-1.5l1.2,0.5l-3.7,1.8l1.4,4.8l-1.1-0.4l-1.1-4l-1,0.3l-0.9,2.4
+   l-0.9-0.4l3.5-9.3l0.9,0.4l-1.9,4.9C331.9,56.5,331.8,56.8,331.6,57.2L331.6,57.2z" />
+					<path class="st29" d="M344.7,65.8c0.2,0.1,0.3,0.1,0.5,0.2c0.2,0,0.3,0.1,0.4,0.1l-0.3,0.7c-0.1,0-0.3,0-0.5-0.1
+   c-0.2-0.1-0.4-0.1-0.5-0.2c-1.2-0.5-1.6-1.5-0.9-2.8l1.8-3.7l-0.9-0.4l0.2-0.4h1l1-1.1l0.5,0.2l-0.6,1.5l1.9,0.8l-0.3,0.7l-1.9-0.8
+   l-1.7,3.7c-0.2,0.4-0.2,0.7-0.1,1C344.3,65.4,344.4,65.7,344.7,65.8z" />
+					<path class="st29" d="M355.2,67.9c-0.5,1-1.1,1.7-2,2c-0.8,0.3-1.7,0.2-2.6-0.2c-0.5-0.3-0.9-0.6-1.2-1.1c-0.3-0.5-0.4-1-0.4-1.7
+   s0.2-1.2,0.5-1.9c0.5-1,1.1-1.7,2-2c0.8-0.3,1.7-0.2,2.5,0.2c0.8,0.4,1.5,1,1.7,1.9C356,66,355.8,67,355.2,67.9z M350.6,65.5
+   c-0.4,0.8-0.5,1.5-0.4,2.1c0.1,0.6,0.4,1,1,1.4c0.6,0.3,1.1,0.3,1.8,0.1c0.5-0.2,1-0.7,1.4-1.6c0.4-0.8,0.5-1.5,0.4-2.1
+   c-0.1-0.6-0.5-1-1.1-1.4s-1.1-0.3-1.7-0.1C351.4,64.2,351,64.7,350.6,65.5z" />
+					<path class="st29" d="M368.8,68.7c0.7,0.4,1.2,0.9,1.5,1.6c0.2,0.6,0.1,1.1-0.2,1.8c-0.2,0.4-0.6,0.7-1,0.8c-0.4,0.2-1,0.2-1.7,0.2
+   c0.4,0.7,0.7,1.2,0.8,1.8c0.1,0.5,0,0.9-0.3,1.5c-0.4,0.6-0.9,1-1.7,1.1c-0.7,0.1-1.5-0.1-2.3-0.5c-0.8-0.5-1.4-1-1.7-1.8
+   c-0.2-0.6-0.1-1.4,0.3-2c0.5-0.9,1.6-1.2,2.9-1.1c-0.3-0.6-0.5-1.1-0.5-1.6c0-0.4,0.1-0.9,0.3-1.4c0.3-0.6,0.8-0.9,1.5-1
+   C367.3,68,368,68.3,368.8,68.7z M363.4,73.7c-0.3,0.4-0.3,0.8-0.2,1.2c0.2,0.4,0.5,0.8,1,1.1c0.5,0.3,1,0.4,1.5,0.4
+   c0.4-0.1,0.8-0.3,1-0.7c0.2-0.3,0.2-0.7,0.1-1.2c-0.1-0.4-0.4-1-1-1.7c-0.7-0.1-1.2-0.1-1.7,0.1C364,73.1,363.6,73.4,363.4,73.7z
+    M368.2,69.5c-0.4-0.3-0.8-0.4-1.2-0.3c-0.4,0.1-0.7,0.3-0.9,0.6c-0.2,0.3-0.3,0.7-0.2,1c0.1,0.4,0.3,0.8,0.7,1.5
+   c0.6,0.1,1.1,0.1,1.6,0c0.4-0.1,0.6-0.3,0.8-0.7c0.2-0.4,0.3-0.7,0.1-1.1C369.1,70.1,368.8,69.8,368.2,69.5z" />
+					<path class="st29" d="M371.9,81c0.1,0.1,0.3,0.2,0.5,0.3c0.2,0.1,0.3,0.1,0.4,0.1l-0.4,0.6c-0.1,0-0.3-0.1-0.5-0.2
+   c-0.2-0.1-0.4-0.2-0.5-0.3c-1.1-0.7-1.4-1.7-0.5-2.9l2.3-3.4l-0.8-0.5l0.3-0.4l1,0.2l1.1-1l0.5,0.3l-0.9,1.4l1.7,1.1l-0.4,0.7
+   l-1.7-1.1l-2.3,3.4c-0.2,0.3-0.3,0.6-0.3,0.9C371.5,80.6,371.7,80.8,371.9,81z" />
+					<path class="st29" d="M379,86.9l2.6-3.6c0.3-0.4,0.5-0.8,0.4-1.2c0-0.4-0.3-0.7-0.7-1c-0.6-0.4-1.1-0.6-1.7-0.4
+   c-0.5,0.1-1,0.5-1.6,1.4l-2.1,3l-0.8-0.6l5.7-8l0.8,0.6l-1.8,2.4c-0.2,0.3-0.4,0.5-0.5,0.7l0,0c0.3-0.1,0.7-0.2,1.1-0.1
+   c0.4,0.1,0.8,0.2,1.2,0.5c0.7,0.5,1.1,1,1.2,1.6c0.1,0.6-0.1,1.2-0.6,2l-2.6,3.7L379,86.9z" />
+					<path class="st29" d="M391.7,96.9l1.7-4c0.1-0.2,0.3-0.7,0.7-1.6l0,0c-0.6,0.4-1,0.8-1.5,1l-3.6,2.3l-0.9-0.8l3-6.6l0.8,0.7
+   c-0.8,1.7-1.4,2.9-1.8,3.7c-0.4,0.8-0.7,1.5-0.8,1.7l0,0c0.2-0.1,0.4-0.3,0.7-0.6c0.3-0.2,0.6-0.4,0.8-0.5l3.5-2.3l0.8,0.7l-1.7,3.9
+   c-0.3,0.7-0.5,1.2-0.8,1.8l0,0c0.1-0.1,0.3-0.2,0.5-0.4c0.3-0.2,1.7-1.2,4.4-3.1l0.8,0.7l-5.9,4.1L391.7,96.9z" />
+					<path class="st29" d="M398.5,103.2c-0.7-0.7-1.1-1.5-1.1-2.4c0-0.8,0.4-1.7,1.1-2.5c0.7-0.8,1.6-1.2,2.4-1.4
+   c0.8-0.1,1.7,0.2,2.3,0.8c0.6,0.6,0.9,1.2,0.9,2.1c0,0.7-0.3,1.5-1,2.2l-0.4,0.5l-3.5-3.2c-0.5,0.6-0.8,1.2-0.8,1.8
+   c0,0.6,0.2,1.1,0.7,1.6c0.5,0.5,1.2,0.9,2,1.1l-0.6,0.7c-0.4-0.1-0.7-0.3-1-0.5C399.2,103.7,398.8,103.5,398.5,103.2z M402.6,98.3
+   c-0.4-0.4-0.8-0.5-1.4-0.5s-0.9,0.3-1.5,0.7l2.7,2.5c0.4-0.5,0.7-0.9,0.7-1.5C403.2,99.1,403,98.7,402.6,98.3z" />
+					<path class="st29" d="M405.1,109.7c-0.7-0.7-1-1.6-1-2.4c0-0.8,0.4-1.7,1.2-2.5s1.7-1.2,2.5-1.2c0.8-0.1,1.7,0.2,2.3,0.9
+   c0.6,0.6,0.9,1.4,0.8,2.1c-0.1,0.7-0.4,1.5-1,2.2l-0.5,0.5l-3.3-3.4c-0.5,0.6-0.8,1.1-0.9,1.8c0,0.6,0.2,1.1,0.7,1.7
+   s1.1,0.9,1.9,1.2l-0.6,0.6c-0.4-0.1-0.7-0.3-1-0.5C405.7,110.2,405.4,110,405.1,109.7z M409.5,105c-0.4-0.4-0.8-0.6-1.4-0.5
+   c-0.5,0-1,0.2-1.5,0.6l2.6,2.6c0.5-0.4,0.7-0.9,0.7-1.4C410,105.8,409.8,105.4,409.5,105z" />
+					<path class="st29" d="M412.9,112.5c0.3,0,0.7-0.1,1.4-0.1l3.3,0.1l0.8,0.9l-4.1-0.1l-0.9,4.9l-0.8-0.9l0.8-4.1l-1-0.1l-2,1.8
+   l-0.7-0.7l7.4-6.7l0.7,0.7l-3.9,3.5C413.5,112,413.2,112.2,412.9,112.5L412.9,112.5z" />
+					<path class="st29"
+						d="M92.6,384l3.9,4.8l-0.7,0.6l-3.4-0.3c-1-0.1-1.8-0.1-2.2-0.1c-0.4,0-0.7,0.1-1,0.2c-0.3,0.1-0.6,0.3-0.8,0.5
+   c-0.4,0.3-0.6,0.7-0.6,1.1c0,0.4,0.1,0.8,0.4,1.2c0.2,0.3,0.5,0.5,0.8,0.7c0.3,0.2,0.7,0.3,1.2,0.4l-0.2,0.9c-1.1-0.2-2-0.7-2.6-1.5
+   c-0.5-0.7-0.8-1.4-0.7-2c0-0.6,0.3-1.2,0.9-1.7c0.4-0.4,1-0.6,1.7-0.7c0.6-0.1,1.7-0.1,2.9,0.1l2.8,0.3l0,0l-3-3.7L92.6,384z" />
+					<path class="st29" d="M84.4,372.8l-3.7,2.6c-0.4,0.3-0.7,0.6-0.8,1c-0.1,0.4,0,0.8,0.3,1.2c0.4,0.6,0.9,0.9,1.5,0.9s1.1-0.2,1.9-0.7
+   l3-2.1l0.6,0.8l-8.1,5.6l-0.6-0.8l2.5-1.7c0.3-0.2,0.5-0.3,0.7-0.5v-0.1c-0.4,0-0.7-0.1-1.1-0.3c-0.4-0.2-0.7-0.5-1-0.9
+   c-0.5-0.7-0.7-1.4-0.6-1.9c0.1-0.6,0.5-1.1,1.2-1.7l3.7-2.6L84.4,372.8z" />
+					<path class="st29" d="M75.3,365.3c0.9-0.6,1.9-0.8,2.7-0.7c0.8,0.1,1.6,0.6,2.1,1.5c0.3,0.5,0.5,1,0.5,1.7c0,0.5-0.1,1.1-0.5,1.7
+   c-0.3,0.5-0.8,0.9-1.5,1.4c-0.9,0.6-1.9,0.8-2.7,0.7c-0.8-0.1-1.6-0.6-2.1-1.5c-0.5-0.8-0.6-1.7-0.4-2.5
+   C73.8,366.6,74.4,366,75.3,365.3z M78.2,369.8c0.7-0.5,1.2-0.9,1.5-1.6c0.2-0.5,0.1-1.1-0.2-1.7c-0.4-0.6-0.8-0.9-1.5-0.9
+   c-0.6-0.1-1.2,0.1-2,0.6c-0.7,0.5-1.2,0.9-1.5,1.6c-0.2,0.5-0.1,1.1,0.3,1.7c0.4,0.6,0.8,0.9,1.5,0.9
+   C76.8,370.6,77.4,370.3,78.2,369.8z" />
+					<path class="st29" d="M69.8,362.7l4-2.2c0.5-0.3,0.8-0.6,0.9-0.9c0.1-0.3,0-0.8-0.2-1.2c-0.3-0.6-0.8-1-1.4-1.1
+   c-0.5-0.1-1.1,0.1-2,0.5l-3.2,1.8l-0.5-0.9l6-3.4l0.4,0.7l-0.7,0.6l0,0c0.4,0,0.8,0.1,1.1,0.4c0.3,0.2,0.6,0.6,0.9,1
+   c0.4,0.7,0.5,1.4,0.4,2c-0.1,0.5-0.6,1-1.4,1.5l-4,2.3L69.8,362.7z" />
+					<path class="st29" d="M63.9,351.9c-0.1-0.3-0.2-0.5-0.3-0.7l0.9-0.3c0.1,0.3,0.2,0.5,0.3,0.7c0.2,0.5,0.7,0.8,1.2,0.9
+   c0.6,0.1,1.1,0.1,1.8-0.2l3.3-1.7l0.5,0.9l-6.2,3.2l-0.4-0.7l1.1-0.7l0,0c-0.5,0-0.9-0.1-1.4-0.3C64.3,352.6,64.1,352.3,63.9,351.9z
+   " />
+					<path class="st29" d="M42.5,230.4c0.6,0.1,1,0.3,1.4,0.6c0.3,0.4,0.5,0.8,0.6,1.5l0,0c0.2-0.7,0.4-1.2,0.8-1.6
+   c0.4-0.3,0.9-0.4,1.6-0.4c0.8,0.1,1.6,0.5,2,1.1c0.4,0.6,0.5,1.6,0.4,2.7c0,0.5-0.1,0.9-0.2,1.4c-0.1,0.4-0.3,0.8-0.5,1.1l-1-0.1
+   c0.2-0.4,0.4-0.8,0.6-1.2c0.1-0.4,0.2-0.8,0.3-1.2c0.2-1.6-0.4-2.5-1.7-2.6c-1.1-0.1-1.8,0.7-2,2.5l-0.1,0.9l-0.9-0.1l0.1-0.9
+   c0.1-0.7,0-1.4-0.3-1.8s-0.7-0.7-1.2-0.7c-0.4,0-0.8,0.1-1.1,0.3c-0.3,0.3-0.4,0.7-0.5,1.2c0,0.4,0,0.8,0,1.1
+   c0.1,0.4,0.2,0.8,0.5,1.2l-0.7,0.4c-0.2-0.4-0.4-0.8-0.5-1.4s-0.1-1-0.1-1.6c0.1-0.9,0.4-1.6,0.8-2.1
+   C41.2,230.5,41.8,230.3,42.5,230.4z" />
+					<path class="st29" d="M50.7,217L50.7,217c0.6,0.6,0.8,1.5,0.6,2.4c-0.2,0.9-0.6,1.6-1.2,2c-0.7,0.4-1.7,0.5-2.7,0.3
+   c-1.1-0.2-2-0.6-2.5-1.2c-0.5-0.6-0.7-1.4-0.5-2.3c0.2-0.9,0.6-1.6,1.4-2v-0.1h-0.5l-0.5-0.1l-2.8-0.5l0.2-1l9.8,1.8l-0.1,0.8H50.7z
+    M50.6,219.1c0.1-0.7,0-1.2-0.3-1.7c-0.3-0.4-0.9-0.6-1.8-0.8h-0.2c-0.9-0.2-1.7-0.1-2.2,0.1c-0.5,0.2-0.7,0.7-0.9,1.5
+   c-0.1,0.6,0,1.1,0.4,1.6c0.4,0.4,1,0.7,1.9,0.8s1.6,0.1,2.1-0.1C50.2,220.1,50.4,219.7,50.6,219.1z" />
+					<path class="st29" d="M53.7,207.8h-1l0,0c0.3,0.4,0.5,0.8,0.6,1.2s0.1,0.8-0.1,1.4c-0.1,0.6-0.4,1.1-0.8,1.5s-0.9,0.4-1.7,0.2
+   c-1.4-0.3-1.9-1.6-1.5-3.7l0.2-1.1l-0.4-0.1c-0.5-0.1-0.9-0.1-1.2,0.1c-0.3,0.2-0.5,0.5-0.6,1c-0.1,0.5-0.1,1.2,0.1,2.1l-0.8,0.1
+   c-0.1-0.4-0.2-0.7-0.2-1.2c0-0.4,0-0.8,0.1-1.2c0.2-0.8,0.5-1.4,0.9-1.7c0.4-0.3,1-0.4,1.9-0.2l4.7,1L53.7,207.8z M52.4,210
+   c0.1-0.6,0.1-1.1-0.2-1.7c-0.3-0.4-0.7-0.7-1.4-0.8l-0.6-0.1l-0.2,1c-0.1,0.8-0.2,1.5,0,1.9c0.1,0.4,0.4,0.6,0.9,0.7
+   c0.4,0.1,0.7,0,0.9-0.1C52.1,210.7,52.3,210.4,52.4,210z" />
+					<path class="st29" d="M47.8,202.3l0.3-1.1l4.3-0.4c0.9-0.1,1.7-0.1,2.1-0.1l0,0c-0.2-0.1-0.5-0.3-0.9-0.6c-0.4-0.3-1.9-1.2-4.3-2.9
+   l0.3-1.1l6.9,5c0.7,0.5,1.1,0.9,1.4,1.5c0.2,0.5,0.2,0.9,0.1,1.6c-0.1,0.3-0.2,0.6-0.3,0.9l-0.8-0.2c0.1-0.2,0.2-0.4,0.3-0.7
+   c0.2-0.7-0.1-1.4-0.7-1.8l-0.8-0.6L47.8,202.3z" />
+					<path class="st29"
+						d="M56.7,190c0.6,0.2,1,0.6,1.2,1.1c0.2,0.5,0.2,1.2-0.1,2.1c-0.3,0.8-0.6,1.6-1,2l-0.9-0.3
+   c0.3-0.3,0.5-0.6,0.7-0.9c0.2-0.3,0.4-0.6,0.5-1c0.2-0.5,0.2-0.9,0.1-1.2c-0.1-0.3-0.3-0.5-0.6-0.6c-0.2-0.1-0.5,0-0.7,0.1
+   c-0.2,0.2-0.6,0.5-1,1.1c-0.4,0.5-0.7,0.9-1,1.1c-0.2,0.2-0.5,0.3-0.7,0.4c-0.2,0.1-0.5,0-0.8-0.1c-0.5-0.2-0.9-0.5-1-1
+   c-0.1-0.5-0.1-1.1,0.1-2c0.2-0.7,0.6-1.4,1.1-2l0.7,0.6c-0.5,0.6-0.8,1.1-0.9,1.7s-0.2,0.8-0.1,1.1c0.1,0.3,0.2,0.5,0.5,0.5
+   c0.2,0.1,0.3,0.1,0.5,0c0.1,0,0.3-0.2,0.5-0.3c0.2-0.2,0.4-0.5,0.8-1c0.5-0.7,1-1.1,1.4-1.4C55.7,189.9,56.2,189.9,56.7,190z" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="result" *ngIf="ExpandTrue">
+		<div class="items">
+			<h3 class="blue">{{TotalHourse}}</h3>
+			<p><b>Time</b> Spent</p>
+		</div>
+		<div class="items">
+			<h3 class="blue">{{OverallPercent}}%</h3>
+			<p><b>Over All</b> Completed</p>
+		</div>
+		<div class="items">
+			<h3 class="yello">{{planningPercent}}%</h3>
+			<p><b>Planning</b> Completed</p>
+		</div>
+		<div class="items">
+			<h3 class="lightblue">{{PreparingPercent}}%</h3>
+			<p><b>Preparing</b> Completed</p>
+		</div>
+		<div class="items">
+			<h3 class="green">{{PerformingPercent}}%</h3>
+			<p><b>Performing</b> Completed</p>
+		</div>
+		<div class="items">
+			<h3 class="orang">{{ReviewingPercent}}%</h3>
+			<p><b>Reviewing</b> Completed</p>
+		</div>
+	</div>
+</ion-content>
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border slidein" style="background: white;">
+	<ion-toolbar>
+		<div class="flex-tool">
+			<ion-icon class="fot-icons active" src="../../assets/img/45-home.svg" [routerLink]="['/mywebinar']">
+			</ion-icon>
+			<ion-icon class="fot-icons" src="../../assets/img/1.svg" [routerLink]="['/personal-detaills']"></ion-icon>
+			<button ion-button class="but m-b-2" *ngIf="expandbtn" (click)="Collapse($event)">Expand</button>
+			<button ion-button class="but m-b-2" *ngIf="!expandbtn" (click)="Expand($event)">Collapse</button>
+			<ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='Admin'" [routerLink]="['/admin-webinar']"
+				src="../../assets/img/21.svg"></ion-icon>
+			<ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='User'" [routerLink]="['/createwebinar']"
+				src="../../assets/img/21.svg"></ion-icon>
+			<ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+		</div>
+	</ion-toolbar>
+</ion-footer>

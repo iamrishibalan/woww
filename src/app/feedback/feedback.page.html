@@ -1,0 +1,218 @@
+<ion-header class="ion-no-border slideyou" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon class="foure" src="../../assets/img/7.svg"></ion-icon>
+    <ion-icon class="edit" src="../../assets/img/11.svg"></ion-icon>
+    <ion-icon class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+ 
+</ion-header>
+
+ 
+
+<ion-content class="slideyou">
+  <div class="myprofile">
+    <ion-icon class="close" (click)="dismiss()" src="../../assets/img/24.svg"></ion-icon>
+    <div class="item-prof ">
+      <img src="../../assets/img/round-top.png" />
+     
+
+      <p>
+        Kindly fill the <b>feedback</b> details to<br>
+        <b>Download Insight</b>
+      </p>
+    </div>
+    <div class="flex-bo">
+
+      <p class="p-rate">
+        Rate the usefulness of WOW application
+        for following Phases.
+      </p>
+      <div class="boxs-feed">
+        <div class="boxs-item">
+          <p>Planning Phase</p>
+        </div>
+        <div class="boxs-item1" (click)="Planning()">
+          <span (click)="PlanSR1()" style="padding-left: 18px;" class="fa fa-star"
+            [ngClass]="(planSR1==true)?'checkedA':'checked'"></span>
+          <span (click)="PlanSR2()" class="fa fa-star" [ngClass]="(planSR2==true)?'checkedA':'checked'"></span>
+          <span (click)="PlanSR3()" class="fa fa-star" [ngClass]="(planSR3==true)?'checkedA':'checked'"></span>
+          <span (click)="PlanSR4()" class="fa fa-star" [ngClass]="(planSR4==true)?'checkedA':'checked'"></span>
+          <span (click)="PlanSR5()" class="fa fa-star" [ngClass]="(planSR5==true)?'checkedA':'checked'"></span>
+        </div>
+      </div>
+
+      <div class="boxs-feed">
+        <div class="boxs-item">
+          <p>Preparing Phase</p>
+        </div>
+        <div class="boxs-item1" (click)="Preparing()">
+          <span (click)="PreSR1()" style="padding-left: 18px;" class="fa fa-star"
+            [ngClass]="(preSR1==true)?'checkedA':'checked'"></span>
+          <span (click)="PreSR2()" class="fa fa-star" [ngClass]="(preSR2==true)?'checkedA':'checked'"></span>
+          <span (click)="PreSR3()" class="fa fa-star" [ngClass]="(preSR3==true)?'checkedA':'checked'"></span>
+          <span (click)="PreSR4()" class="fa fa-star" [ngClass]="(preSR4==true)?'checkedA':'checked'"></span>
+          <span (click)="PreSR5()" class="fa fa-star" [ngClass]="(preSR5==true)?'checkedA':'checked'"></span>
+        </div>
+      </div>
+
+      <div class="boxs-feed">
+        <div class="boxs-item">
+          <p>Performing Phase</p>
+        </div>
+        <div class="boxs-item1" (click)="Performing()">
+          <span (click)="PerformingSR1()" style="padding-left: 18px;" class="fa fa-star"
+            [ngClass]="(performingSR1==true)?'checkedA':'checked'"></span>
+          <span (click)="PerformingSR2()" class="fa fa-star"
+            [ngClass]="(performingSR2==true)?'checkedA':'checked'"></span>
+          <span (click)="PerformingSR3()" class="fa fa-star"
+            [ngClass]="(performingSR3==true)?'checkedA':'checked'"></span>
+          <span (click)="PerformingSR4()" class="fa fa-star"
+            [ngClass]="(performingSR4==true)?'checkedA':'checked'"></span>
+          <span (click)="PerformingSR5()" class="fa fa-star"
+            [ngClass]="(performingSR5==true)?'checkedA':'checked'"></span>
+        </div>
+      </div>
+
+      <div class="boxs-feed">
+        <div class="boxs-item">
+          <p>Reviewing Phase</p>
+        </div>
+        <div class="boxs-item1" (click)="Reviewing()">
+          <span (click)="ReviewSR1()" style="padding-left: 18px;" class="fa fa-star"
+            [ngClass]="(reviewSR1==true)?'checkedA':'checked'"></span>
+          <span (click)="ReviewSR2()" class="fa fa-star" [ngClass]="(reviewSR2==true)?'checkedA':'checked'"></span>
+          <span (click)="ReviewSR3()" class="fa fa-star" [ngClass]="(reviewSR3==true)?'checkedA':'checked'"></span>
+          <span (click)="ReviewSR4()" class="fa fa-star" [ngClass]="(reviewSR4==true)?'checkedA':'checked'"></span>
+          <span (click)="ReviewSR5()" class="fa fa-star" [ngClass]="(reviewSR5==true)?'checkedA':'checked'"></span>
+        </div>
+      </div>
+
+      <div class="boxs-feed">
+        <div class="boxs-item">
+          <p>Overall Usefulness</p>
+        </div>
+        <div class="boxs-item1" (click)="usefullnesss()">
+          <span (click)="usefullnesss1()" style="padding-left: 18px;" class="fa fa-star"
+            [ngClass]="(Usefull1==true)?'checkedA':'checked'"></span>
+          <span (click)="usefullnesss2()" class="fa fa-star" [ngClass]="(Usefull2==true)?'checkedA':'checked'"></span>
+          <span (click)="usefullnesss3()" class="fa fa-star" [ngClass]="(Usefull3==true)?'checkedA':'checked'"></span>
+          <span (click)="usefullnesss4()" class="fa fa-star" [ngClass]="(Usefull4==true)?'checkedA':'checked'"></span>
+          <span (click)="usefullnesss5()" class="fa fa-star" [ngClass]="(Usefull5==true)?'checkedA':'checked'"></span>
+        </div>
+      </div>
+
+
+
+      <span *ngIf="Eplan">Not Applicable for this phase due to In Progress</span>
+      <span *ngIf="Eperfor">Not Applicable for this phase due to In Progress</span>
+      <span *ngIf="Eprepare">Not Applicable for this phase due to In Progress</span>
+      <span *ngIf="EReview">Not Applicable for this phase due to In Progress</span>
+      
+
+      <!-- <div class="boxs-feed m-t-2" style="display: none;">
+        <div class="boxs-item">
+          <p>Overall Usefulness</p>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==5">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==4">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==3">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==2">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==1">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1" *ngIf="OeverAllRate==0">
+          <span style="padding-left: 18px;" class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+     
+        <div class="boxs-item1"
+          *ngIf="OeverAllRate==0.1||OeverAllRate==0.2||OeverAllRate==0.3||OeverAllRate==0.4||OeverAllRate==0.5||OeverAllRate==0.6||OeverAllRate==0.7||OeverAllRate==0.8||OeverAllRate==0.9||OeverAllRate==0.10">
+          <span style="padding-left: 18px;" class="fa fa-star-half-full checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1"
+          *ngIf="OeverAllRate==1.1||OeverAllRate==1.2||OeverAllRate==1.3||OeverAllRate==1.4||OeverAllRate==1.5||OeverAllRate==1.6||OeverAllRate==1.7||OeverAllRate==1.8||OeverAllRate==1.9||OeverAllRate==1.10">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star-half-full checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        
+        <div class="boxs-item1"
+          *ngIf="OeverAllRate==2.1||OeverAllRate==2.2||OeverAllRate==2.3||OeverAllRate==2.4||OeverAllRate==2.5||OeverAllRate==2.6||OeverAllRate==2.7||OeverAllRate==2.8||OeverAllRate==2.9||OeverAllRate==2.10">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star-half-full checkedA"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1"
+          *ngIf="OeverAllRate==3.1||OeverAllRate==3.2||OeverAllRate==3.3||OeverAllRate==3.4||OeverAllRate==3.5||OeverAllRate==3.6||OeverAllRate==3.7||OeverAllRate==3.8||OeverAllRate==3.9||OeverAllRate==3.10">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star-half-full checkedA"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="boxs-item1"
+          *ngIf="OeverAllRate==4.1||OeverAllRate==4.2||OeverAllRate==4.3||OeverAllRate==4.4||OeverAllRate==4.5||OeverAllRate==4.6||OeverAllRate==4.7||OeverAllRate==4.8||OeverAllRate==4.9||OeverAllRate==4.10">
+          <span style="padding-left: 18px;" class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star checkedA"></span>
+          <span class="fa fa-star-half-full checkedA"></span>
+        </div>
+      
+      </div> -->
+      <form [formGroup]="profileForm" (ngSubmit)="Alert()">
+        <div class="boxs-feed item" style="width: 300px !important;">
+          <ion-item>
+            <ion-textarea formControlName="FeedBack"
+              placeholder="Feel free and write your comments for further improvement."></ion-textarea>
+          </ion-item>
+        </div>
+        <button ion-button class="but m-b-2" type="submit" expand="block"> Send and Download</button>
+      </form>
+
+    </div>
+  </div>
+</ion-content>
+<div class="webinar-bg"></div>

@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon  (click)='Update()'  class="foure gold" src="../../assets/img/35.svg"></ion-icon>
+    <!-- <ion-icon class="foure acvct" (click)="records()"  src="../../assets/img/36.svg"></ion-icon> -->
+   
+  </ion-toolbar>
+</ion-header>
+
+<div class="form-prof">
+  <h2>Records</h2>
+  <p>Now you can View all User and admin Records, Total Records {{count}}</p>
+  <form class="search" (submit)="doSignup()">
+    <ion-item>
+      <ion-input name="profession" type="text" [(ngModel)]="searchText" placeholder="Search by Name, Dept etc">
+      </ion-input>
+      <ion-icon class="active" src="../../assets/img/37.svg"></ion-icon>
+      <ion-icon src="../../assets/img/38.svg" (click)="fillter()"></ion-icon>
+    </ion-item>
+  </form>
+</div>
+<ion-content>
+  <div class="record-card">
+    <div class="filter" *ngIf="filter_valuse">
+      <ion-icon class="user" src="../../assets/img/38.svg"></ion-icon>
+      <ion-text class="card1">Great !
+        <h3>{{resultcount}} Records found..</h3>
+      </ion-text>
+    </div>
+    <div *ngFor="let data of (RecordDetail |filter:searchText); let i=index">
+      <ion-icon *ngIf="data.UserType=='User'" class="user" src="../../assets/img/7.svg"></ion-icon>
+      <ion-icon *ngIf="data.UserType=='Admin'" class="admin" src="../../assets/img/35.svg"></ion-icon>
+      <ion-text *ngIf="data.UserType=='User'" class="card1 user">{{data.UserName}}</ion-text>
+      <ion-text *ngIf="data.UserType=='Admin'" class="card1 admin">{{data.UserName}}</ion-text>
+      <ion-text class="card2">{{data.counts}}</ion-text>
+      <ion-icon (click)="adminwebinar($event,data.UserId,data.UserType)" src="../../assets/img/39.svg"></ion-icon>
+      <ion-icon (click)="Pdfdownload(data.UserId)" src="../../assets/img/20.svg"></ion-icon>
+    </div>
+  </div>
+
+
+</ion-content>
+<div class="webinar-bg"></div>
+<div class="loaders" *ngIf="load" >  
+  <div class="imgstyle">
+  <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+</div>
+</div>
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="flex-tool">
+      <ion-icon class="fot-icons" src="../../assets/img/45-home.svg" [routerLink]="['/mywebinar']"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/1.svg"  [routerLink]="['/personal-detaills']"></ion-icon>
+      <button ion-button class="but m-b-2" (click)='refresh()'> Refresh </button>
+      <ion-icon class="fot-icons" src="../../assets/img/21.svg"  [routerLink]="['/admin-webinar']"></ion-icon>
+      <ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>

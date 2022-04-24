@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border slidein" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar" style="margin-top: 25x;">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon *ngIf="userDetail.reg_UserType=='Admin'" (click)='Update()' style="color: #f29500;" class="foure" src="../../assets/img/35.svg"></ion-icon>
+    <ion-icon *ngIf="userDetail.reg_UserType=='User'" (click)='User()' class="foure" src="../../assets/img/7.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="personal m-b-2 slidein">
+  <div class="item-0">
+    <img src="../../assets/img/user-1.png">
+  </div>
+  <div class="item-1">
+  <h2>{{userDetail.reg_Name}}</h2>
+  <div style="height: 50px;">
+  <a [routerLink]="['/personal-detaills']">Personal Details</a><a [routerLink]="['/myactivities']" class="active">My Activities</a>
+  </div>
+</div>
+  </div>
+<ion-content class="slidein">
+  <div class="myprofile">
+    <div class="form-prof">
+        <h3>My Webinar</h3>
+        <div class="webinar">
+          <div class="item">
+            <h4 class="yloat">{{details.length}}</h4>
+            <p>Created</p>
+          </div>
+          <div class="item">
+            <h4 class="sblue" *ngIf="details.length !='0'">{{detailss.Completed}}</h4>
+            <h4 class="sblue" *ngIf="details.length=='0'">0</h4>
+            <p>Completed</p>
+          </div>
+          <div class="item">
+           <h4 class="green" *ngIf="details.length !='0'">{{detailss.Inprogess}}</h4> 
+           <h4 class="green" *ngIf="details.length=='0'">0</h4> 
+            <p>In Progress</p>
+          </div>
+        </div>
+        <button [routerLink]="['/mywebinar']" ion-button class="but butw orang-b" >Go to My Webinar</button>  
+    </div>
+    <div class="form-prof">
+      <h3>History</h3>
+      <div class="webinar his">
+        <div class="item">
+          <h4 class="yloat">{{AppusageTime}}</h4>
+          <p>Webinar Used</p>
+        </div>
+        <div class="item">
+          <h4 class="sblue">{{Downloadshare.downcount}}</h4>
+          <p>Times Downloded</p>
+        </div>
+        <div class="item">
+         <h4 class="green">{{Downloadshare.sharecount}}</h4> 
+          <p>Times Shared Externaly</p>
+        </div>
+      </div>
+  </div>
+  </div>
+</ion-content>
+<div class="webinar-bg"></div>
+
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border slidein">
+  <ion-toolbar>
+  <div class="flex-tool">
+    <ion-icon class="fot-icons " src="../../assets/img/45-home.svg" [routerLink]="['/mywebinar']" ></ion-icon>
+    <ion-icon class="fot-icons active" src="../../assets/img/1.svg"></ion-icon>
+    <button ion-button class="but m-b-2" [routerLink]="['/personal-detaills']"> Edit Profile</button>
+    <ion-icon class="fot-icons"  *ngIf="userDetail.reg_UserType=='Admin'" [routerLink]="['/admin-webinar']" src="../../assets/img/21.svg"></ion-icon>
+    <ion-icon class="fot-icons" *ngIf="userDetail.reg_UserType=='User'" [routerLink]="['/createwebinar']" src="../../assets/img/21.svg"></ion-icon>
+    <ion-icon class="fot-icons" src="../../assets/img/27.svg" (click)="presentModal()"></ion-icon>
+  </div>
+  </ion-toolbar>
+</ion-footer>
+
+<div class="loaders" *ngIf="load" >  
+  <div class="imgstyle">
+  <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+</div>
+</div>

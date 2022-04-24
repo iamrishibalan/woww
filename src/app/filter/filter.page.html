@@ -1,0 +1,132 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar color="menu" [class.show-background]="showToolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menucs"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon class="foure" (click)="Update()" src="../../assets/img/35.svg"></ion-icon>
+    <ion-icon class="foure acvct" style="color: #ff7716;" (click)="records()" src="../../assets/img/36.svg"></ion-icon>
+    <ion-icon class="user" src="../../assets/img/10.svg"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<div class="myprofile slidein modal-content slid">
+  <div class="item-prof">
+    <img src="../../assets/img/filter-i.png" />
+  </div>
+  <div class="top">
+    <h2>Filter Option</h2>
+    <ion-icon class="dissmissed" (click)="dismiss()" src="../../assets/img/24.svg"></ion-icon>
+    <p>Hello! <b>{{UserDetails.reg_Name}}</b> you can now
+      Choose or Select the filter option.</p>
+    <h3>Choose Credential Category</h3>
+  </div>
+  <ion-content>
+    <div class="flex-bo">
+      <div class="filter">
+        <ion-checkbox color="primary" type="checkbox" (click)="userclick($event)" id="userCheck"></ion-checkbox>
+        <ion-icon class="user" src="../../assets/img/7.svg"></ion-icon>
+        <ion-text class="user">USER</ion-text>
+        <ion-checkbox color="primary" (click)="Adminclick($event)" type="checkbox" id="adminCheck"></ion-checkbox>
+        <ion-icon class="admin" src="../../assets/img/35.svg"></ion-icon>
+        <ion-text class="admin">ADMIN</ion-text>
+      </div>
+      <h3>Category </h3>
+      <form [formGroup]="filterForm" class="form" >
+        <div class="form-group">
+          <ion-item>
+            <ion-select id="s_profession" [multiple]="true" placeholder="Select Profession" cancelText="cancel"
+              okText="done" class="form-control" formControlName="profession"
+              [(ngModel)]="Professionfilter.SelectedProfessionList">
+              <ion-select-option *ngFor="let data of Professionfilter.ProfessionList" [selected]="data.selected"
+                [value]="data.reg_Profession">{{data.reg_Profession}}
+              </ion-select-option>
+            </ion-select>
+            <ion-icon src="../../assets/img/14.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="viewbox" *ngIf="Professionfilter.SelectedProfessionList.length > 0">
+          <b class="dynamicvalue" *ngFor="let val of Professionfilter.SelectedProfessionList;index as i">
+            <span (click)="clearProfession(val)" id={{i}}>{{val}}<ion-icon style="margin-top: 1px !important;"
+                name="close-circle-outline"></ion-icon></span>
+          </b>
+        </div>
+        <div class="form-group ">
+          <ion-item>
+            <ion-label>Select Institution</ion-label>
+            <ion-select [multiple]="true" name="institution" type="text" class="form-control"
+              formControlName="institution" [(ngModel)]="Institutionfilter.SelectedInstitutionList">
+              <ion-select-option  *ngFor="let data of Institutionfilter.InstitutionList" value="{{data.reg_Institution}}">
+                {{data.reg_Institution}}
+              </ion-select-option>
+            </ion-select>
+            <ion-icon style="color: black;" name="add-circle-outline">
+            </ion-icon>
+            <ion-icon src="../../assets/img/7.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item>
+            <ion-label>Select Department</ion-label>
+            <ion-select [multiple]="true" name="department" type="text" class="form-control"
+              formControlName="department" [(ngModel)]="Departmentfilter.SelectedDeparmentList">
+              <ion-select-option *ngFor="let data of Departmentfilter.DeparmentList" [selected]="data.selected"
+              [value]="data.reg_Department">{{data.reg_Department}}
+              </ion-select-option>
+            </ion-select>
+            <ion-icon src="../../assets/img/15.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="viewbox" *ngIf="Departmentfilter.SelectedDeparmentList.length > 0">
+          <b class="dynamicvalue" *ngFor="let val of Departmentfilter.SelectedDeparmentList;index as i">
+            <span (click)="ClearDepartment(val)" id={{i}}>{{val}}<ion-icon style="margin-top: 1px !important;"
+                name="close-circle-outline"></ion-icon></span>
+          </b>
+        </div>
+        <div class="form-group">
+          <ion-item>
+            <ion-label>Select Purpose</ion-label>
+            <ion-select [multiple]="true" name="purpose" type="text"  [(ngModel)]="Purposefilter.SelectedPurposeList"
+              placeholder="Enter Purpose" class="form-control" formControlName="purpose">
+              <ion-select-option *ngFor="let data of Purposefilter.PurposeList" [selected]="data.selected"
+              [value]="data.reg_Purpose">{{data.reg_Purpose}}
+              </ion-select-option>
+            </ion-select>
+            <ion-icon src="../../assets/img/16.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="viewbox" *ngIf="Purposefilter.SelectedPurposeList.length > 0">
+          <b class="dynamicvalue" *ngFor="let val of Purposefilter.SelectedPurposeList;index as i">
+            <span (click)="ClearPurpose(val)" id={{i}}>{{val}}<ion-icon style="margin-top: 1px !important;"
+                name="close-circle-outline"></ion-icon></span>
+          </b>
+        </div>
+        <div class="form-group">
+          <ion-item>
+            <ion-label>Select Place</ion-label>
+            <ion-select [multiple]="true" name="Place" class="form-control" formControlName="place" type="text"
+              placeholder="Enter Place" [(ngModel)]="Placefilter.SelectedPlaceList">
+              <ion-select-option *ngFor="let data of Placefilter.PlaceList" [selected]="data.selected"
+              [value]="data.reg_Place">{{data.reg_Place}}
+              </ion-select-option>
+            </ion-select>
+            <ion-icon src="../../assets/img/17.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="viewbox" *ngIf="Placefilter.SelectedPlaceList.length > 0">
+          <b class="dynamicvalue" *ngFor="let val of Placefilter.SelectedPlaceList;index as i">
+            <span (click)="ClearPlace(val)" id={{i}}>{{val}}<ion-icon style="margin-top: 1px !important;"
+                name="close-circle-outline"></ion-icon></span>
+          </b>
+        </div>
+        <div class="filt">
+          <button ion-button class="but" (click)="filter($event)">Apply Filter</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</div>
+<div class="overlay" (click)="dismiss()"></div>
+<div class="loaders" *ngIf="load" >  
+  <div class="imgstyle">
+  <img style="max-width: 50%;" src="../../assets/img/wow-logo.gif" />
+</div>
+</div>
